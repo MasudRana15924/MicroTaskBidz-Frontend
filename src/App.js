@@ -9,9 +9,6 @@ import Login from './pages/user/Login';
 
 function App() {
   return (
-   
-    <></>
-    
   );
 }
 export default App;

@@ -6,12 +6,14 @@ import {
 import UserSignup from './pages/user/UserSignup';
 import Login from './pages/user/Login';
 import ConfirmEmail from './pages/user/ConfirmEmail';
+import UpdateInfo from './pages/user/UpdateInfo';
 
 
 function App() {
   return (
      <Routes>
       <Route path="/user/email/confirm" element={<ConfirmEmail/>}></Route>
+      <Route path="/user" element={<UpdateInfo/>}></Route>
      </Routes>
   );
 }

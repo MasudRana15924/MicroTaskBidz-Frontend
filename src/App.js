@@ -9,6 +9,9 @@ import Login from './pages/user/Login';
 
 function App() {
   return (
+    <>
+    <Routes></Routes>
+    </>
   );
 }
 export default App;

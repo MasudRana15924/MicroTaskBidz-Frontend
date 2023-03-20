@@ -3,7 +3,10 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import ConfirmEmail from './pages/user/ConfirmEmail';
+
+import UserDetails from './pages/user/UserDetails';
+
+
 
 
 function App() {
@@ -12,7 +15,7 @@ function App() {
     <>
     <Routes >
 
-      <Route path="/confirm-email"  element={<ConfirmEmail/>}></Route>
+      <Route path="/user-info"  element={< UserDetails/>}></Route>
     </Routes>
     </>
 

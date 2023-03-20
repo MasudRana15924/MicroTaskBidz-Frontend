@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import img from '../../images/Rectangle.jpg'
+import './User.css'
 
 const UserSignup = () => {
   const dispatch = useDispatch();
@@ -26,45 +28,93 @@ const UserSignup = () => {
     });
   };
   return (
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div class="w-full max-w-md">
-        <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="mt-5 mb-5 text-2xl font-medium mb-4 text-start">Create a Account </h2>
-          <form onSubmit={registerSubmit}>
-            <div class="mb-4">
-              <input class="border border-gray-200 w-full h-10 rounded p-3" type="text" id="username"
-                name="name"
-                value={name}
-                onChange={registerDataChange}
-                placeholder="Enter Your Name"
-                required
-              />
-            </div>
-            <div class="mb-4">
-              <input class="border border-gray-200 w-full h-10 rounded p-3" type="text" id="useremail"
-                name="email"
-                value={email}
-                onChange={registerDataChange}
-                placeholder="Enter Your Email"
-                required
-              />
-            </div>
-            <div class="mb-4">
+    // <div class="flex  ">
+    //   <div class="flex-initial w-50">
+    //     <img src={img} alt="" className="signupImg"/>
 
-              <input class="border border-gray-200 w-full h-10 rounded p-3" type="password" id="userpassword"
-                name="password"
-                value={name}
-                onChange={registerDataChange}
-                placeholder="Enter Your Password"
-                required
-              />
-            </div>
-            <button class="border-2 border-teal-700 bg-teal-700 text-white py-1 w-full rounded-md  font-semibold h-10 bg-teal-700" type="submit">SignUp</button>
-            <div class="mt-3 mb-5 text-center">
-              <Link to="/user-signin" class="text-black"><span class="text-gray-500">Already have a account ? </span> <span class="text-black-900 font-semibold"> SignIn </span></Link>
-            </div>
-          </form>
-        </div>
+    //   </div>
+    //   <div class="flex-initial w-full">
+    //     <div class="bg-white rounded-lg shadow-lg p-8">
+    //       <h2 class="mt-5 mb-5 text-2xl font-medium mb-4 text-start">Create a Account </h2>
+    //       <form onSubmit={registerSubmit}>
+    //         <div class="mb-4">
+    //           <input class="border border-gray-200 w-full h-10 rounded p-3" type="text" id="username"
+    //             name="name"
+    //             value={name}
+    //             onChange={registerDataChange}
+    //             placeholder="Enter Your Name"
+    //             required
+    //           />
+    //         </div>
+    //         <div class="mb-4">
+    //           <input class="border border-gray-200 w-full h-10 rounded p-3" type="text" id="useremail"
+    //             name="email"
+    //             value={email}
+    //             onChange={registerDataChange}
+    //             placeholder="Enter Your Email"
+    //             required
+    //           />
+    //         </div>
+    //         <div class="mb-4">
+
+    //           <input class="border border-gray-200 w-full h-10 rounded p-3" type="password" id="userpassword"
+    //             name="password"
+    //             value={name}
+    //             onChange={registerDataChange}
+    //             placeholder="Enter Your Password"
+    //             required
+    //           />
+    //         </div>
+    //         <button class="border-2 border-teal-700 bg-teal-700 text-white py-1 w-full rounded-md  font-semibold h-10 bg-teal-700" type="submit">SignUp</button>
+    //         <div class="mt-3 mb-5 text-center">
+    //           <Link to="/user-signin" class="text-black"><span class="text-gray-500">Already have a account ? </span> <span class="text-black-900 font-semibold"> SignIn </span></Link>
+    //         </div>
+    //       </form>
+    //     </div>
+    //   </div>
+
+    // </div>
+    <div className="signup-form-section">
+      <div className="signupForm-img">
+
+      </div>
+      <div className="signup-form-right-section">
+
+        <form class="signup-form">
+          <h2>Create a account </h2>
+          <div class="mt-5">
+            <input class="" type="text" id="username"
+              name="name"
+              value={name}
+              onChange={registerDataChange}
+              placeholder="Enter Your Name"
+              required
+            />
+          </div>
+          <div>
+            <input class="" type="text" id="useremail"
+              name="email"
+              value={email}
+              onChange={registerDataChange}
+              placeholder="Enter Your Email"
+              required
+            />
+          </div>
+          <div>
+
+            <input class="" type="password" id="userpassword"
+              name="password"
+              value={name}
+              onChange={registerDataChange}
+              placeholder="Enter Your Password"
+              required
+            />
+          </div>
+          <button class="signupBtn" type="submit">SignUp</button>
+          <div class="mt-5">
+            <Link to="/user-signin" class="text-black"><span class="text-gray-500">Already have a account ? </span> <span class="text-black-900 font-semibold"> SignIn </span></Link>
+          </div>
+        </form>
       </div>
 
     </div>

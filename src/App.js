@@ -3,13 +3,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
-import Login from './pages/user/Login';
 import ConfirmEmail from './pages/user/ConfirmEmail';
-
-import UpdateInfo from './pages/user/UpdateInfo';
-
-
 
 
 function App() {
@@ -18,7 +12,7 @@ function App() {
     <>
     <Routes >
 
-      <Route path="/user-signin"  element={<Login/>}></Route>
+      <Route path="/confirm-email"  element={<ConfirmEmail/>}></Route>
     </Routes>
     </>
 

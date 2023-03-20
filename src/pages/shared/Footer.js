@@ -14,9 +14,9 @@ const FOoter = () => {
             <h2 className="text-start text-white text-2xl mt-3 font-bold">WE"RE MORE TALKATIVE</h2>
             <h2 className="text-start text-white text-2xl mb-5 font-bold">ALIVE 24HOUR IN A WEEK</h2>
             <form action="" className='mt-5 '>
-              <input type="text" placeholder='Name         |' />
-              <input type="text" placeholder='Email          |' />
-              <input type="text" placeholder='Phone        |' />
+              <input type="text" placeholder='Name         |' /> 
+              <input type="text" placeholder='Email          |' /> 
+              <input type="text" placeholder='Phone        |' /> 
               <input type="text" placeholder='Message    |' />
               <button className="lg:w-3/12 bg-teal-700">+ Submit</button>
             </form>

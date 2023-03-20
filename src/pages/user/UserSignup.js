@@ -28,95 +28,84 @@ const UserSignup = () => {
     });
   };
   return (
-    // <div class="flex  ">
-    //   <div class="flex-initial w-50">
-    //     <img src={img} alt="" className="signupImg"/>
 
-    //   </div>
-    //   <div class="flex-initial w-full">
-    //     <div class="bg-white rounded-lg shadow-lg p-8">
-    //       <h2 class="mt-5 mb-5 text-2xl font-medium mb-4 text-start">Create a Account </h2>
-    //       <form onSubmit={registerSubmit}>
-    //         <div class="mb-4">
-    //           <input class="border border-gray-200 w-full h-10 rounded p-3" type="text" id="username"
-    //             name="name"
-    //             value={name}
-    //             onChange={registerDataChange}
-    //             placeholder="Enter Your Name"
-    //             required
-    //           />
-    //         </div>
-    //         <div class="mb-4">
-    //           <input class="border border-gray-200 w-full h-10 rounded p-3" type="text" id="useremail"
-    //             name="email"
-    //             value={email}
-    //             onChange={registerDataChange}
-    //             placeholder="Enter Your Email"
-    //             required
-    //           />
-    //         </div>
-    //         <div class="mb-4">
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <div class=" lg:w-3/12 ">
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <div class="space-y-4">
 
-    //           <input class="border border-gray-200 w-full h-10 rounded p-3" type="password" id="userpassword"
-    //             name="password"
-    //             value={name}
-    //             onChange={registerDataChange}
-    //             placeholder="Enter Your Password"
-    //             required
-    //           />
-    //         </div>
-    //         <button class="border-2 border-teal-700 bg-teal-700 text-white py-1 w-full rounded-md  font-semibold h-10 bg-teal-700" type="submit">SignUp</button>
-    //         <div class="mt-3 mb-5 text-center">
-    //           <Link to="/user-signin" class="text-black"><span class="text-gray-500">Already have a account ? </span> <span class="text-black-900 font-semibold"> SignIn </span></Link>
-    //         </div>
-    //       </form>
-    //     </div>
-    //   </div>
+            <p class="font-lg text-2xl text-gray-600">Create a account </p>
+          </div>
 
-    // </div>
-    <div className="signup-form-section">
-      <div className="signupForm-img">
 
+          <form action="" class="space-y-6 py-6" onSubmit={registerSubmit}>
+            <div>
+              <input
+                class=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                type="text"
+                name="name"
+                value={name}
+                onChange={registerDataChange}
+                placeholder="Enter Your Name"
+
+              />
+            </div>
+            <div>
+              <input
+                class=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                type="email"
+                name="email"
+                value={email}
+                onChange={registerDataChange}
+                placeholder="Enter Your Email"
+
+              />
+            </div>
+
+            <div class="flex flex-col items-end">
+              <input
+                type="password"
+
+                class=" border-2 w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                name="password"
+                value={password}
+                onChange={registerDataChange}
+                placeholder="Enter Your Password"
+
+              />
+
+            </div>
+
+            <div>
+              <button class="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
+                <span class="font-semibold text-white text-lg">Signup</span>
+              </button>
+              <Link to="/user-signup">
+                <span class="text-sm tracking-wide text-gray-400 mt-5">Already have a account ?</span> <span class="text-blue-600">Please Login</span>
+              </Link>
+            </div>
+            <div class="mt-12 border-t">
+              <span class="block w-max mx-auto -mt-3 px-4 text-center text-gray-500 bg-white">Or</span>
+            </div>
+            <div class="mt-12 grid gap-6 sm:grid-cols-2">
+              <button class="py-3 px-6 rounded-xl bg-green-200 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
+                <div class="flex gap-4 justify-center">
+                  <img src="../public/images/google.svg" class="w-5" alt="" />
+                  <span class="block w-max font-medium tracking-wide text-sm text-black-700">Google</span>
+                </div>
+              </button>
+              <button class="py-3 px-6 rounded-xl bg-gray-900 transition hover:bg-gray-800 active:bg-gray-600 focus:bg-gray-700">
+                <div class="flex gap-4 items-center justify-center text-white">
+
+                  <span class="block w-max font-medium tracking-wide text-sm text-white">Github</span>
+                </div>
+              </button>
+            </div>
+
+
+          </form>
+        </div>
       </div>
-      <div className="signup-form-right-section">
-
-        <form class="signup-form">
-          <h2>Create a account </h2>
-          <div class="mt-5">
-            <input class="" type="text" id="username"
-              name="name"
-              value={name}
-              onChange={registerDataChange}
-              placeholder="Enter Your Name"
-              required
-            />
-          </div>
-          <div>
-            <input class="" type="text" id="useremail"
-              name="email"
-              value={email}
-              onChange={registerDataChange}
-              placeholder="Enter Your Email"
-              required
-            />
-          </div>
-          <div>
-
-            <input class="" type="password" id="userpassword"
-              name="password"
-              value={name}
-              onChange={registerDataChange}
-              placeholder="Enter Your Password"
-              required
-            />
-          </div>
-          <button class="signupBtn" type="submit">SignUp</button>
-          <div class="mt-5">
-            <Link to="/user-signin" class="text-black"><span class="text-gray-500">Already have a account ? </span> <span class="text-black-900 font-semibold"> SignIn </span></Link>
-          </div>
-        </form>
-      </div>
-
     </div>
   );
 };

@@ -34,7 +34,7 @@ const UserSignup = () => {
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="space-y-4">
 
-            <p className="font-lg text-4xl text-gray-600 mb-3">Create a account </p>
+            <p className="font-lg text-4xl text-gray-600 mb-3">Create an account </p>
           </div>
 
 

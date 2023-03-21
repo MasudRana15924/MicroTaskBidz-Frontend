@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './User.css'
 import { useDispatch } from 'react-redux';
+import { createLogin } from '../../state/loginSlice';
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -10,14 +11,14 @@ const Login = () => {
         email: "",
         password: "",
     });
-    const { name, email, password } = user;
+    const {email, password } = user;
     const registerSubmit = (e) => {
         e.preventDefault();
         const myForm = new FormData();
 
         myForm.set("email", email);
         myForm.set("password", password);
-        dispatch();
+        dispatch(createLogin(myForm));
 
     };
     const registerDataChange = (e) => {

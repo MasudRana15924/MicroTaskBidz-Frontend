@@ -3,8 +3,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import UserSignup from './pages/user/UserSignup';
-import Login from './pages/user/Login';
 import ConfirmEmail from './pages/user/ConfirmEmail';
 
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import './User.css'
+import { createSignUp } from '../../state/signupSlice';
 
 const UserSignup = () => {
   const dispatch = useDispatch();
@@ -16,7 +18,7 @@ const UserSignup = () => {
     myForm.set("name", name);
     myForm.set("email", email);
     myForm.set("password", password);
-    dispatch();
+    dispatch(createSignUp(myForm));
 
   };
   const registerDataChange = (e) => {
@@ -26,47 +28,84 @@ const UserSignup = () => {
     });
   };
   return (
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div class="w-full max-w-md">
-        <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="mt-5 mb-5 text-2xl font-medium mb-4 text-start">Create a Account </h2>
-          <form onSubmit={registerSubmit}>
-            <div class="mb-4">
-              <input class="border border-gray-200 w-full h-10 rounded p-3" type="text" id="username"
+
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <div className=" lg:w-3/12 ">
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="space-y-4">
+
+            <p className="font-lg text-4xl text-gray-600 mb-3">Create an account </p>
+          </div>
+
+
+          <form action="" className="space-y-6 py-6" onSubmit={registerSubmit}>
+            <div>
+              <input
+                className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                type="text"
                 name="name"
                 value={name}
                 onChange={registerDataChange}
                 placeholder="Enter Your Name"
-                required
+
               />
             </div>
-            <div class="mb-4">
-              <input class="border border-gray-200 w-full h-10 rounded p-3" type="text" id="useremail"
+            <div>
+              <input
+                className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                type="email"
                 name="email"
                 value={email}
                 onChange={registerDataChange}
                 placeholder="Enter Your Email"
-                required
+
               />
             </div>
-            <div class="mb-4">
 
-              <input class="border border-gray-200 w-full h-10 rounded p-3" type="password" id="userpassword"
+            <div className="flex flex-col items-end">
+              <input
+                type="password"
+
+                className=" border-2 w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
                 name="password"
-                value={name}
+                value={password}
                 onChange={registerDataChange}
                 placeholder="Enter Your Password"
-                required
+
               />
+
             </div>
-            <button class="border-2 border-teal-700 bg-teal-700 text-white py-1 w-full rounded-md  font-semibold h-10 bg-teal-700" type="submit">SignUp</button>
-            <div class="mt-3 mb-5 text-center">
-              <Link to="/user-signin" class="text-black"><span class="text-gray-500">Already have a account ? </span> <span class="text-black-900 font-semibold"> SignIn </span></Link>
+
+            <div>
+              <button className="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
+                <span className="font-semibold text-white text-lg">Signup</span>
+              </button>
+
+              <span className="text-sm tracking-wide text-gray-400 mt-5">Already have a account ?</span> <Link to="/user-signin"><span className="text-blue-600">Please Login</span>
+              </Link>
             </div>
+            <div className="mt-12 border-t">
+              <span className="block w-max mx-auto -mt-3 px-4 text-center text-gray-500 bg-white">Or</span>
+            </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2">
+              <button className="py-3 px-6 rounded-xl bg-green-200 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
+                <div className="flex gap-4 justify-center">
+                  <img src="../public/images/google.svg" className="w-5" alt="" />
+                  <span className="block w-max font-medium tracking-wide text-sm text-black-700">Google</span>
+                </div>
+              </button>
+              <button className="py-3 px-6 rounded-xl bg-gray-900 transition hover:bg-gray-800 active:bg-gray-600 focus:bg-gray-700">
+                <div className="flex gap-4 items-center justify-center text-white">
+
+                  <span className="block w-max font-medium tracking-wide text-sm text-white">Github</span>
+                </div>
+              </button>
+            </div>
+
+
           </form>
         </div>
       </div>
-
     </div>
   );
 };

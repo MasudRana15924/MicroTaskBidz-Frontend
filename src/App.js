@@ -4,13 +4,13 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import ConfirmEmail from './pages/user/ConfirmEmail';
 import UserDetails from './pages/user/UserDetails';
 import UpdateInfo from './pages/user/UpdateInfo';
 import ResetPassword from './pages/user/Resetpassword';
 import Login from './pages/user/Login';
 import UserSignup from './pages/user/UserSignup';
 import Changepassword from './pages/user/Changepassword';
-
 
 function App() {
   return (

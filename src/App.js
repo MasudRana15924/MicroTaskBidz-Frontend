@@ -4,7 +4,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import ResetPassword from './pages/user/ResetPassword'
+import ResetPassword from './pages/user/ResetPassword';
+
 
 
 

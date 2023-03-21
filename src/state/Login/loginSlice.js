@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { publicPost } from "../utilities/apiCaller";
+import { publicPost } from "../../utilities/apiCaller";
 
 
 export const createLogin = createAsyncThunk(
@@ -9,7 +9,8 @@ export const createLogin = createAsyncThunk(
       const response = await publicPost("/user/signin",data);
       return response;
     } catch (err) {
-      return rejectWithValue(err);
+      console.log("error", err);
+      return rejectWithValue(err.message);
     }
   }
 );
@@ -18,9 +19,6 @@ export const loginSlice = createSlice({
   name: "login",
   initialState: {
     isLoading: false,
-    success: false,
-    error: false,
-    errorMessage:"",
   },
 
   extraReducers: (builder) => {
@@ -29,14 +27,12 @@ export const loginSlice = createSlice({
     });
     builder.addCase(createLogin.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.error = null;
-      state.userDetails = action.payload;
-      state.success = true;
+      state.user = action.payload;
+      state.errorMessage = "";
     });
     builder.addCase(createLogin.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = true;
-      state.errorMessage = action.payload.data.message;
+      state.errorMessage = action.payload;
     });
   },
 });

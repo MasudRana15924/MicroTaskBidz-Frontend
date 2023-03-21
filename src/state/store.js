@@ -1,6 +1,14 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { loginSlice } from "./loginSlice";
+import storage from "redux-persist/lib/storage";
+import logger from "redux-logger";
+import { loginReducer } from "./Login";
 import { signUpSlice } from "./signupSlice";
+import { persistReducer,persistStore,FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
+
+const persistConfig = {
+  key: "authentication",
+  storage
+};
 
 const middlewares = [];
 
@@ -9,15 +17,22 @@ if (process.env.NODE_ENV !== "development") {
   middlewares.push(logger);
 }
 
+const persistedReducer = persistReducer(persistConfig, loginReducer);
 const rootReducer = combineReducers({
-   signup:signUpSlice,
-   login:loginSlice
+   signup: signUpSlice,
+   userDetails: persistedReducer
 });
 
 const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(...middlewares),
+    getDefaultMiddleware({
+      serializableCheck:{
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+      }
+    }).concat(logger),
 });
 
 export default store;
+
+export const persistor = persistStore(store);

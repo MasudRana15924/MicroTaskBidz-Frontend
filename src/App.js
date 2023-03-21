@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 
 import UserDetails from './pages/user/UserDetails';
+import UserSignup from './pages/user/UserSignup';
 
 
 
@@ -16,6 +17,7 @@ function App() {
     <Routes >
 
       <Route path="/user-info"  element={< UserDetails/>}></Route>
+      <Route path="/user-signup"  element={< UserSignup/>}></Route>
     </Routes>
     </>
 

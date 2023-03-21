@@ -1,5 +1,5 @@
 import axios from "axios";
-import { api } from "../configs";
+import { api } from "../config/index";
 
 const config = {
   headers: {

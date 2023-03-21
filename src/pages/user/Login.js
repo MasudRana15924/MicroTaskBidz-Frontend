@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './User.css'
 import { useDispatch } from 'react-redux';
-import { createLogin } from '../../state/loginSlice';
+import { createLogin } from '../../state/Login/loginSlice';
 
 const Login = () => {
     const dispatch = useDispatch();

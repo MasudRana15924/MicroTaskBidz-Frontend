@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import img from '../../images/Rectangle.jpg'
 import './User.css'
+import { createSignUp } from '../../state/signupSlice';
 
 const UserSignup = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const UserSignup = () => {
     myForm.set("name", name);
     myForm.set("email", email);
     myForm.set("password", password);
-    dispatch();
+    dispatch(createSignUp(myForm));
 
   };
   const registerDataChange = (e) => {

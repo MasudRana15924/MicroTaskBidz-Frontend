@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './User.css'
 import { useDispatch } from 'react-redux';
+import { createLogin } from '../../state/Login/loginSlice';
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -10,14 +11,14 @@ const Login = () => {
         email: "",
         password: "",
     });
-    const { name, email, password } = user;
+    const { email, password } = user;
     const registerSubmit = (e) => {
         e.preventDefault();
         const myForm = new FormData();
 
         myForm.set("email", email);
         myForm.set("password", password);
-        dispatch();
+        dispatch(createLogin(myForm));
 
     };
     const registerDataChange = (e) => {
@@ -27,48 +28,75 @@ const Login = () => {
         });
     };
     return (
-        <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-            <div class="w-full max-w-md">
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <h2 class="mt-5 mb-5 text-2xl font-medium mb-4 text-start">Login </h2>
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+            <div className=" lg:w-3/12 ">
+                <div className="bg-white rounded-lg shadow-lg p-8">
+                    <div className="space-y-4">
 
-                    <h2 class="mt-5 mb-5 text-sm font-sm mb-4 text-start">Welcome back Please enter your details </h2>
-                    <form onSubmit={registerSubmit}>
+                        <p className="font-lg text-3xl text-gray-600">Welcome to Spring Rain </p>
+                    </div>
 
-                        <div class="mb-4">
-                            <input class="border border-gray-200 w-full h-10 rounded p-3" type="text" id="useremail"
+                    <div className="mt-12 grid gap-6 sm:grid-cols-2">
+                        <button className="py-3 px-6 rounded-xl bg-blue-50 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
+                            <div className="flex gap-4 justify-center">
+                                <img src="../public/images/google.svg" className="w-5" alt="" />
+                                <span className="block w-max font-medium tracking-wide text-sm text-green-700">Google</span>
+                            </div>
+                        </button>
+                        <button className="py-3 px-6 rounded-xl bg-gray-900 transition hover:bg-gray-800 active:bg-gray-600 focus:bg-gray-700">
+                            <div className="flex gap-4 items-center justify-center text-white">
+
+                                <span className="block w-max font-medium tracking-wide text-sm text-white">Github</span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div className="mt-12 border-t">
+                        <span className="block w-max mx-auto -mt-3 px-4 text-center text-gray-500 bg-white">Or</span>
+                    </div>
+
+                    <form action="" className="space-y-6 py-6" onSubmit={registerSubmit}>
+                        <div>
+                            <input
+                                className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                                type="email"
                                 name="email"
                                 value={email}
                                 onChange={registerDataChange}
                                 placeholder="Enter Your Email"
-                                required
+
                             />
                         </div>
-                        <div class="mb-4">
 
-                            <input class="border-2 border-gray-200 w-full h-10 rounded p-3" type="password" id="userpassword"
+                        <div className="flex flex-col items-end">
+                            <input
+                                type="password"
+
+                                className=" border-2 w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
                                 name="password"
-                                value={name}
+                                value={password}
                                 onChange={registerDataChange}
                                 placeholder="Enter Your Password"
-                                required
+
                             />
-                        </div>
-                        <div class="text-end mt-3 mb-3">
-                            <Link to="/forgot-password"><span class="text-teal-700 text-end">Forgot password ? </span> </Link>
+                            <button type="reset" className="w-max p-3 -mr-3">
+                                <span className="text-sm tracking-wide text-blue-600">Forgot password ?</span>
+                            </button>
                         </div>
 
-                        <button class="border-2 border-teal-700 bg-teal-700 text-white py-1 w-full rounded-md  font-semibold h-10 bg-teal-700" type="submit">SignUp</button>
-                        <div class="mt-3 mb-5 text-center">
-                            <Link to="/user-signup" class="text-black"><span class="text-gray-500">Don't have a account ? </span> <span class="text-black-900 font-semibold"> Register </span></Link>
+                        <div>
+                            <button className="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
+                                <span className="font-semibold text-white text-lg">Login</span>
+                            </button>
+
+                            <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/user-signup"> <span className="text-blue-600">Create new account</span>
+                            </Link>
                         </div>
                     </form>
                 </div>
             </div>
 
         </div>
-
-
     );
 };
 

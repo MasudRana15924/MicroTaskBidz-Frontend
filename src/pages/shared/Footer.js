@@ -14,6 +14,7 @@ const FOoter = () => {
             <h2 className="text-start text-white text-2xl mt-3 font-bold">WE"RE MORE TALKATIVE</h2>
             <h2 className="text-start text-white text-2xl mb-5 font-bold">ALIVE 24HOUR IN A WEEK</h2>
             <form action="" className='mt-5 '>
+
               <div>
                 <input type="text" placeholder='Name         |' className="lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
                 <input type="text" placeholder='Email          |' className="lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
@@ -23,6 +24,7 @@ const FOoter = () => {
               <div>
                 <button className="bg-rose-700 mt-5 h-10 w-1/5 text-white font-semibold text-center mb-5">+ Submit</button>
               </div>
+
             </form>
           </div>
           <div className="">

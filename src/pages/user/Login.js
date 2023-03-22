@@ -79,9 +79,13 @@ const Login = () => {
                                 placeholder="Enter Your Password"
 
                             />
-                            <button type="reset" className="w-max p-3 -mr-3">
-                                <span className="text-sm tracking-wide text-blue-600">Forgot password ?</span>
-                            </button>
+                            <div className="mt-5">
+                                <Link to="/user/password">
+
+                                    <span className="text-sm tracking-wide text-blue-600 mt-5">Forgot password ?</span>
+                                </Link>
+                            </div>
+
                         </div>
 
                         <div>

@@ -17,19 +17,19 @@ const Header = () => {
                 <nav className={`${open ? "block" : "hidden"} w-full lg:flex lg:items-center lg:w-auto`}>
                     <ul className="text-base lg:flex lg:justify-between">
                         <li>
-                            <Link to="/" className="text-white px-5 py-2 hover:text-blue-200 font-semibold block">HOME</Link>
+                            <Link to="/" className="text-white px-5 py-2 hover:text-blue-200 font-semibold block">Home</Link>
                         </li>
                         <li>
-                            <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">ABOUT</Link>
+                            <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">About</Link>
                         </li>
                         <li>
-                            <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">PORTFOLIO</Link>
+                            <Link to="/user/create-task" className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">Create Task</Link>
                         </li>
                         <li>
-                            <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">CLIENTS</Link>
+                            <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">Clients</Link>
                         </li>
                         <li>
-                            <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">CONTACT US</Link>
+                            <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">Contact Us</Link>
                         </li>
                         <li>
                             <Link to="/user-signin" className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">LOGIN</Link>

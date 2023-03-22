@@ -30,7 +30,7 @@ const Changepassword = () => {
           <div className=" lg:w-8/12 lg:mx-auto text-end  mb-5">
             <UserSidebar></UserSidebar>
           </div>
-          <div className=" lg:w-8/12 lg:mx-auto mb-5  p-5 ">
+          <div className=" lg:w-8/12 mb-5  p-5 ">
             <div class="bg-white rounded-lg shadow-lg p-8 ">
               <h2 class=" mb-5 text-2xl font-medium  text-start">Change Passowrd</h2>
               <form onSubmit={registerSubmit}>
@@ -54,7 +54,7 @@ const Changepassword = () => {
                     required
                   />
                 </div>
-                <button class="border-2 border-rose-700 text-white py-1 w-full rounded-md  font-semibold h-10 bg-rose-700 mt-5" type="submit">Change Password</button>
+                <button class="border-2 border-rose-700 text-white py-1 w-full rounded-md  font-semibold h-10 bg-rose-700 mt-5 mb-5" type="submit">Change Password</button>
 
               </form>
             </div>

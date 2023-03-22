@@ -20,7 +20,7 @@ const UserSidebar = () => {
                     <AiOutlineUnorderedList className="mt-1 w-20 h-5"></AiOutlineUnorderedList>
                     <h2 className="text-xl  font-semibold"> Manage My Accounts </h2>
                 </div>
-                <Link to="/user-info"> 
+                <Link to="/user/updateinfo"> 
                 <h2 className="text-xl font-thin  mx-20 mt-3">Update Profile</h2>
                 </Link>
                 <Link to="/user/change/password">

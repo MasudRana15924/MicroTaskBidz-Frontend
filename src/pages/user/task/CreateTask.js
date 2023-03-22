@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { createTask } from '../../../state/task/taskSlice';
 import UserSidebar from '../UserSidebar';
 
 const CreateTask = () => {
@@ -15,7 +15,7 @@ const CreateTask = () => {
         const myForm = new FormData();
         myForm.set("name", name);
         myForm.set("password", budget);
-        dispatch();
+        dispatch(createTask(myForm));
 
     };
     const registerDataChange = (e) => {

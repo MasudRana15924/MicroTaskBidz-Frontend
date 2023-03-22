@@ -33,7 +33,7 @@ const UserSignup = () => {
       <div className=" lg:w-3/12 ">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="space-y-4">
-            <p className="font-lg text-4xl text-gray-600 mb-3">Create an account an</p>
+            <p className="font-lg text-4xl text-gray-600 mb-3">Create an account as a</p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             <button className="py-3 px-6 rounded-xl bg-rose-700 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">

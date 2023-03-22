@@ -13,6 +13,7 @@ import UserSignup from './pages/user/UserSignup';
 import Changepassword from './pages/user/Changepassword';
 import CreateTask from './pages/user/task/CreateTask';
 import ContractorSignup from './pages/contractor/ContractorSignup';
+import ContractorLogin from './pages/contractor/ContractorLogin';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
      <Route path="/user/confirm/email"  element={< ConfirmEmail/>}></Route>
      <Route path="/user/create-task"  element={< CreateTask/>}></Route>
      <Route path="/contractor-signup"  element={< ContractorSignup/>}></Route>
+     <Route path="/contractor-signin"  element={< ContractorLogin/>}></Route>
     </Routes>
   );
 }

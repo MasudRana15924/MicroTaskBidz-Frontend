@@ -16,7 +16,7 @@ const UserSidebar = () => {
                 </div>
             </div>
             <div className="mx-5 border border-gray-50 w-3/4 shadow-xl mb-3 mt-5 text-start">
-                <div className="flex items-center mt-10">
+                <div className="flex items-center mt-20">
                     <AiOutlineUnorderedList className="mt-1 w-20 h-5"></AiOutlineUnorderedList>
                     <h2 className="text-xl  font-semibold"> Manage My Accounts </h2>
                 </div>
@@ -30,9 +30,9 @@ const UserSidebar = () => {
                 <h2 className="text-xl font-thin mx-20 mt-3">Create a Task </h2>
                 </Link>
                 
-                <div className="flex items-center mt-10 mb-10">
-                    <BsArrowClockwise className="mt-1 w-20 h-5"></BsArrowClockwise>
-                    <h2 className="text-start text-xl font-thin ">LogOut</h2>
+                <div className="flex items-center mt-10  bg-teal-700 h-20 text-white">
+                    <BsArrowClockwise className="mt-1 w-20 h-10"></BsArrowClockwise>
+                    <h2 className="text-start text-3xl font-thin ">LogOut</h2>
                 </div>
 
 

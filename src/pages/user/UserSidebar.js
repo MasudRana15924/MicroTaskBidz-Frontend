@@ -21,7 +21,7 @@ const UserSidebar = () => {
                     <h2 className="text-xl  font-semibold"> Manage My Accounts </h2>
                 </div>
                 <Link to="/user-info"> 
-                <h2 className="text-xl font-thin  mx-20 mt-3">Profile Information</h2>
+                <h2 className="text-xl font-thin  mx-20 mt-3">Update Profile</h2>
                 </Link>
                 <Link to="/user/change/password">
                 <h2 className="text-xl font-thin mx-20 mt-3"> Change Password</h2>

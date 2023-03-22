@@ -19,7 +19,9 @@ function App() {
       <Route path="/user-signin"  element={< Login/>}></Route>
       <Route path="/user-signup"  element={< UserSignup/>}></Route>
       <Route path="/user/password" element={<ResetPassword/>}></Route>
-      <Route path="/user/changepassword" element={<Changepassword/>}></Route>
+
+          <Route path="/user/change/password" element={<Changepassword/>}></Route>
+
       <Route path="/user/update/info" element={<UpdateInfo/>}></Route>
      <Route path="/user-info"  element={< UserDetails/>}></Route>
      <Route path="/user/confirm/email"  element={< ConfirmEmail/>}></Route>

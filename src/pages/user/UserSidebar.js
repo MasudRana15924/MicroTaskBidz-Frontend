@@ -23,7 +23,7 @@ const UserSidebar = () => {
                 <Link to="/user-info"> 
                 <h2 className="text-xl font-thin  mx-20 mt-3">Profile Information</h2>
                 </Link>
-                <Link to="/user/changepasswor">
+                <Link to="/user/change/password">
                 <h2 className="text-xl font-thin mx-20 mt-3"> Change Password</h2>
                 </Link>
                 <Link to="/user/create-task">

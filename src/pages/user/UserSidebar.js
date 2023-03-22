@@ -20,11 +20,14 @@ const UserSidebar = () => {
                     <AiOutlineUnorderedList className="mt-1 w-20 h-5"></AiOutlineUnorderedList>
                     <h2 className="text-xl  font-semibold"> Manage My Accounts </h2>
                 </div>
-                <Link> 
+                <Link to="/user-info"> 
                 <h2 className="text-xl font-thin  mx-20 mt-3">Profile Information</h2>
                 </Link>
-                <Link>
+                <Link to="/user/change/password">
                 <h2 className="text-xl font-thin mx-20 mt-3"> Change Password</h2>
+                </Link>
+                <Link to="/user/create-task">
+                <h2 className="text-xl font-thin mx-20 mt-3">Create a Task </h2>
                 </Link>
                 
                 <div className="flex items-center mt-10 mb-10">

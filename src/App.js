@@ -11,6 +11,7 @@ import ResetPassword from './pages/user/Resetpassword';
 import Login from './pages/user/Login';
 import UserSignup from './pages/user/UserSignup';
 import Changepassword from './pages/user/Changepassword';
+import CreateTask from './pages/user/task/CreateTask';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path="/user/update/info" element={<UpdateInfo/>}></Route>
      <Route path="/user-info"  element={< UserDetails/>}></Route>
      <Route path="/user/confirm/email"  element={< ConfirmEmail/>}></Route>
+     <Route path="/user/create-task"  element={< CreateTask/>}></Route>
     </Routes>
   );
 }

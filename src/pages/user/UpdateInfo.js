@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { updateInfo } from '../../state/update/updateInfoSlice.js';
 import UserSidebar from './UserSidebar';
 
 const UpdateInfo = () => {
@@ -11,7 +12,7 @@ const UpdateInfo = () => {
     e.preventDefault();
     const myForm = new FormData();
     myForm.set("name", name);
-    dispatch();
+    dispatch(updateInfo(myForm));
 
   };
   const registerDataChange = (e) => {

@@ -37,16 +37,19 @@ const Login = () => {
                     </div>
 
                     <div className="mt-12 grid gap-6 sm:grid-cols-2">
-                        <button className="py-3 px-6 rounded-xl bg-blue-50 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
+                        <button className="py-3 px-6 rounded-xl bg-rose-700 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
                             <div className="flex gap-4 justify-center">
-                                <img src="../public/images/google.svg" className="w-5" alt="" />
-                                <span className="block w-max font-medium tracking-wide text-sm text-green-700">Google</span>
+                                <Link to="/user-signin">
+                                <span className="block w-max font-medium tracking-wide text-md text-center text-white">User</span>
+                                </Link>
                             </div>
                         </button>
                         <button className="py-3 px-6 rounded-xl bg-gray-900 transition hover:bg-gray-800 active:bg-gray-600 focus:bg-gray-700">
                             <div className="flex gap-4 items-center justify-center text-white">
 
-                                <span className="block w-max font-medium tracking-wide text-sm text-white">Github</span>
+                               <Link to="/contractor-signin">
+                               <span className="block w-max font-medium tracking-wide text-sm text-white">Contractor</span>
+                               </Link>
                             </div>
                         </button>
                     </div>

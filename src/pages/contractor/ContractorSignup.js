@@ -91,7 +91,7 @@ const ContractorSignup = () => {
                   <span className="font-semibold text-white text-lg">Signup</span>
                 </button>
   
-                <span className="text-sm tracking-wide text-gray-400 mt-5">Already have a account ?</span> <Link to="/user-signin"><span className="text-blue-600">Please Login</span>
+                <span className="text-sm tracking-wide text-gray-400 mt-5">Already have a account ?</span> <Link to="/contractor-signin"><span className="text-blue-600">Please Login</span>
                 </Link>
               </div>
               <div className="mt-12 border-t">

@@ -6,7 +6,7 @@ import { ImYoutube } from "react-icons/im";
 
 const FOoter = () => {
   return (
-    <div className="p-10 bg-black mt-5 ">
+    <div className="p-10 bg-black mt-10 ">
       <div className="max-w-full mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 gap-2 ">
           <div className="lg:w-8/12 lg:mx-auto text-end  mb-5">

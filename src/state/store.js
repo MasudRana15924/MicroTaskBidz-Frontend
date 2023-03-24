@@ -25,9 +25,7 @@ const persistedReducer = persistReducer(persistConfig, loginReducer);
 const rootReducer = combineReducers({
    signup: signUpSlice,
    userDetails: persistedReducer,
-
-   userUpdateInfo:updateInfo
-
+   userUpdateInfo:updateInfo,
    createTask:createTaskSlice,
    createContractor:contractorSignupSlice
 

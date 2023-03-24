@@ -14,10 +14,12 @@ import Changepassword from './pages/user/Changepassword';
 import CreateTask from './pages/user/task/CreateTask';
 import ContractorSignup from './pages/contractor/ContractorSignup';
 import ContractorLogin from './pages/contractor/ContractorLogin';
+import Home from './components/home/Home';
 
 function App() {
   return (
     <Routes >
+      <Route path="/" element={<Home></Home>}></Route>
       <Route path="/user-signin"  element={< Login/>}></Route>
       <Route path="/user-signup"  element={< UserSignup/>}></Route>
       <Route path="/user/password" element={<ResetPassword/>}></Route>

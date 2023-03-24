@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import './User.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { createLogin } from '../../state/Login/loginSlice';
 
-
-const Login = () => {
+const ContractorLogin = () => {
     const dispatch = useDispatch();
-    const { token } = useSelector(
-        (state) => state.userDetails.user
-    );
-
     const [user, setUser] = useState({
-
         email: "",
         password: "",
     });
@@ -23,7 +15,7 @@ const Login = () => {
 
         myForm.set("email", email);
         myForm.set("password", password);
-        dispatch(createLogin(myForm));
+        dispatch();
 
     };
     const registerDataChange = (e) => {
@@ -45,16 +37,16 @@ const Login = () => {
                         <button className="py-3 px-6 rounded-xl bg-rose-700 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
                             <div className="flex gap-4 justify-center">
                                 <Link to="/user-signin">
-                                    <span className="block w-max font-medium tracking-wide text-md text-center text-white">User</span>
+                                <span className="block w-max font-medium tracking-wide text-md text-center text-white">User</span>
                                 </Link>
                             </div>
                         </button>
                         <button className="py-3 px-6 rounded-xl bg-gray-900 transition hover:bg-gray-800 active:bg-gray-600 focus:bg-gray-700">
                             <div className="flex gap-4 items-center justify-center text-white">
 
-                                <Link to="/contractor-signin">
-                                    <span className="block w-max font-medium tracking-wide text-sm text-white">Contractor</span>
-                                </Link>
+                               <Link to="/contractor-signin">
+                               <span className="block w-max font-medium tracking-wide text-sm text-white">Contractor</span>
+                               </Link>
                             </div>
                         </button>
                     </div>
@@ -88,7 +80,7 @@ const Login = () => {
 
                             />
                             <div className="mt-5">
-                                <Link to="/user/password">
+                                <Link to="/contractor/password">
 
                                     <span className="text-sm tracking-wide text-blue-600 mt-5">Forgot password ?</span>
                                 </Link>
@@ -97,14 +89,11 @@ const Login = () => {
                         </div>
 
                         <div>
-                            {
-                                token ? <button className="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
-                                    <span className="font-semibold text-white text-lg">Logout</span>
-                                </button> : <button className="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
-                                    <span className="font-semibold text-white text-lg">Login</span>
-                                </button>
-                            }
-                            <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/user-signup"> <span className="text-blue-600">Create new account</span>
+                            <button className="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
+                                <span className="font-semibold text-white text-lg">Login</span>
+                            </button>
+
+                            <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/contractor-signup"> <span className="text-blue-600">Create new account</span>
                             </Link>
                         </div>
                     </form>
@@ -115,4 +104,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default ContractorLogin;

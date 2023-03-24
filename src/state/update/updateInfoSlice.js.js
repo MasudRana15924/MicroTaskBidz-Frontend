@@ -30,7 +30,7 @@ export const updateInfoSlice = createSlice({
     builder.addCase(updateInfo.fulfilled, (state, action) => {
       state.isLoading = false;
       state.error = null;
-      state.userSignup = action.payload;
+      state.userInfo = action.payload;
       state.success = true;
     });
     builder.addCase(updateInfo.rejected, (state, action) => {

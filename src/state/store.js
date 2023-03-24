@@ -4,8 +4,10 @@ import logger from "redux-logger";
 import { loginReducer } from "./Login";
 import { signUpSlice } from "./signupSlice";
 import { persistReducer,persistStore,FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
+import { updateInfo } from "./update/updateInfoSlice.js";
 import { createTaskSlice } from "./task/taskSlice";
 import contractorSignupSlice from "./contractor/contractorSignupSlice";
+
 
 const persistConfig = {
   key: "authentication",
@@ -23,8 +25,12 @@ const persistedReducer = persistReducer(persistConfig, loginReducer);
 const rootReducer = combineReducers({
    signup: signUpSlice,
    userDetails: persistedReducer,
+
+   userUpdateInfo:updateInfo
+
    createTask:createTaskSlice,
    createContractor:contractorSignupSlice
+
 });
 
 const store = configureStore({

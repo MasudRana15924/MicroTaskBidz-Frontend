@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './User.css'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createLogin } from '../../state/Login/loginSlice';
 
 
 const Login = () => {
     const dispatch = useDispatch();
-    const { token } = useSelector(
-        (state) => state.userDetails.user
-    );
 
     const [user, setUser] = useState({
 
@@ -97,13 +94,10 @@ const Login = () => {
                         </div>
 
                         <div>
-                            {
-                                token ? <button className="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
-                                    <span className="font-semibold text-white text-lg">Logout</span>
-                                </button> : <button className="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
-                                    <span className="font-semibold text-white text-lg">Login</span>
-                                </button>
-                            }
+                            <button className="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
+                                <span className="font-semibold text-white text-lg">Login</span>
+                            </button>
+
                             <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/user-signup"> <span className="text-blue-600">Create new account</span>
                             </Link>
                         </div>

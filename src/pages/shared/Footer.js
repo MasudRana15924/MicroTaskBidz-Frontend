@@ -16,13 +16,16 @@ const FOoter = () => {
             <form action="" className='mt-5 '>
 
               <div>
-                <input type="text" placeholder='Name         |' className="lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
-                <input type="text" placeholder='Email          |' className="lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
-                <input type="text" placeholder='Phone        |' className="lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
-                <input type="text" placeholder='Message    |' className="lg:w-full mb-3 h-10 border-gray-100 px-5" />
+                <input type="text" placeholder='Name         |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
+                <input type="text" placeholder='Email          |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
+                <input type="text" placeholder='Phone        |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
+                <input type="text" placeholder='Message    |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" />
               </div>
               <div>
-                <button className="bg-rose-700 mt-5 h-10 w-1/5 text-white font-semibold text-center mb-5">+ Submit</button>
+                <button className="lg:bg-rose-700 lg:mt-5 lg:h-10 lg:w-1/5 lg:text-white lg:font-semibold lg:text-center lg:mb-5
+                w-full bg-teal-700 h-10 text-white text-2xl
+                
+                ">+ Submit</button>
               </div>
 
             </form>

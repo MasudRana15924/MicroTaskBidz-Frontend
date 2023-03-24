@@ -18,21 +18,21 @@ const UserSidebar = () => {
             <div className="mx-5 border border-gray-50 w-3/4 shadow-xl mb-3 mt-5 text-start">
                 <div className="flex items-center mt-20">
                     <AiOutlineUnorderedList className="mt-1 w-20 h-5"></AiOutlineUnorderedList>
-                    <h2 className="text-xl  font-semibold"> Manage My Accounts </h2>
+                    <h2 className="text-sm lg:text-xl  lg:font-semibold"> Manage My Accounts </h2>
                 </div>
                 <Link to="/user/updateinfo"> 
-                <h2 className="text-xl font-thin  mx-20 mt-3">Update Profile</h2>
+                <h2 className="text-sm mx-20 w-full lg:text-xl font-thin lg:mx-20 mt-3">Update Profile</h2>
                 </Link>
                 <Link to="/user/change/password">
-                <h2 className="text-xl font-thin mx-20 mt-3"> Change Password</h2>
+                <h2 className="text-sm mx-20 w-full lg:text-xl font-thin lg:mx-20 mt-3"> Change Password</h2>
                 </Link>
                 <Link to="/user/create-task">
-                <h2 className="text-xl font-thin mx-20 mt-3">Create a Task </h2>
+                <h2 className="text-sm mx-20 w-full lg:text-xl font-thin lg:mx-20 mt-3">Create a Task </h2>
                 </Link>
                 
-                <div className="flex items-center mt-10  bg-teal-700 h-20 text-white">
-                    <BsArrowClockwise className="mt-1 w-20 h-10"></BsArrowClockwise>
-                    <h2 className="text-start text-3xl font-thin ">LogOut</h2>
+                <div className="h-5 flex items-center mt-10  bg-teal-700 lg:h-20 text-white">
+                    <BsArrowClockwise className="h-5 mt-1 w-20 lg:h-10"></BsArrowClockwise>
+                    <h2 className=" text-md text-start lg:text-3xl font-thin ">LogOut</h2>
                 </div>
 
 

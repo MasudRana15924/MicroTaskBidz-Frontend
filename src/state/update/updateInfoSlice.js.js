@@ -36,7 +36,7 @@ export const updateInfoSlice = createSlice({
     builder.addCase(updateInfo.rejected, (state, action) => {
       state.isLoading = false;
       state.error = true;
-      state.errorMessage = action.payload.data.message;
+      state.errorMessage = action.payload;
     });
   },
 });

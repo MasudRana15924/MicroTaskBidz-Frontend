@@ -8,7 +8,6 @@ const Tasks = () => {
             .then(res => res.json())
             .then(data => setTasks(data));
     }, [])
-    console.log(tasks);
     return (
         <div className="mt-20">
             <h5 className="text-center text-4xl font-medium ">Live Auction </h5>
@@ -18,7 +17,7 @@ const Tasks = () => {
 
                 {
                     tasks.map(task => <Task
-                        key={task.key}
+                        key={task.id}
                         task={task}
                     ></Task>)
                 }

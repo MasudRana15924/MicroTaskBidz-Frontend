@@ -12,7 +12,7 @@ const UpdateInfo = () => {
     e.preventDefault();
     const myForm = new FormData();
     myForm.set("name", name);
-    dispatch(updateInfo(myForm));
+     dispatch(updateInfo(myForm));
 
   };
   const registerDataChange = (e) => {

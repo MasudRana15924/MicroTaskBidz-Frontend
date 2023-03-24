@@ -6,10 +6,9 @@ export const createLogin = createAsyncThunk(
   "/login",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await publicPost("/user/signin",data);
+      const response = await publicPost("/user/signin", data);
       return response;
     } catch (err) {
-      console.log("error", err);
       return rejectWithValue(err.message);
     }
   }
@@ -20,6 +19,11 @@ export const loginSlice = createSlice({
   initialState: {
     isLoading: false,
   },
+  reducers: {
+    logout: (state) => {
+      state.token = null
+    }
+  },
 
   extraReducers: (builder) => {
     builder.addCase(createLogin.pending, (state) => {
@@ -27,7 +31,7 @@ export const loginSlice = createSlice({
     });
     builder.addCase(createLogin.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.user = action.payload;
+      state.token = action.payload.token;
       state.errorMessage = "";
     });
     builder.addCase(createLogin.rejected, (state, action) => {
@@ -37,4 +41,5 @@ export const loginSlice = createSlice({
   },
 });
 
+export const { logout } = loginSlice.actions;
 export default loginSlice.reducer;

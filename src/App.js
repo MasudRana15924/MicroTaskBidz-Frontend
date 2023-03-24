@@ -15,11 +15,16 @@ import CreateTask from './pages/user/task/CreateTask';
 import ContractorSignup from './pages/contractor/ContractorSignup';
 import ContractorLogin from './pages/contractor/ContractorLogin';
 import Home from './components/home/Home';
+import Portfolio from './components/banner/Portfolio';
+import About from './components/banner/About';
+
 
 function App() {
   return (
     <Routes >
       <Route path="/" element={<Home></Home>}></Route>
+      <Route path="/portfolio" element={<Portfolio/>}></Route>
+      <Route path="/about" element={<About/>}></Route>
       <Route path="/user-signin"  element={< Login/>}></Route>
       <Route path="/user-signup"  element={< UserSignup/>}></Route>
       <Route path="/user/password" element={<ResetPassword/>}></Route>

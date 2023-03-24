@@ -9,7 +9,10 @@ const Header = () => {
     return (
         <header className="header">
             <div className="flex items-center justify-between xl:max-w-7xl xl:mx-auto max-w-full px-[5%] flex-wrap w-full">
-                <img src={logo} alt="" className="logo" />
+                <Link to="/">
+                    <img src={logo} alt="" className="logo" />
+                </Link>
+
                 <FiMenu className="lg:hidden block h-10 w-10 cursor-pointer"
                     onClick={() => setOpen(!open)}
                 />
@@ -20,21 +23,22 @@ const Header = () => {
                             <Link to="/" className="text-white px-5 py-2 hover:text-blue-200 font-semibold block">Home</Link>
                         </li>
                         <li>
-                            <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">About</Link>
+                            <Link to="/about" className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">About</Link>
+                        </li>
+                        <li>
+                            <Link to="/portfolio" className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">Portfolio</Link>
                         </li>
                         <li>
                             <Link to="/user/create-task" className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">Create Task</Link>
                         </li>
-                        <li>
-                            <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">Clients</Link>
-                        </li>
+
                         <li>
                             <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">Contact Us</Link>
                         </li>
                         <li>
                             <Link to="/user-signin" className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">LOGIN</Link>
                         </li>
-                       
+
 
                     </ul>
 

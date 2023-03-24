@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../banner/Banner'
+import Portfolio from '../banner/Portfolio';
 import Tasks from '../task/Tasks';
 
 
@@ -8,6 +9,7 @@ const Home = () => {
         <>
             <Banner></Banner>
             <Tasks></Tasks>
+            <Portfolio></Portfolio>
         </>
 
     );

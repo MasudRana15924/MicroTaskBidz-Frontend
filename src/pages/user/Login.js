@@ -11,7 +11,7 @@ import { createLogin } from '../../state/Login/loginSlice';
 const Login = () => {
     const navigate=useNavigate();
     const dispatch = useDispatch();
-    const { isLoading, user } = useSelector(
+    const { isLoading,token } = useSelector(
         (state) => state.userDetails
     );
 
@@ -36,10 +36,10 @@ const Login = () => {
         });
     };
     useEffect(() => {
-        if (user.token) {
+        if (token) {
             navigate('/');
         }
-    }, [user, navigate]);
+    }, [token, navigate]);
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
             <div className=" lg:w-3/12 ">

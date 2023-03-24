@@ -9,7 +9,7 @@ import { logout } from '../../state/Login/loginSlice';
 const Header = () => {
     const [open, setOpen] = useState(false);
     const dipatch=useDispatch();
-    const { user } = useSelector(
+    const { token } = useSelector(
         (state) => state.userDetails
     );
     return (
@@ -42,7 +42,7 @@ const Header = () => {
                             <Link className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">Contact Us</Link>
                         </li>
                         {
-                            user.token ? <button className="text-xl text-white font-bold" onClick={()=>dipatch(logout())}>Logout</button>:<li>
+                            token ? <button className="text-xl text-white font-bold" onClick={()=>dipatch(logout())}>Logout</button>:<li>
                             <Link to="/user-signin" className="text-white  px-5 py-2 hover:text-blue-200 font-semibold block">LOGIN</Link>
                         </li>
                         }

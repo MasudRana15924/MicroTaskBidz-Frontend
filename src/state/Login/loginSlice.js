@@ -21,7 +21,7 @@ export const loginSlice = createSlice({
   },
   reducers: {
     logout: (state) => {
-      state.user = ""
+      state.token = null
     }
   },
 
@@ -31,7 +31,7 @@ export const loginSlice = createSlice({
     });
     builder.addCase(createLogin.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.user = action.payload;
+      state.token = action.payload.token;
       state.errorMessage = "";
     });
     builder.addCase(createLogin.rejected, (state, action) => {

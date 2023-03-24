@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState,useEffect } from 'react';
+import { Link,useNavigate  } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 import './User.css'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createLogin } from '../../state/Login/loginSlice';
 
 
+
 const Login = () => {
+    const navigate=useNavigate();
     const dispatch = useDispatch();
+    const { isLoading, user } = useSelector(
+        (state) => state.userDetails
+    );
 
-    const [user, setUser] = useState({
-
+    const [users, setUser] = useState({
         email: "",
         password: "",
     });
-    const { email, password } = user;
+    const { email, password } = users;
     const registerSubmit = (e) => {
         e.preventDefault();
         const myForm = new FormData();
@@ -25,10 +31,15 @@ const Login = () => {
     };
     const registerDataChange = (e) => {
         setUser({
-            ...user,
+            ...users,
             [e.target.name]: e.target.value
         });
     };
+    useEffect(() => {
+        if (user.token) {
+            navigate('/');
+        }
+    }, [user, navigate]);
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
             <div className=" lg:w-3/12 ">
@@ -95,7 +106,11 @@ const Login = () => {
 
                         <div>
                             <button className="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
-                                <span className="font-semibold text-white text-lg">Login</span>
+                                {isLoading ?<div className="w-2/4 mx-auto">
+                                    <Box sx={{ display: 'flex' }}>
+                                    <CircularProgress color="secondary"/>
+                                </Box>
+                                </div> : <span className="font-semibold text-white text-lg">Login</span>}
                             </button>
 
                             <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/user-signup"> <span className="text-blue-600">Create new account</span>

@@ -6,10 +6,9 @@ export const createLogin = createAsyncThunk(
   "/login",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await publicPost("/user/signin",data);
+      const response = await publicPost("/user/signin", data);
       return response;
     } catch (err) {
-      console.log("error", err);
       return rejectWithValue(err.message);
     }
   }
@@ -19,6 +18,11 @@ export const loginSlice = createSlice({
   name: "login",
   initialState: {
     isLoading: false,
+  },
+  reducers: {
+    logout: (state) => {
+      state.user = ""
+    }
   },
 
   extraReducers: (builder) => {
@@ -37,4 +41,5 @@ export const loginSlice = createSlice({
   },
 });
 
+export const { logout } = loginSlice.actions;
 export default loginSlice.reducer;

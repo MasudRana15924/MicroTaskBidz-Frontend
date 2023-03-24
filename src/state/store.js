@@ -4,6 +4,7 @@ import logger from "redux-logger";
 import { loginReducer } from "./Login";
 import { signUpSlice } from "./signupSlice";
 import { persistReducer,persistStore,FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
+import { updateInfo } from "./update/updateInfoSlice.js";
 
 const persistConfig = {
   key: "authentication",
@@ -20,7 +21,8 @@ if (process.env.NODE_ENV !== "development") {
 const persistedReducer = persistReducer(persistConfig, loginReducer);
 const rootReducer = combineReducers({
    signup: signUpSlice,
-   userDetails: persistedReducer
+   userDetails: persistedReducer,
+   userUpdateInfo:updateInfo
 });
 
 const store = configureStore({

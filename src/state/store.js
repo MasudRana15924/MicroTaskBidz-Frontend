@@ -1,39 +1,36 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import logger from "redux-logger";
-import { loginReducer } from "./Login";
-import { signUpSlice } from "./signupSlice";
-import { persistReducer,persistStore,FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
-import { createTaskSlice } from "./task/taskSlice";
-import contractorSignupSlice from "./contractor/contractorSignupSlice";
-
+import { loginReducer } from "./user/Login";
+import { signUpSlice } from "./user/signupSlice";
+import { persistReducer, persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
+import doctorsSlice from "./doctor/doctorsSlice";
+import doctorSlice from "./doctor/doctorSlice";
+import reviewSlice from "./doctor/reviewSlice";
 
 const persistConfig = {
   key: "authentication",
   storage
 };
-
 const middlewares = [];
-
 if (process.env.NODE_ENV !== "development") {
   const { logger } = require("redux-logger");
   middlewares.push(logger);
 }
-
 const persistedReducer = persistReducer(persistConfig, loginReducer);
 const rootReducer = combineReducers({
   signup: signUpSlice,
   userDetails: persistedReducer,
-  createTask: createTaskSlice,
-  createContractor: contractorSignupSlice
-
+  doctors: doctorsSlice,
+  doctor:doctorSlice,
+  reviews:reviewSlice
 });
 
 const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck:{
+      serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
       }
     }).concat(logger),

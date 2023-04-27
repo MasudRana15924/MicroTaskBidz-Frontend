@@ -1,42 +1,60 @@
 import React from 'react';
-import userImg from '../../images/icons8-circled-user-male-skin-type-7-96.png'
-import { AiOutlineUnorderedList } from "react-icons/ai";
-import { BsArrowClockwise } from "react-icons/bs";
+import { AiOutlineUnorderedList,AiOutlineEdit } from "react-icons/ai";
+import {BsMinecartLoaded,BsFillChatDotsFill } from "react-icons/bs";
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { logout } from '../../state/user/Login/loginSlice';
 
 
 const UserSidebar = () => {
+    const dispatch=useDispatch();
     return (
         <div className="">
-            <div className="w-full  flex items-center border border-gray-50  lg:mx-5 lg:w-3/4 shadow-xl mb-10">
-                <img src={userImg} alt="" className="rounded-full h-20" />
-                <div className="text-start mx-5 ">
-                    <h2>Hello,</h2>
+            <div className="card w-3/4 bg-base-100 shadow-xl">
+                <div className="card-body text-start ml-8">
+                    <h2 className="">Hello,</h2>
                     <h2 className="text-xl font-semibold">Masud Rana</h2>
                 </div>
             </div>
-            <div className=" border border-gray-50 w-full shadow-xl mb-3 mt-5 text-start lg:w-3/4 lg:mx-5 ">
-                <div className="flex items-center mt-20">
-                    <AiOutlineUnorderedList className="mt-1 w-20 h-5"></AiOutlineUnorderedList>
-                    <h2 className="text-sm lg:text-xl  lg:font-semibold"> Manage My Accounts </h2>
+            <div className="card w-3/4 bg-base-100 shadow-xl mt-5">
+                <div className="card-body text-start">
+                    <div className="flex ">
+                        <AiOutlineUnorderedList className="mt-1 w-20 h-5"></AiOutlineUnorderedList>
+                        <h2 className="text-sm lg:text-xl  lg:font-semibold"> Manage My Accounts </h2>
+                    </div>
+                    <div className="flex mt-5">
+                        <AiOutlineEdit className="mt-1 w-20 h-5"></AiOutlineEdit>
+                        <Link to="/user/updateinfo">
+                        <h2 className="text-sm lg:text-xl  lg:font-semibold ">Update Profile</h2>
+                    </Link>
+                    </div>
+
+                    <div className="flex mt-5">
+                        <AiOutlineEdit className="mt-1 w-20 h-5"></AiOutlineEdit>
+                        <Link to="/user/change/password">
+                        <h2 className="text-sm lg:text-xl  lg:font-semibold"> Change Password</h2>
+                    </Link>
+                    </div>
+                    <div className="flex mt-5">
+                        <BsMinecartLoaded className="mt-1 w-20 h-5"></BsMinecartLoaded>
+                        <Link to="/user/updateinfo">
+                        <h2 className="text-sm lg:text-xl  lg:font-semibold ">My Booking</h2>
+                    </Link>
+                    </div>
+                    <div className="flex mt-5">
+                        <BsFillChatDotsFill className="mt-1 w-20 h-5"></BsFillChatDotsFill>
+                        <Link to="/user/updateinfo">
+                        <h2 className="text-sm lg:text-xl  lg:font-semibold ">Chat</h2>
+                    </Link>
+                    </div>
+                   
+                    <div className=" mt-10">
+                        <Link to="/user-signin">
+                        
+                        <button className="btn  ml-8 w-3/4 bg-red-700 border-red-700 hover:bg-red-700 hover:border-red-700" onClick={()=>dispatch(logout())}>  Logout </button>
+                        </Link>
+                    </div>
                 </div>
-                <Link to="/user/updateinfo"> 
-                <h2 className="text-sm mx-20 w-full lg:text-xl font-thin lg:mx-20 mt-3">Update Profile</h2>
-                </Link>
-                <Link to="/user/change/password">
-                <h2 className="text-sm mx-20 w-full lg:text-xl font-thin lg:mx-20 mt-3"> Change Password</h2>
-                </Link>
-                <Link to="/user/create-task">
-                <h2 className="text-sm mx-20 w-full lg:text-xl font-thin lg:mx-20 mt-3">Create a Task </h2>
-                </Link>
-                
-                <div className="h-5 flex items-center mt-10  bg-teal-700 lg:h-20 text-white">
-                    <BsArrowClockwise className="h-5 mt-1 w-20 lg:h-10"></BsArrowClockwise>
-                    <h2 className=" text-md text-start lg:text-3xl font-thin ">LogOut</h2>
-                </div>
-
-
-
 
             </div>
         </div>

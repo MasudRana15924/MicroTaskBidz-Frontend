@@ -3,68 +3,52 @@ import { ImFacebook } from "react-icons/im";
 import { ImTwitter } from "react-icons/im";
 import { ImLinkedin2 } from "react-icons/im";
 import { ImYoutube } from "react-icons/im";
+import { Link } from 'react-router-dom';
 
-const FOoter = () => {
+
+const Footer = () => {
   return (
-    <div className="p-10 bg-black mt-10 ">
-      <div className="max-w-full mx-auto ">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 gap-2 ">
-          <div className="lg:w-8/12 lg:mx-auto text-end  mb-5">
-            <h2 className="text-start text-white  font-bold">DROP US A LINE</h2>
-            <h2 className="text-start text-white text-2xl mt-3 font-bold">WE"RE MORE TALKATIVE</h2>
-            <h2 className="text-start text-white text-2xl mb-5 font-bold">ALIVE 24HOUR IN A WEEK</h2>
-            <form action="" className='mt-5 '>
-
-              <div>
-                <input type="text" placeholder='Name         |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
-                <input type="text" placeholder='Email          |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
-                <input type="text" placeholder='Phone        |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
-                <input type="text" placeholder='Message    |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" />
-              </div>
-              <div>
-                <button className="lg:bg-rose-700 lg:mt-5 lg:h-10 lg:w-1/5 lg:text-white lg:font-semibold lg:text-center lg:mb-5
-                w-full bg-teal-700 h-10 text-white text-2xl
-                
-                ">+ Submit</button>
-              </div>
-
-            </form>
-          </div>
-          <div className="">
-            <div>
-              <h2 className="text-start text-white text-xl font-semibold">ADDRESS 01</h2>
-              <h2 className="text-start text-white font-semibold mt-3">Rain Design</h2>
-              <h2 className="text-start text-white font-semibold mt-1">Silver Tower</h2>
-              <h2 className="text-start text-white font-semibold mt-1">123/45. There are many variations of passages</h2>
-              <h2 className="text-start text-white font-semibold mt-1">12 Jumpton Road , South Avenue, New Jersey , NA</h2>
-              <h2 className="text-start text-white font-semibold mt-1">Phone (123) 456 789</h2>
-              <h2 className="text-start text-white font-semibold mt-1">Email : help@raindesign.com</h2>
-            </div>
-            <div className="mt-5">
-              <h2 className="text-start text-white text-xl font-semibold ">ADDRESS 01</h2>
-              <h2 className="text-start text-white font-semibold mt-3">Rain Design</h2>
-              <h2 className="text-start text-white font-semibold mt-1">Silver Tower</h2>
-              <h2 className="text-start text-white font-semibold mt-1">123/45. There are many variations of passages</h2>
-              <h2 className="text-start text-white font-semibold mt-1">12 Jumpton Road , South Avenue, New Jersey , NA</h2>
-              <h2 className="text-start text-white font-semibold mt-1">Phone (123) 456 789</h2>
-              <h2 className="text-start text-white font-semibold mt-1 mb-5">Email : help@raindesign.com</h2>
-              <div className="flex items-start justify-start mb-5">
-                <ImFacebook className="bg-teal-700 text-white text-4xl rounded-full text-center"></ImFacebook>
-                <ImTwitter className="bg-zinc-600 text-white text-4xl rounded-full text-center mx-5 p-2"></ImTwitter>
-                <ImLinkedin2 className="bg-zinc-600 text-white text-4xl rounded-full text-center  p-2"></ImLinkedin2>
-                <ImYoutube className="bg-zinc-600 text-white text-4xl rounded-full text-center mx-3  p-2"></ImYoutube>
-              </div>
-              <h2 className="text-white text-start text-sm"> &copy; 2021 Rain Design .All rights reserved</h2>
-              <h2 className="text-white text-start text-sm"> Made by Rain Group of Company</h2>
-              <h2 className="text-white text-start text-sm"> Privacy policy | Terms & Conditions</h2>
-            </div>
+   <div>
+   <footer className="footer p-10 border-t text-base-content">
+        <div>
+          <span className="footer-title">Services</span>
+          <Link className="link link-hover">Branding</Link>
+          <Link className="link link-hover">Design</Link>
+          <Link className="link link-hover">Marketing</Link>
+          <Link className="link link-hover">Advertisement</Link>
+        </div>
+        <div>
+          <span className="footer-title">Company</span>
+          <Link className="link link-hover">About us</Link>
+          <Link className="link link-hover">Contact</Link>
+          <Link className="link link-hover">Jobs</Link>
+          <Link className="link link-hover">Press kit</Link>
+        </div>
+        <div>
+          <span className="footer-title">Legal</span>
+          <Link className="link link-hover">Terms of use</Link>
+          <Link className="link link-hover">Privacy policy</Link>
+          <Link className="link link-hover">Cookie policy</Link>
+        </div>
+      </footer>
+      <footer className="footer px-10 py-4  text-base-content border-base-300">
+        <div className="items-center grid-flow-col">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd" className="fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg>
+          <p>ACME Industries Ltd. <br />Providing reliable tech since 1992</p>
+        </div>
+        <div className="md:place-self-center md:justify-self-end">
+          <div className="grid grid-flow-col gap-4">
+           
+                 <ImFacebook ></ImFacebook>
+               <ImTwitter></ImTwitter>
+                 <ImLinkedin2 ></ImLinkedin2>
+                 <ImYoutube ></ImYoutube>
+             
           </div>
         </div>
-
-      </div>
-
-    </div>
+      </footer>
+   </div>
   );
 };
 
-export default FOoter;
+export default Footer;

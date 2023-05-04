@@ -43,12 +43,12 @@ function App() {
             <Route path="/user-signin" element={< Login />}></Route>
             <Route path="/user-signup" element={<PublicRoute>< UserSignup /></PublicRoute>}></Route>
             <Route path="/user/password" element={<ResetPassword />}></Route>
-            <Route path="/user/change/password" element={<Changepassword />}></Route>
-            <Route path="/user/updateinfo" element={<UpdateInfo />}></Route>
-              <Route path="/user-info" element={<PrivateRoute>
-                < UserDetails />
-              </PrivateRoute>}>
-              </Route>
+            <Route path="/user/change/password" element={<PrivateRoute><Changepassword /></PrivateRoute>}></Route>
+            <Route path="/user/updateinfo" element={<PrivateRoute><UpdateInfo /></PrivateRoute>}></Route>
+            <Route path="/user-info" element={<PrivateRoute>
+              < UserDetails />
+            </PrivateRoute>}>
+            </Route>
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>

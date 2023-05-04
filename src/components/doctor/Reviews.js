@@ -8,16 +8,14 @@ const Reviews = ({review}) => {
         precision: 0.5,
     };
     return (
-        <div className="review-card mt-12">
-            <div className="review-img-section">
+        <div className="flex mt-12 w-3/4 ">
+            <div className=" w-1/4">
                 {/* <img src={profilePng} alt="User" className="user-img-review" /> */}
             </div>
-            <div className="review-details ml-12">
-                <p>{review.name}</p>
-                <div className="review-star mt-3">
-                <Rating {...options} name="size-small" size="small"/>
-                </div>
-                <span className="pl-10">{review.comment}</span>
+            <div className=" w-3/4">
+                <p className="text-start font-medium">{review.name}</p>
+                <Rating {...options} name="size-small" size="small" className=" mr-64 mt-2"/>
+                <p className="text-start">{review.comment}</p>
                 
             </div>
 

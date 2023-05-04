@@ -25,11 +25,10 @@ const UpdateInfo = () => {
           </div>
           <div className="lg:w-8/12 mb-5  p-5">
             <div className="bg-white rounded-lg shadow-lg p-8">
-
               <h2 className="mt-5  text-2xl font-medium mb-4 text-start">Update Your Info</h2>
 
               <form onSubmit={registerSubmit}>
-                <div className="mb-4 ">
+                <div className="mb-2 ">
                   <input className="border border-gray-200 w-full h-10 rounded p-3 mt-5 mb-5" type="text" id="username"
                     name="name"
                     value={name}
@@ -38,8 +37,44 @@ const UpdateInfo = () => {
                     required
                   />
                 </div>
+                <div className="mb-2 ">
+                  <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
+                    name="name"
+                    value={name}
+                    onChange={registerDataChange}
+                    placeholder="Enter Your Email"
+                    required
+                  />
+                </div>
+                <div className="mb-2 ">
+                  <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
+                    name="name"
+                    value={name}
+                    onChange={registerDataChange}
+                    placeholder="Enter Your Phone Number"
+                    required
+                  />
+                </div>
+                <div className="mb-2 ">
+                  <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
+                    name="name"
+                    value={name}
+                    onChange={registerDataChange}
+                    placeholder="Enter Your Gender"
+                    required
+                  />
+                </div>
+                <div className="mb-2 ">
+                  <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="date" id="username"
+                    name="name"
+                    value={name}
+                    onChange={registerDataChange}
+                    placeholder="Birth Date"
+                    required
+                  />
+                </div>
 
-                <button className="border-2 border-rose-700  text-white py-1 w-full rounded-md  font-semibold h-10 bg-rose-700 mt-5" type="submit">Update</button>
+                <button className=" text-white py-1 w-full rounded-md  font-semibold h-10 bg-violet-700 mt-5" type="submit">Update</button>
               </form>
             </div>
           </div>

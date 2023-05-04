@@ -8,12 +8,17 @@ const initialState={
     error:''
 }
 
-export const createreviews=createAsyncThunk(
-    'user/createReview',async({data,token})=>{
-    const reviews=await privatePut('/create/review',{token,data});
-    return reviews;
-    
-});
+export const createreviews = createAsyncThunk(
+    'user/createReview',
+     async ({data,userToken}, { rejectWithValue }) => {
+        try{
+            const reviews = await privatePut('/create/review', userToken, data);
+            return reviews;
+        }catch(err){
+            return rejectWithValue(err);
+        }
+   
+    });
 
 const reviewSlice=createSlice({
     name:'review',

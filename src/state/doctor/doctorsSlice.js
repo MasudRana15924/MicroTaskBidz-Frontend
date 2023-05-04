@@ -4,7 +4,7 @@ import { publicGet } from '../../utilities/apiCaller';
 export const fetchDoctors = createAsyncThunk(
     'doctors/fetchDoctors',
     async () => {
-        const doctors = await publicGet("/doctors");
+        const doctors = await publicGet('/doctors');
         return doctors;
     }
 );

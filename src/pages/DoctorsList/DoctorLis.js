@@ -3,6 +3,10 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../loader/Loading';
 import DoctorsList from './DoctorsList';
+import { useParams } from 'react-router-dom';
+import { fetchFilterDoctors } from '../../state/filter/filterSlice';
+import { useEffect } from 'react';
+
 const experts = [
     "Dentist",
     "Surgeon",
@@ -10,12 +14,10 @@ const experts = [
     "Neurology",
     "Urology",
     "Medicine",
-
 ];
 const genders = [
     "Male",
     "Female"
-
 ];
 const locations = [
     "Uttara",
@@ -24,16 +26,15 @@ const locations = [
     "Mirpur"
 ];
 const DoctorLis = () => {
-    const [agree, setAgree] = useState(false);
     const [selected, setSelected] = useState([]);
     const [expert, setExpert] = useState("");
     const [location, setLocation] = useState("");
     const [gender, setGender] = useState("");
     const dispatch = useDispatch();
-    const { doctors, isLoading, isError, error } = useSelector(state => state.doctors.doctors);
-    // useEffect(() => {
-    //     dispatch(fetchFilterDoctors({ expert, gender, location }));
-    // }, [dispatch, expert, location, gender])
+    const { doctors, isLoading, isError, error } = useSelector(state => state.filterDoctors.filterDoctors);
+    useEffect(() => {
+        dispatch(fetchFilterDoctors({expert,gender,location}));
+    }, [dispatch,expert,gender,location])
     //decide what to render 
 
     let content;
@@ -54,27 +55,25 @@ const DoctorLis = () => {
             setSelected(selected.filter(values => values !== e.target.value));
             setExpert()
         }
-
         console.log(e.target.value)
-
     }
 
 
     return (
         <div>
-            <div className="flex gap-4 mt-10">
+            <div className="flex gap-4 mt-10 mb-20">
 
                 <div className="w-2/4 mt-16 ">
                     <div className="w-3/4 mx-auto">
-                        <div className="form-control w-3/4 mx-auto max-w-xs">
-                            <label className="label">
+                        <div className="form-control">
+                            <label className="label w-3/4 mx-auto">
                                 <span className="label-text">What you want to find ?</span>
                             </label>
-                            <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                            <input type="text" placeholder="Type here" className="input input-bordered w-3/4 mx-auto " />
                             
                         </div>
                         <div className="border h-12 w-3/4 mx-auto mt-10">
-                            <h2 className="font-semibold text-2xl mt-1 text-center ">Search Filter </h2>
+                            <h2 className="font-semibold text-2xl mt-1 text-center ">Expert</h2>
                         </div>
                         <div className="w-3/4 mx-auto ">
 
@@ -83,7 +82,7 @@ const DoctorLis = () => {
                                 <p
                                     className=" w-32 h-8  pt-1  text-start font-semibold text-slate-600 mt-3 ml-5"
                                     key={exp}
-                                    onClick={() => setLocation(exp)}
+                                    onClick={() => setExpert(exp)}
 
                                 >
                                     {exp}
@@ -101,7 +100,7 @@ const DoctorLis = () => {
                                     <p
                                         className=" w-32 h-8  pt-1 font-semibold text-slate-600 text-start mt-3 ml-5"
                                         key={exp}
-                                        onClick={() => setLocation(exp)}
+                                        onClick={() => setGender(exp)}
 
                                     >
                                         {exp}

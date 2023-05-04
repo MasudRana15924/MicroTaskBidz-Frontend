@@ -7,6 +7,9 @@ import { persistReducer, persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, 
 import doctorsSlice from "./doctor/doctorsSlice";
 import doctorSlice from "./doctor/doctorSlice";
 import reviewSlice from "./doctor/reviewSlice";
+import relatedDoctorsSlice from "./relatedDoctor/relatedDoctorSlice";
+import  filterdoctorsSlice  from "./filter/filterSlice";
+
 
 const persistConfig = {
   key: "authentication",
@@ -23,7 +26,10 @@ const rootReducer = combineReducers({
   userDetails: persistedReducer,
   doctors: doctorsSlice,
   doctor:doctorSlice,
-  reviews:reviewSlice
+  reviews:reviewSlice,
+  relatedDoctors:relatedDoctorsSlice,
+  filterDoctors:filterdoctorsSlice,
+
 });
 
 const store = configureStore({

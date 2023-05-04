@@ -12,7 +12,7 @@ const Doctors = ({doctor}) => {
     };
     return (
         <div className="doctors-card col-span-12 sm:col-span-6 md:col-span-3  ">
-            <div className="w-full flex flex-col mt-10">
+            <div className="w-full flex flex-col ">
                 <div className="relative">
                     <Link to={`/doctor/${doctor._id}`}>
                         <img
@@ -39,7 +39,7 @@ const Doctors = ({doctor}) => {
                 <div className="flex justify-between ml-5">
                 <p className=""><Rating {...options} size="medium" className=""/>({ratings})</p>
                 <Link to={`/doctor/${doctor._id}`} >
-                <button className="h-8 mr-5  border border-green-400 text-xs pl-1 pr-1">VIEW PROFILE</button>
+                <button className="h-8 mr-5  border border-violet-400 text-xs pl-1 pr-1">VIEW PROFILE</button>
                 </Link>
                 </div>
 

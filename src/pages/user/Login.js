@@ -11,6 +11,7 @@ import { createLogin } from '../../state/user/Login/loginSlice';
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const [agree, setAgree] = useState(false);
     const { token } = useSelector(
         (state) => state.userDetails
     );
@@ -62,12 +63,13 @@ const Login = () => {
                         <form action="" className="space-y-6 py-6 " onSubmit={registerSubmit}>
                             <div>
                                 <input
-                                    className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                                    className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-gray-400 focus:invalid:outline-none"
                                     type="email"
                                     name="email"
                                     value={email}
                                     onChange={registerDataChange}
                                     placeholder="Enter Your Email"
+                                    required
 
                                 />
                             </div>
@@ -82,13 +84,31 @@ const Login = () => {
                                     placeholder="Enter Your Password"
 
                                 />
-                                <div className="mt-5">
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center">
+                                    <input
+                                        id="agree"
+                                        name="agree"
+                                        type="checkbox"
+                                        className="h-4 w-4 text-violet-600 focus:ring-violet-500 border-gray-300 rounded"
+                                        checked={agree}
+                                        onChange={(e) => setAgree(e.target.checked)}
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="accept-terms"
+                                        className="ml-2 block text-sm text-gray-900"
+                                    >
+                                        Remember me
+                                    </label>
+                                </div>
+                                <div>
                                     <Link to="/user/password">
 
                                         <span className="text-sm tracking-wide text-violet-700 mt-5">Forgot password ?</span>
                                     </Link>
                                 </div>
-
                             </div>
 
                             <div>

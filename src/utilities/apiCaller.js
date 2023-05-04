@@ -34,7 +34,7 @@ export const privatePost = async (endpoint, token, body) => {
 };
 
 export const privatePut = async (endpoint, token, body) => {
-  config.headers.Authorization = `Bearer ${token}`;
+  config.headers.Authorization = `${token}`;
   const response = await axios.put(`${api}${endpoint}`, body, config);
   return response.data;
 };

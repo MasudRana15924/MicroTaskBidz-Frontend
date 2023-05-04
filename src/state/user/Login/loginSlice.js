@@ -19,7 +19,7 @@ export const loginSlice = createSlice({
   name: "login",
   initialState: {
     isLoading: false,
-    loggeduser:[]
+    loggeduser:[],
   },
   reducers: {
     logout: (state) => {
@@ -30,6 +30,7 @@ export const loginSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(createLogin.pending, (state) => {
       state.isLoading = true;
+     state.isAuthenticated= false;
     });
     builder.addCase(createLogin.fulfilled, (state, action) => {
       state.isLoading = false;

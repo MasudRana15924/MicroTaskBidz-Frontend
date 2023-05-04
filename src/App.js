@@ -21,6 +21,8 @@ import Loader from './pages/loader/Loader';
 import PrivateRoute from './components/Privateroute/PrivateRoute';
 import PublicRoute from './components/Privateroute/PublicRoute';
 import DoctorLis from './pages/DoctorsList/DoctorLis';
+import Contact from './components/landingpage/Contact';
+import About from './components/landingpage/About';
 
 
 
@@ -52,6 +54,8 @@ function App() {
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/about" element={<About />}></Route>
 
           </Routes>
           <Footer></Footer>

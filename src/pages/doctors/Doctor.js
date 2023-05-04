@@ -46,7 +46,7 @@ const Doctor = () => {
     }
     return (
 
-        <section className="pt-12 mb-10">
+        <section className="doctors-section pt-12 mb-10 mt-10">
             <h1 className="text-center text-6xl">Our Best Doctors</h1>
             <div className="mt-10 ">
                 {experts?.map((exp) => (
@@ -66,7 +66,7 @@ const Doctor = () => {
 
                 <div className="col-span-12 ">
                     {visible && (doctors?.length > 0 && (
-                        <button onClick={loadMore} className="btn bg-violet-600 border-violet-600 mx-auto mt-5">Load More</button>
+                        <button onClick={loadMore} className="btn bg-violet-600 border-violet-600 mx-auto mt-5 mb-10">Load More</button>
                     ))
                     }
                 </div>

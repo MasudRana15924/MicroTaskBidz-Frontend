@@ -15,6 +15,7 @@ const Loader = () => {
                 visible={true}
                 className="absolute "
             />
+            <p className="text-sm text-violet-900">MKM HealthBridge</p>
         </div>
     </div>
     );

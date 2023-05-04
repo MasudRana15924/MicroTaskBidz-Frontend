@@ -24,7 +24,7 @@ const Header = () => {
                 <FiMenu className="lg:hidden block h-10 w-10 cursor-pointer"
                     onClick={() => setOpen(!open)}
                 />
-
+                
                 <nav className={`${open ? "block" : "hidden"} w-full lg:flex lg:items-center lg:w-auto`}>
                     <ul className="text-base lg:flex lg:justify-between">
                         <li>

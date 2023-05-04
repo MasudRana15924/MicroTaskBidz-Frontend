@@ -59,7 +59,7 @@ const ResetPassword = () => {
                 required
               />
             </div>
-            <button className="border-2 border-teal-700  text-white py-1 w-full rounded-md  font-semibold h-10 bg-teal-700" type="submit">Reset Password</button>
+            <button className=" text-white py-1 w-full rounded-md  font-semibold h-10 bg-violet-600" type="submit">Reset Password</button>
 
           </form>
         </div>

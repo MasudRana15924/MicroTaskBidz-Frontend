@@ -1,20 +1,20 @@
-import React, { useState,useEffect } from 'react';
-import { Link,useNavigate  } from 'react-router-dom';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './User.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { createLogin } from '../../state/Login/loginSlice';
-
+import authImg from '../../images/auth.png'
+import { createLogin } from '../../state/user/Login/loginSlice';
 
 
 const Login = () => {
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { isLoading,token } = useSelector(
+    const [agree, setAgree] = useState(false);
+    const { token } = useSelector(
         (state) => state.userDetails
     );
-
     const [users, setUser] = useState({
         email: "",
         password: "",
@@ -23,10 +23,19 @@ const Login = () => {
     const registerSubmit = (e) => {
         e.preventDefault();
         const myForm = new FormData();
-
         myForm.set("email", email);
         myForm.set("password", password);
         dispatch(createLogin(myForm));
+        toast.info('Login Successfull ', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
 
     };
     const registerDataChange = (e) => {
@@ -41,85 +50,94 @@ const Login = () => {
         }
     }, [token, navigate]);
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-            <div className=" lg:w-3/12 ">
-                <div className="bg-white rounded-lg shadow-lg p-8">
-                    <div className="space-y-4">
+        <div>
 
-                        <p className="font-lg text-3xl text-gray-600">Welcome to Spring Rain </p>
-                    </div>
+            <div className=" flex flex-col items-center justify-center min-h-screen">
 
-                    <div className="mt-12 grid gap-6 sm:grid-cols-2">
-                        <button className="py-3 px-6 rounded-xl bg-rose-700 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
-                            <div className="flex gap-4 justify-center">
-                                <Link to="/user-signin">
-                                    <span className="block w-max font-medium tracking-wide text-md text-center text-white">User</span>
-                                </Link>
-                            </div>
-                        </button>
-                        <button className="py-3 px-6 rounded-xl bg-gray-900 transition hover:bg-gray-800 active:bg-gray-600 focus:bg-gray-700">
-                            <div className="flex gap-4 items-center justify-center text-white">
+                <div className="lg:w-3/12 ">
+                    <div className="  p-8">
 
-                                <Link to="/contractor-signin">
-                                    <span className="block w-max font-medium tracking-wide text-sm text-white">Contractor</span>
-                                </Link>
-                            </div>
-                        </button>
-                    </div>
+                        <img src={authImg} alt="" className="mx-auto" />
 
-                    <div className="mt-12 border-t">
-                        <span className="block w-max mx-auto -mt-3 px-4 text-center text-gray-500 bg-white">Or</span>
-                    </div>
 
-                    <form action="" className="space-y-6 py-6" onSubmit={registerSubmit}>
-                        <div>
-                            <input
-                                className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-                                type="email"
-                                name="email"
-                                value={email}
-                                onChange={registerDataChange}
-                                placeholder="Enter Your Email"
+                        <form action="" className="space-y-6 py-6 " onSubmit={registerSubmit}>
+                            <div>
+                                <input
+                                    className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-gray-400 focus:invalid:outline-none"
+                                    type="email"
+                                    name="email"
+                                    value={email}
+                                    onChange={registerDataChange}
+                                    placeholder="Enter Your Email"
+                                    required
 
-                            />
-                        </div>
-
-                        <div className="flex flex-col items-end">
-                            <input
-                                type="password"
-
-                                className=" border-2 w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-                                name="password"
-                                value={password}
-                                onChange={registerDataChange}
-                                placeholder="Enter Your Password"
-
-                            />
-                            <div className="mt-5">
-                                <Link to="/user/password">
-
-                                    <span className="text-sm tracking-wide text-blue-600 mt-5">Forgot password ?</span>
-                                </Link>
+                                />
                             </div>
 
-                        </div>
+                            <div className="flex flex-col items-end">
+                                <input
+                                    className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400  "
+                                    type="password"
+                                    name="password"
+                                    value={password}
+                                    onChange={registerDataChange}
+                                    placeholder="Enter Your Password"
 
-                        <div>
-                            <button className="w-full px-6 py-3 rounded-xl bg-teal-700 mb-5">
-                                {isLoading ?<div className="w-2/4 mx-auto">
-                                    <Box sx={{ display: 'flex' }}>
-                                    <CircularProgress color="secondary"/>
-                                </Box>
-                                </div> : <span className="font-semibold text-white text-lg">Login</span>}
-                            </button>
+                                />
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center">
+                                    <input
+                                        id="agree"
+                                        name="agree"
+                                        type="checkbox"
+                                        className="h-4 w-4 text-violet-600 focus:ring-violet-500 border-gray-300 rounded"
+                                        checked={agree}
+                                        onChange={(e) => setAgree(e.target.checked)}
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="accept-terms"
+                                        className="ml-2 block text-sm text-gray-900"
+                                    >
+                                        Remember me
+                                    </label>
+                                </div>
+                                <div>
+                                    <Link to="/user/password">
 
-                            <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/user-signup"> <span className="text-blue-600">Create new account</span>
-                            </Link>
-                        </div>
-                    </form>
+                                        <span className="text-sm tracking-wide text-violet-700 mt-5">Forgot password ?</span>
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button className="w-full px-6 py-3 rounded-xl bg-violet-600 mb-5">
+                                    <span className="font-semibold text-white text-lg">Login</span>
+                                </button>
+
+                                <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/user-signup"> <span className="text-violet-700">Create new account</span>
+                                </Link>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                />
+                {/* Same as */}
+                <ToastContainer />
 
+            </div>
         </div>
     );
 };

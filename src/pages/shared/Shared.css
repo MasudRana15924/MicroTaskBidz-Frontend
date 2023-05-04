@@ -1,14 +1,5 @@
-.header {
-    background: radial-gradient(100% 100% at 50.7% 50%, rgba(26, 163, 175, 0.95) 0%, rgba(11, 106, 119, 0.95) 100%);;
-    
-}
 
 .logo {
     padding: 5px;
     height:60px;
-}
-.footer{
-    width:100%;
-    background-color: black;
-    height:500px;
 }

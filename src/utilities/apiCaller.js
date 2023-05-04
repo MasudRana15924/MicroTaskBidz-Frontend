@@ -11,6 +11,10 @@ export const publicGet = async (endpoint) => {
   const response = await axios.get(`${api}${endpoint}`, config);
   return response.data;
 };
+export const publicGetSingle = async (endpoint,id) => {
+  const response = await axios.get(`${api}${endpoint}`, config);
+  return response.data;
+};
 
 export const publicPost = async (endpoint, body) => {
   const response = await axios.post(`${api}${endpoint}`, body, config);
@@ -30,7 +34,7 @@ export const privatePost = async (endpoint, token, body) => {
 };
 
 export const privatePut = async (endpoint, token, body) => {
-  config.headers.Authorization = `Bearer ${token}`;
+  config.headers.Authorization = `${token}`;
   const response = await axios.put(`${api}${endpoint}`, body, config);
   return response.data;
 };

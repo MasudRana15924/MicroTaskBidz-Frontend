@@ -3,68 +3,51 @@ import { ImFacebook } from "react-icons/im";
 import { ImTwitter } from "react-icons/im";
 import { ImLinkedin2 } from "react-icons/im";
 import { ImYoutube } from "react-icons/im";
+import { Link } from 'react-router-dom';
 
-const FOoter = () => {
+
+const Footer = () => {
   return (
-    <div className="p-10 bg-black mt-10 ">
-      <div className="max-w-full mx-auto ">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 gap-2 ">
-          <div className="lg:w-8/12 lg:mx-auto text-end  mb-5">
-            <h2 className="text-start text-white  font-bold">DROP US A LINE</h2>
-            <h2 className="text-start text-white text-2xl mt-3 font-bold">WE"RE MORE TALKATIVE</h2>
-            <h2 className="text-start text-white text-2xl mb-5 font-bold">ALIVE 24HOUR IN A WEEK</h2>
-            <form action="" className='mt-5 '>
-
-              <div>
-                <input type="text" placeholder='Name         |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
-                <input type="text" placeholder='Email          |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
-                <input type="text" placeholder='Phone        |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" /> <br />
-                <input type="text" placeholder='Message    |' className="w-full lg:w-full mb-3 h-10 border-gray-100 px-5" />
-              </div>
-              <div>
-                <button className="lg:bg-rose-700 lg:mt-5 lg:h-10 lg:w-1/5 lg:text-white lg:font-semibold lg:text-center lg:mb-5
-                w-full bg-teal-700 h-10 text-white text-2xl
-                
-                ">+ Submit</button>
-              </div>
-
-            </form>
-          </div>
-          <div className="">
-            <div>
-              <h2 className="text-start text-white text-xl font-semibold">ADDRESS 01</h2>
-              <h2 className="text-start text-white font-semibold mt-3">Rain Design</h2>
-              <h2 className="text-start text-white font-semibold mt-1">Silver Tower</h2>
-              <h2 className="text-start text-white font-semibold mt-1">123/45. There are many variations of passages</h2>
-              <h2 className="text-start text-white font-semibold mt-1">12 Jumpton Road , South Avenue, New Jersey , NA</h2>
-              <h2 className="text-start text-white font-semibold mt-1">Phone (123) 456 789</h2>
-              <h2 className="text-start text-white font-semibold mt-1">Email : help@raindesign.com</h2>
-            </div>
-            <div className="mt-5">
-              <h2 className="text-start text-white text-xl font-semibold ">ADDRESS 01</h2>
-              <h2 className="text-start text-white font-semibold mt-3">Rain Design</h2>
-              <h2 className="text-start text-white font-semibold mt-1">Silver Tower</h2>
-              <h2 className="text-start text-white font-semibold mt-1">123/45. There are many variations of passages</h2>
-              <h2 className="text-start text-white font-semibold mt-1">12 Jumpton Road , South Avenue, New Jersey , NA</h2>
-              <h2 className="text-start text-white font-semibold mt-1">Phone (123) 456 789</h2>
-              <h2 className="text-start text-white font-semibold mt-1 mb-5">Email : help@raindesign.com</h2>
-              <div className="flex items-start justify-start mb-5">
-                <ImFacebook className="bg-teal-700 text-white text-4xl rounded-full text-center"></ImFacebook>
-                <ImTwitter className="bg-zinc-600 text-white text-4xl rounded-full text-center mx-5 p-2"></ImTwitter>
-                <ImLinkedin2 className="bg-zinc-600 text-white text-4xl rounded-full text-center  p-2"></ImLinkedin2>
-                <ImYoutube className="bg-zinc-600 text-white text-4xl rounded-full text-center mx-3  p-2"></ImYoutube>
-              </div>
-              <h2 className="text-white text-start text-sm"> &copy; 2021 Rain Design .All rights reserved</h2>
-              <h2 className="text-white text-start text-sm"> Made by Rain Group of Company</h2>
-              <h2 className="text-white text-start text-sm"> Privacy policy | Terms & Conditions</h2>
-            </div>
+   <div>
+   <footer className="footer p-10 border-t text-base-content">
+        <div>
+          <span className="footer-title">Services</span>
+          <Link className="link link-hover">Online Consultant</Link>
+          <Link className="link link-hover">Appointment</Link>
+          <Link className="link link-hover">Blood</Link>
+          <Link className="link link-hover">Nurses</Link>
+        </div>
+        <div>
+          <span className="footer-title">Who Are We ?</span>
+          <Link className="link link-hover">About</Link>
+          <Link className="link link-hover">Contact</Link>
+         
+        </div>
+        <div>
+          <span className="footer-title">Legal</span>
+          <Link className="link link-hover">Terms of use</Link>
+          <Link className="link link-hover">Privacy policy</Link>
+          <Link className="link link-hover">Cookie policy</Link>
+        </div>
+      </footer>
+      <footer className="footer px-10 py-4  text-base-content border-base-300">
+        <div className="items-center grid-flow-col">
+          <p className="text-xl font-bold">&copy;</p>
+          <p>MKM HealthBridge Ltd. <br />Providing reliable medi care since 2022</p>
+        </div>
+        <div className="md:place-self-center md:justify-self-end">
+          <div className="grid grid-flow-col gap-4">
+           
+                 <ImFacebook ></ImFacebook>
+               <ImTwitter></ImTwitter>
+                 <ImLinkedin2 ></ImLinkedin2>
+                 <ImYoutube ></ImYoutube>
+             
           </div>
         </div>
-
-      </div>
-
-    </div>
+      </footer>
+   </div>
   );
 };
 
-export default FOoter;
+export default Footer;

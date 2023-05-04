@@ -1,15 +1,20 @@
 import React from 'react';
 import Banner from '../banner/Banner'
-import Portfolio from '../banner/Portfolio';
-import Tasks from '../task/Tasks';
+import Doctor from '../../pages/doctors/Doctor';
+import Services from '../landingpage/Services';
+import Acheivement from '../landingpage/Acheivement';
+
 
 
 const Home = () => {
     return (
         <>
             <Banner></Banner>
-            <Tasks></Tasks>
-            <Portfolio></Portfolio>
+            <Services></Services>
+            <Doctor></Doctor>
+            <Acheivement></Acheivement>
+           
+    
         </>
 
     );

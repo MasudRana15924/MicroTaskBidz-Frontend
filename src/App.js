@@ -1,8 +1,8 @@
 import './App.css';
 import {
-
   Routes,
   Route,
+  BrowserRouter,
 } from "react-router-dom";
 import ConfirmEmail from './pages/user/ConfirmEmail';
 import UserDetails from './pages/user/UserDetails';
@@ -11,31 +11,54 @@ import ResetPassword from './pages/user/Resetpassword';
 import Login from './pages/user/Login';
 import UserSignup from './pages/user/UserSignup';
 import Changepassword from './pages/user/Changepassword';
-import CreateTask from './pages/user/task/CreateTask';
-import ContractorSignup from './pages/contractor/ContractorSignup';
-import ContractorLogin from './pages/contractor/ContractorLogin';
 import Home from './components/home/Home';
-import Portfolio from './components/banner/Portfolio';
-import About from './components/banner/About';
+import SingleDoctor from './pages/doctors/SingleDoctor';
+import Header from '../src/pages/shared/Header';
+import Footer from '../src/pages/shared/Footer';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Loader from './pages/loader/Loader';
+import PrivateRoute from './components/Privateroute/PrivateRoute';
+import PublicRoute from './components/Privateroute/PublicRoute';
+import DoctorLis from './pages/DoctorsList/DoctorLis';
+
 
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  })
   return (
-    <Routes >
-      <Route path="/" element={<Home></Home>}></Route>
-      <Route path="/portfolio" element={<Portfolio/>}></Route>
-      <Route path="/about" element={<About/>}></Route>
-      <Route path="/user-signin"  element={< Login/>}></Route>
-      <Route path="/user-signup"  element={< UserSignup/>}></Route>
-      <Route path="/user/password" element={<ResetPassword/>}></Route>
-      <Route path="/user/change/password" element={<Changepassword/>}></Route>
-      <Route path="/user/updateinfo" element={<UpdateInfo/>}></Route>
-     <Route path="/user-info"  element={< UserDetails/>}></Route>
-     <Route path="/user/confirm/email"  element={< ConfirmEmail/>}></Route>
-     <Route path="/user/create-task"  element={< CreateTask/>}></Route>
-     <Route path="/contractor-signup"  element={< ContractorSignup/>}></Route>
-     <Route path="/contractor-signin"  element={< ContractorLogin/>}></Route>
-    </Routes>
+    <div>
+      {loading ? <div>
+        <Loader></Loader>
+      </div> : <div className="App">
+        <BrowserRouter>
+          <Header></Header>
+          <Routes >
+            <Route path="/" element={<Home></Home>}></Route>
+            <Route path="/user-signin" element={< Login />}></Route>
+            <Route path="/user-signup" element={<PublicRoute>< UserSignup /></PublicRoute>}></Route>
+            <Route path="/user/password" element={<ResetPassword />}></Route>
+            <Route path="/user/change/password" element={<PrivateRoute><Changepassword /></PrivateRoute>}></Route>
+            <Route path="/user/updateinfo" element={<PrivateRoute><UpdateInfo /></PrivateRoute>}></Route>
+            <Route path="/user-info" element={<PrivateRoute>
+              < UserDetails />
+            </PrivateRoute>}>
+            </Route>
+            <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
+            <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
+            <Route path="/doctors" element={<DoctorLis />}></Route>
+
+          </Routes>
+          <Footer></Footer>
+        </BrowserRouter>
+      </div>}
+    </div>
+
   );
 }
 export default App;

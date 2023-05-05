@@ -9,6 +9,8 @@ import doctorSlice from "./doctor/doctorSlice";
 import reviewSlice from "./doctor/reviewSlice";
 import relatedDoctorsSlice from "./relatedDoctor/relatedDoctorSlice";
 import  filterdoctorsSlice  from "./filter/filterSlice";
+import appointmentsSlice from "./appointments/appointmentsSlice";
+
 
 
 const persistConfig = {
@@ -29,6 +31,7 @@ const rootReducer = combineReducers({
   reviews:reviewSlice,
   relatedDoctors:relatedDoctorsSlice,
   filterDoctors:filterdoctorsSlice,
+  appointments:appointmentsSlice
 
 });
 

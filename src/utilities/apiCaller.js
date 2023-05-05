@@ -22,7 +22,7 @@ export const publicPost = async (endpoint, body) => {
 };
 
 export const privateGet = async (endpoint, token) => {
-  config.headers.Authorization = `Bearer ${token}`;
+  config.headers.Authorization = `${token}`;
   const response = await axios.get(`${api}${endpoint}`, config);
   return response.data;
 };

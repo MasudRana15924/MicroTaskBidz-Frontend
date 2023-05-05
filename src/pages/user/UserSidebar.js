@@ -50,7 +50,7 @@ const UserSidebar = () => {
                     </div>
                     <div className="flex mt-5">
                         <BsMinecartLoaded className="mt-1 w-20 h-5"></BsMinecartLoaded>
-                        <Link to="/user/updateinfo">
+                        <Link to="/my-booking">
                             <h2 className="text-sm lg:text-xl  lg:font-semibold ">My Booking</h2>
                         </Link>
                     </div>

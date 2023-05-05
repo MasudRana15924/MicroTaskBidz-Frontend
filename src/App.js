@@ -23,6 +23,7 @@ import PublicRoute from './components/Privateroute/PublicRoute';
 import DoctorLis from './pages/DoctorsList/DoctorLis';
 import Contact from './components/landingpage/Contact';
 import About from './components/landingpage/About';
+import MyBooking from './pages/user/appointments/MyBooking';
 
 
 
@@ -56,6 +57,7 @@ function App() {
             <Route path="/doctors" element={<DoctorLis />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<About />}></Route>
+            <Route path="/my-booking" element={<MyBooking />}></Route>
 
           </Routes>
           <Footer></Footer>

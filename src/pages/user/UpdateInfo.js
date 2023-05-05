@@ -1,20 +1,37 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import UserSidebar from './UserSidebar';
+import { updateProfile } from '../../state/user/updateprofile/updateProfileSlice';
 
 const UpdateInfo = () => {
   const dispatch = useDispatch();
-  const [name, setName] = useState("")
+  const { loggeduser } = useSelector(
+    (state) => state.userDetails
+);
+const userToken = loggeduser.token
+  const [name, setName] = useState("");
+  const [gender, setGender] = useState("");
+  const [phone, setPhone] = useState("");
+  const [birthdate, setBirthdate] = useState("");
+  const [avatar, setAvatar] = useState();
+  const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
+  const data=({name,gender,phone,birthdate,avatar})
   const registerSubmit = (e) => {
     e.preventDefault();
-    const myForm = new FormData();
-    myForm.set("name", name);
-   
-
+    dispatch(updateProfile({data,userToken}));
+    alert('updated');
   };
-  const registerDataChange = (e) => {
-    setName(e.target.value);
-  };
+  const updateProfileDataChange = (e) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+        if (reader.readyState === 2) {
+            setAvatarPreview(reader.result);
+            setAvatar(reader.result);
+        }
+    };
+    reader.readAsDataURL(e.target.files[0]);
+};
+  
   return (
     <div className="p-10 bg-white mt-20 mb-20">
       <div className="max-w-full mx-auto ">
@@ -32,45 +49,47 @@ const UpdateInfo = () => {
                   <input className="border border-gray-200 w-full h-10 rounded p-3 mt-5 mb-5" type="text" id="username"
                     name="name"
                     value={name}
-                    onChange={registerDataChange}
-                    placeholder="Enter Your Name"
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Name"
                     required
                   />
                 </div>
                 <div className="mb-2 ">
                   <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
                     name="name"
-                    value={name}
-                    onChange={registerDataChange}
-                    placeholder="Enter Your Email"
+                    value={gender}
+                    onChange={(e) => setGender(e.target.value)}
+                    placeholder="Gender"
                     required
                   />
                 </div>
                 <div className="mb-2 ">
                   <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
                     name="name"
-                    value={name}
-                    onChange={registerDataChange}
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     placeholder="Enter Your Phone Number"
                     required
                   />
                 </div>
-                <div className="mb-2 ">
-                  <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
-                    name="name"
-                    value={name}
-                    onChange={registerDataChange}
-                    placeholder="Enter Your Gender"
-                    required
-                  />
-                </div>
+                
                 <div className="mb-2 ">
                   <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="date" id="username"
                     name="name"
-                    value={name}
-                    onChange={registerDataChange}
+                    value={birthdate}
+                    onChange={(e) => setBirthdate(e.target.value)}
                     placeholder="Birth Date"
                     required
+                  />
+                </div>
+                <div className="flex">
+                  <img src={avatarPreview} alt="Avatar Preview" className="w-24 " />
+                  <input
+                    type="file"
+                    name="avatar"
+                    accept="image/*"
+                    onChange={updateProfileDataChange}
+                    className="mt-5 ms-3"
                   />
                 </div>
 

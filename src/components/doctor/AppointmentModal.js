@@ -16,12 +16,11 @@ const AppointmentModal = ({ doctor }) => {
     const [phone, setPhone] = useState('');
     const [date, setDate] = useState('');
     const [schedule, setSchedule] = useState('');
-    const name = doctor.name;
-    const fees = doctor.fees;
-    const image = doctor.image;
-    const doctorId = doctor._id
-    const bookingAppointment = ({ name, fees, image, doctorId })
-    const data = ({ bookingAppointment, patientname, patientemail, patientgender, phone, date, schedule });
+    const doctorname = doctor.name;
+    const doctorfees = doctor.fees;
+    const doctorimage = doctor.images[0].url;
+    const doctorId = doctor._id;
+    const data = ({doctorname,doctorfees,doctorimage,doctorId, patientname, patientemail, patientgender, phone, date, schedule });
     const handleCreate = (e) => {
         e.preventDefault();
         if (patientname && patientemail && patientgender && phone && date) {

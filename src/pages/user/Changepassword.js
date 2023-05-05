@@ -1,29 +1,51 @@
 import React, { useState } from 'react';
 import UserSidebar from './UserSidebar';
+import { useDispatch, useSelector } from 'react-redux';
+import { updatePassword } from '../../state/user/changePassword/updatePasswordSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import { useEffect } from 'react';
 
 
 
 const Changepassword = () => {
-    const [user, setUser] = useState({
-      oldpassword: "",
-      newpassword: "",
-    });
-    const {oldpassword,newpassword} = user;
-    const registerSubmit = (e) => {
-      e.preventDefault();
-      const myForm = new FormData();
-      myForm.set("oldPassword", oldpassword);
-      myForm.set("newPassword", newpassword);
-      
-  
-    };
-    const registerDataChange = (e) => {
-      setUser({
-        ...user,
-        [e.target.name]: e.target.value
+  const dispatch = useDispatch();
+  const { loggeduser } = useSelector(
+    (state) => state.userDetails
+  );
+  const userToken = loggeduser.token
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const data = ({ oldPassword, newPassword, confirmPassword })
+  const registerSubmit = (e) => {
+    e.preventDefault();
+    if (data && userToken) {
+      dispatch(updatePassword({ data, userToken }));
+      toast.success('Password Update Suceessfully ', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
       });
-    };
-    
+    } else {
+      toast.error('Please enter your details', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  };
+
+
 
   return (
     <div className="p-10 bg-white mt-20 mb-20">
@@ -35,14 +57,14 @@ const Changepassword = () => {
           </div>
           <div className=" lg:w-8/12 mb-5  p-5 ">
             <div class="bg-white rounded-lg shadow-lg p-8 ">
-              <h2 class=" mb-5 text-2xl font-medium  text-start">Change Passowrd</h2>
+              <h2 class=" mb-5 text-2xl font-medium  text-start mt-10">Change Password</h2>
               <form onSubmit={registerSubmit}>
                 <div class="mb-4">
-                  <input class="border border-gray-200 w-full h-10 rounded p-3" type="text" id="username"
-                    name="name"
-                    value={oldpassword}
-                    onChange={registerDataChange}
-                    placeholder="Enter Your 6 digit code"
+                  <input class="border border-gray-200 w-full h-10 rounded p-3" type="password" id="username"
+                    name="password"
+                    value={oldPassword}
+                    onChange={(e) => setOldPassword(e.target.value)}
+                    placeholder="Enter Your Old Password"
                     required
                   />
                 </div>
@@ -51,13 +73,23 @@ const Changepassword = () => {
 
                   <input class="border border-gray-200 w-full h-10 rounded p-3" type="password" id="userpassword"
                     name="password"
-                    value={newpassword}
-                    onChange={registerDataChange}
-                    placeholder="Enter Your Password"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                    placeholder="Enter Your New Password"
                     required
                   />
                 </div>
-                <button class="border-2 border-rose-700 text-white py-1 w-full rounded-md  font-semibold h-10 bg-rose-700 mt-5 mb-5" type="submit">Change Password</button>
+                <div class="mb-4">
+
+                  <input class="border border-gray-200 w-full h-10 rounded p-3" type="password" id="userpassword"
+                    name="password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder="Confirm Your Password"
+                    required
+                  />
+                </div>
+                <button class="border-2 border-rose-700 text-white py-1 w-full rounded-md  font-semibold h-10 bg-rose-700 mt-5 mb-10" type="submit">Change Password</button>
 
               </form>
             </div>
@@ -65,6 +97,20 @@ const Changepassword = () => {
 
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </div>
   );
 };

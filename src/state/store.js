@@ -10,7 +10,10 @@ import reviewSlice from "./doctor/reviewSlice";
 import relatedDoctorsSlice from "./relatedDoctor/relatedDoctorSlice";
 import  filterdoctorsSlice  from "./filter/filterSlice";
 import appointmentsSlice from "./appointments/appointmentsSlice";
-
+import myAppointmentsSlice from "./user/appointment/myAppointmentsSlice";
+import updateProfileSlice from "./user/updateprofile/updateProfileSlice";
+import updatePasswordSlice from './user/changePassword/updatePasswordSlice'
+import forgotPasswordSlice from "./user/forgotpassword/forgotPasswordSlice";
 
 
 const persistConfig = {
@@ -31,7 +34,11 @@ const rootReducer = combineReducers({
   reviews:reviewSlice,
   relatedDoctors:relatedDoctorsSlice,
   filterDoctors:filterdoctorsSlice,
-  appointments:appointmentsSlice
+  appointments:appointmentsSlice,
+  myAppointments:myAppointmentsSlice,
+  updateProfile:updateProfileSlice,
+  updatePassword:updatePasswordSlice,
+  forgotPassword:forgotPasswordSlice
 
 });
 

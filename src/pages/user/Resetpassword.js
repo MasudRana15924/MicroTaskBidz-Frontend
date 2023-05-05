@@ -5,11 +5,12 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const ResetPassword = () => {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
+ 
 
   const registerSubmit = (e) => {
     e.preventDefault();
-    const data = ({ email });
+    const data = ({email });
     if (data) {
       dispatch(forgotPassword(data));
       toast.success('Reset Password Email Send', {
@@ -46,7 +47,7 @@ const ResetPassword = () => {
 
             <div className="mb-4">
               <input className="border border-gray-200 w-full h-10 rounded p-3" type="text" id="useremail"
-                name="email"
+                name="password"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter Your Email"

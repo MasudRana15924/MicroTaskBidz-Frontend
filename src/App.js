@@ -24,6 +24,7 @@ import DoctorLis from './pages/DoctorsList/DoctorLis';
 import Contact from './components/landingpage/Contact';
 import About from './components/landingpage/About';
 import MyBooking from './pages/user/appointments/MyBooking';
+import ForgotPassword from './pages/user/ForgotPassword';
 
 
 
@@ -46,6 +47,8 @@ function App() {
             <Route path="/user-signin" element={< Login />}></Route>
             <Route path="/user-signup" element={<PublicRoute>< UserSignup /></PublicRoute>}></Route>
             <Route path="/user/password" element={<ResetPassword />}></Route>
+            
+            <Route exact path="/password/reset/:token" element={<ForgotPassword></ForgotPassword>} />
             <Route path="/user/change/password" element={<PrivateRoute><Changepassword /></PrivateRoute>}></Route>
             <Route path="/user/updateinfo" element={<PrivateRoute><UpdateInfo /></PrivateRoute>}></Route>
             <Route path="/user-info" element={<PrivateRoute>

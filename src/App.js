@@ -27,10 +27,6 @@ import ForgotPassword from './pages/user/Forgotpassword';
 import Resetpassword from './pages/user/Resetpassword';
 
 
-
-
-
-
 function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -46,26 +42,23 @@ function App() {
         <BrowserRouter>
           <Header></Header>
           <Routes >
+
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="/user-signin" element={< Login />}></Route>
             <Route path="/user-signup" element={<PublicRoute>< UserSignup /></PublicRoute>}></Route>
-            {/* <Route path="/register" element={<PublicRoute>< UserSignup /></PublicRoute>}></Route> */}
             <Route path="/user/password" element={<ForgotPassword />}></Route>
             <Route exact path="/password/reset/:token" element={<Resetpassword></Resetpassword>} />
             <Route path="/user/change/password" element={<PrivateRoute><Changepassword /></PrivateRoute>}></Route>
             <Route path="/user/updateinfo" element={<PrivateRoute><UpdateInfo /></PrivateRoute>}></Route>
-            <Route path="/user-info" element={<PrivateRoute>
-              < UserDetails />
-            </PrivateRoute>}>
-            </Route>
+            <Route path="/user-info" element={<PrivateRoute>< UserDetails /></PrivateRoute>}></Route>
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<About />}></Route>
-            <Route path="/my-booking" element={<MyBooking />}></Route>
-
+            <Route path="/my-booking" element={<PrivateRoute><MyBooking /></PrivateRoute>}></Route>
           </Routes>
+
           <Footer></Footer>
         </BrowserRouter>
       </div>}

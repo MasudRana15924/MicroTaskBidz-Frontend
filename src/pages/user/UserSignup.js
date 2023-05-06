@@ -42,11 +42,7 @@ const UserSignup = () => {
       [e.target.name]: e.target.value
     });
   };
-  useEffect(() => {
-    if (createSignUp) {
-        navigate('/login');
-    }
-}, [ navigate]);
+ 
   return (
     <div>
 

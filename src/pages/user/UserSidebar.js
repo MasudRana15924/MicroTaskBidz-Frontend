@@ -56,15 +56,14 @@ const UserSidebar = () => {
                     </div>
                     <div className="flex mt-5">
                         <BsFillChatDotsFill className="mt-1 w-20 h-5"></BsFillChatDotsFill>
-                        <Link to="/user/updateinfo">
+                        <Link to="/chat">
                             <h2 className="text-sm lg:text-xl  lg:font-semibold ">Chat</h2>
                         </Link>
                     </div>
 
                     <div className=" mt-10">
                         <Link to="/user-signin">
-
-                            <button className="btn  ml-8 w-3/4 bg-red-700 border-red-700 hover:bg-red-700 hover:border-red-700" onClick={() => dispatch(logout())}>  Logout </button>
+                            <button className="btn  ml-8 w-3/4 bg-slate-700 border-slate-200  hover:bg-slate-700" onClick={() => dispatch(logout())}>  Logout </button>
                         </Link>
                     </div>
                 </div>

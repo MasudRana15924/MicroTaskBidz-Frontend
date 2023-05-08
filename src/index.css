@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -14,15 +15,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.doctors-section{
+
+.doctors-section {
   background-color: #f8f9fa !important;
 }
-.doctors-card{
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+.doctors-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  height:440px;
+  height: 440px;
 }
-.blogs{
+
+.blogs {
   background-color: #f8f9fa !important;
-  
-};
+
+}
+
+;
+

@@ -25,6 +25,7 @@ import About from './components/landingpage/About';
 import MyBooking from './pages/user/appointments/MyBooking';
 import ForgotPassword from './pages/user/Forgotpassword';
 import Resetpassword from './pages/user/Resetpassword';
+import Conversations from './pages/user/conversation/Conversations';
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/my-booking" element={<PrivateRoute><MyBooking /></PrivateRoute>}></Route>
+            <Route path="/chat" element={<PrivateRoute><Conversations /></PrivateRoute>}></Route>
           </Routes>
 
           <Footer></Footer>

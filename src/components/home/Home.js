@@ -15,7 +15,7 @@ const Home = () => {
             <Doctor></Doctor>
             <Acheivement></Acheivement>
             <Blog></Blog>
-           
+      
     
         </>
 

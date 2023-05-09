@@ -95,7 +95,7 @@ const Header = () => {
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                
                 {
-                    token ? <Link to="/user-signin" className="text-sm font-semibold leading-6 text-gray-900">
+                  token ? <Link to="/user-info" className="text-sm font-semibold leading-6 text-gray-900">
                     {user.name} <span aria-hidden="true">&rarr;</span>
                 </Link> :  <Link to="/user-signin" className="text-sm font-semibold leading-6 text-gray-900">
                     Log in <span aria-hidden="true">&rarr;</span>
@@ -122,7 +122,7 @@ const Header = () => {
             </li>
 
             {
-                token ? <div>
+               token ? <div>
                    <li>
                     <Link to="/user-info" className="text-white px-5 py-2  font-semibold block">
                         My Profile

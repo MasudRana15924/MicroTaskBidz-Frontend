@@ -15,6 +15,9 @@ import updateProfileSlice from "./user/updateprofile/updateProfileSlice";
 import updatePasswordSlice from './user/changePassword/updatePasswordSlice'
 import forgotPasswordSlice from "./user/forgotpassword/forgotPasswordSlice";
 import resetPasswordSlice from "./user/forgotpassword/resetPasswordSlice";
+import  adminAllAppointmentsSlice  from "./admin/AdminAppointmentSlices";
+import adminAllDoctorsSlice  from "./admin/AdminDoctorsSlice";
+
 
 
 const persistConfig = {
@@ -41,6 +44,8 @@ const rootReducer = combineReducers({
   updatePassword:updatePasswordSlice,
   forgotPassword:forgotPasswordSlice,
   resetPassword:resetPasswordSlice,
+  allAppointments:adminAllAppointmentsSlice,
+  allDoctors:adminAllDoctorsSlice,
 
 });
 

@@ -24,6 +24,7 @@ export const loginSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.token = null
+      state.loggeduser=[]
     }
   },
 

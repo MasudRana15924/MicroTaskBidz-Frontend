@@ -28,6 +28,12 @@ import Resetpassword from './pages/user/Resetpassword';
 import Conversations from './pages/user/conversation/Conversations';
 import AdminAppointments from './pages/admin/AdminAppointments';
 import AdminDoctors from './pages/admin/AdminDoctors';
+import Dashboard from './pages/admin/Dashboard';
+import AllUsers from './pages/admin/AllUsers';
+import UpdateProfile from './pages/user/UpdateProfile';
+import Insurance from './components/landingpage/Insurance';
+import Verify from './pages/user/verify/Verify';
+import Nurses from './pages/nurses/Nurses';
 
 
 function App() {
@@ -47,22 +53,29 @@ function App() {
           <Routes >
 
             <Route path="/" element={<Home></Home>}></Route>
+            <Route path="/home" element={<Home></Home>}></Route>
             <Route path="/user-signin" element={< Login />}></Route>
             <Route path="/user-signup" element={<PublicRoute>< UserSignup /></PublicRoute>}></Route>
+            <Route path="/activation/:activation_token"  element={<Verify />} />
             <Route path="/user/password" element={<ForgotPassword />}></Route>
             <Route exact path="/password/reset/:token" element={<Resetpassword></Resetpassword>} />
             <Route path="/user/change/password" element={<PrivateRoute><Changepassword /></PrivateRoute>}></Route>
             <Route path="/user/updateinfo" element={<PrivateRoute><UpdateInfo /></PrivateRoute>}></Route>
+            <Route path="/user/updateprofile" element={<PrivateRoute><UpdateProfile /></PrivateRoute>}></Route>
             <Route path="/user-info" element={<PrivateRoute>< UserDetails /></PrivateRoute>}></Route>
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<About />}></Route>
+            <Route path="/insurance" element={<Insurance />}></Route>
+            <Route path="/nurses" element={<Nurses />}></Route>
             <Route path="/my-booking" element={<PrivateRoute><MyBooking /></PrivateRoute>}></Route>
             <Route path="/chat" element={<PrivateRoute><Conversations /></PrivateRoute>}></Route>
             <Route path="/admin-appointments" element={<PrivateRoute><AdminAppointments /></PrivateRoute>}></Route>
-            <Route path="/user/all-doctors" element={<PrivateRoute><AdminDoctors /></PrivateRoute>}></Route>
+            <Route path="/admin/all-doctors" element={<PrivateRoute><AdminDoctors /></PrivateRoute>}></Route>
+            <Route path="/admin-dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
+            <Route path="/admin/alluser" element={<PrivateRoute><AllUsers/></PrivateRoute>}></Route>
           </Routes>
 
           <Footer></Footer>

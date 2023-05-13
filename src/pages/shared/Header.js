@@ -3,13 +3,17 @@ import logo from '../../images/logo2.png'
 import { FiMenu } from 'react-icons/fi'
 import './Shared.css'
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { useSelector } from 'react-redux';
 import { MdCancelPresentation } from "react-icons/md";
 const navigation = [
-    { name: 'Home', to: '/' },
+    { name: 'Home', to: '/home' },
     { name: 'About Us', to: '/about' },
     { name: 'Contact Us', to: '/contact' },
     { name: 'Doctors', to: '/doctors' },
+    { name: 'Insurance', to: '/insurance' },
+    { name: 'Bloods', to: '/bloods' },
+    { name: 'Nurses',  to:"/nurses" },
 ]
 
 const Header = () => {
@@ -71,6 +75,7 @@ const Header = () => {
                     src={logo}
                     alt=""
                 />
+                <p className="text-sm font-semibold leading-6 text-gray-900">MKM HealthBridge</p>
             </div>
             <div className="flex lg:hidden">
                 <button
@@ -87,7 +92,7 @@ const Header = () => {
             </div>
             <div className="hidden lg:flex lg:gap-x-12">
                 {navigation.map((item) => (
-                    <Link key={item.name} to={item.to} className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link key={item.name} as={HashLink} to={item.to} className="text-sm font-semibold leading-6 text-gray-900">
                         {item.name}
                     </Link>
                 ))}

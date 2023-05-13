@@ -48,21 +48,35 @@ const AdminAppointments = () => {
                 <div className="w-1/4">
                     <UserSidebar></UserSidebar>
                 </div>
-                {/* <div className="grid grid-cols-3 gap-4  w-3/4 "> */}
+    
                 <div className="w-3/4 ">
-                    <div className="overflow-x-auto w-full">
+                <p className="text-start font-bold mb-5 text-2xl">All Appointments</p>
+                <div className="overflow-x-auto w-full">
                         <table className="table w-full">
-                            <thead className='text-start '>
-
-                                <th className='text-center'>Doctor</th>
-                                <th className='text-center '>Patient</th>
-                                <th className='text-center'>Appointment Date </th>
-                                <th className='text-center'>Schedule</th>
-                                <th className='text-center '>Details</th>
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Image</th>
+                                    <th>Doctor</th>
+                                    <th>Fees</th>
+                                    <th>Patient</th>
+                                    <th>Patient Gender</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Date</th>
+                                    <th>Schedule</th>
+                                    <th>Process</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
                             </thead>
+                            <tbody>
+                                  {content}
+                            </tbody>
+
                         </table>
                     </div>
-                    {content}
+                  
                     {
                         resultPerPage ? <div className="paginationBox">
                         <Pagination

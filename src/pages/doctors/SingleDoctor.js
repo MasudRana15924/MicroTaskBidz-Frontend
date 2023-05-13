@@ -30,7 +30,7 @@ const SingleDoctor = () => {
         </div>
     }
     return (
-        <section className="w-3/4 mx-auto pt-6 pb-20">
+        <section className="w-3/4 mx-auto pt-6 pb-20 mt-24">
             {content}
             <div className="mt-48">
                 {/* <h2 className="text-start text-3xl text-red-500">Related Doctors </h2> */}

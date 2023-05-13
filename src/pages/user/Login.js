@@ -12,9 +12,10 @@ const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [agree, setAgree] = useState(false);
-    const { token } = useSelector(
+    const { token,loggeduser} = useSelector(
         (state) => state.userDetails
     );
+const message=loggeduser.message
     const [users, setUser] = useState({
         email: "",
         password: "",
@@ -26,17 +27,9 @@ const Login = () => {
         myForm.set("email", email);
         myForm.set("password", password);
         dispatch(createLogin(myForm));
-        toast.info('Login Successfull ', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
-
+        if(token){
+            toast.info('Login Succesfull'); 
+        }
     };
     const registerDataChange = (e) => {
         setUser({
@@ -46,9 +39,13 @@ const Login = () => {
     };
     useEffect(() => {
         if (token) {
+           
             navigate('/');
+         
+        }else{
+            toast.info(message); 
         }
-    }, [token, navigate]);
+    }, [token, navigate,message]);
     return (
         <div>
 

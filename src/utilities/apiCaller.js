@@ -38,6 +38,11 @@ export const privatePut = async (endpoint, token, body) => {
   const response = await axios.put(`${api}${endpoint}`, body, config);
   return response.data;
 };
+export const privateDelete = async (endpoint, token, body) => {
+  config.headers.Authorization = `${token}`;
+  const response = await axios.delete(`${api}${endpoint}`, body, config);
+  return response.data;
+};
 export const publicPut = async (endpoint, body) => {
   const response = await axios.put(`${api}${endpoint}`, body, config);
   return response.data;

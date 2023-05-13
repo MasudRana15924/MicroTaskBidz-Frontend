@@ -60,7 +60,7 @@ const DoctorDetails = ({ doctor }) => {
                     />
 
                 </div>
-                <div className="text-start ml-5 text-slate-600 text-md font-semibold">
+                <div className="text-start ml-5 text-sm font-semibold leading-6 text-gray-900">
                     <p className="">{name} (  {expert})  </p>
                     <p className="mt-3 ">  {degree}  </p>
                     <p className=" mt-3"> Works at {work}  </p>

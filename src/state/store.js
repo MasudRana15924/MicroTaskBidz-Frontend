@@ -17,6 +17,9 @@ import forgotPasswordSlice from "./user/forgotpassword/forgotPasswordSlice";
 import resetPasswordSlice from "./user/forgotpassword/resetPasswordSlice";
 import  adminAllAppointmentsSlice  from "./admin/AdminAppointmentSlices";
 import adminAllDoctorsSlice  from "./admin/AdminDoctorsSlice";
+import  adminAllUsersSlice  from "./admin/AllUsersSlice";
+import  filternursesSlice  from "./nurses/nursesSlices";
+// import nursesSlices, { filternursesSlice, nursesSlice } from "./nurses/nursesSlices";
 
 
 
@@ -46,6 +49,8 @@ const rootReducer = combineReducers({
   resetPassword:resetPasswordSlice,
   allAppointments:adminAllAppointmentsSlice,
   allDoctors:adminAllDoctorsSlice,
+  allUsers:adminAllUsersSlice,
+   filterNurses:filternursesSlice,
 
 });
 

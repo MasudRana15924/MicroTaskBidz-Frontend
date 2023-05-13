@@ -15,9 +15,7 @@ const Blog = () => {
                             <h2 className="text-center text-2xl font-semibold ">
                              Benefits of Consulting Online Doctor 
                             </h2>
-                            <p className="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem pariatur fuga maxime reiciendis! Nesciunt dolorem est quasi reiciendis quidem</p>
-                            
-                           <button className="btn btn-sm bg-violet-600 border-violet-600 w-1/4 text-xs">Read More</button>
+                            <p className=" text-start text-sm font-semibold leading-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem pariatur fuga maxime reiciendis! Nesciunt dolorem est quasi reiciendis quidem  <button className="btn btn-sm bg-violet-600 border-violet-600 w-1/4 text-xs ">Read More</button></p>
                       
                         </div>
                     </div>
@@ -29,9 +27,7 @@ const Blog = () => {
                             <h2 className="text-start text-2xl font-semibold ">
                             Benefits of Online Doctor 
                             </h2>
-                            <p className="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem pariatur fuga maxime reiciendis! Nesciunt dolorem est quasi reiciendis quidem</p>
-                         
-                           <button className="btn btn-sm bg-violet-600 border-violet-600 w-1/4 text-xs">Read More</button>
+                            <p className=" text-start text-sm font-semibold leading-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem pariatur fuga maxime reiciendis! Nesciunt dolorem est quasi reiciendis quidem  <button className="btn btn-sm bg-violet-600 border-violet-600 w-1/4 text-xs ">Read More</button></p>
                           
                          
                         </div>
@@ -44,9 +40,9 @@ const Blog = () => {
                             <h2 className="text-start text-2xl font-semibold">
                             Benefits of Insurance
                             </h2>
-                            <p className="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem pariatur fuga maxime reiciendis! Nesciunt dolorem est quasi reiciendis quidem</p>
+                            <p className=" text-start text-sm font-semibold leading-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem pariatur fuga maxime reiciendis! Nesciunt dolorem est quasi reiciendis quidem  <button className="btn btn-sm bg-violet-600 border-violet-600 w-1/4 text-xs ">Read More</button></p>
                 
-                           <button className="btn btn-sm bg-violet-600 border-violet-600 w-1/4 text-xs ">Read More</button>
+                          
                       
                         </div>
                     </div>

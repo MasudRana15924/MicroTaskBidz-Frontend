@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import UserSidebar from './UserSidebar';
 import { updateProfile } from '../../state/user/updateprofile/updateProfileSlice';
+import { ToastContainer, toast } from 'react-toastify';
 
 const UpdateInfo = () => {
   const dispatch = useDispatch();
@@ -13,24 +14,23 @@ const userToken = loggeduser.token
   const [gender, setGender] = useState("");
   const [phone, setPhone] = useState("");
   const [birthdate, setBirthdate] = useState("");
-  const [avatar, setAvatar] = useState();
-  const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
-  const data=({name,gender,phone,birthdate,avatar})
+  const data=({name,gender,phone,birthdate})
   const registerSubmit = (e) => {
     e.preventDefault();
     dispatch(updateProfile({data,userToken}));
-    alert('updated');
+    toast.success('Your Info Updated', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    },
+    );
   };
-  const updateProfileDataChange = (e) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-        if (reader.readyState === 2) {
-            setAvatarPreview(reader.result);
-            setAvatar(reader.result);
-        }
-    };
-    reader.readAsDataURL(e.target.files[0]);
-};
+
   
   return (
     <div className="p-10 bg-white mt-20 mb-20">
@@ -55,15 +55,14 @@ const userToken = loggeduser.token
                   />
                 </div>
                 <div className="mb-2 ">
-                  <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
-                    name="name"
-                    value={gender}
-                    onChange={(e) => setGender(e.target.value)}
-                    placeholder="Gender"
-                    required
-                  />
+                  
+                    <select name="Gender" className="w-full h-12 border rounded" value={gender} onChange={(e) => setGender(e.target.value)}>
+                                            <option  >Select Gender </option>
+                                            <option  >Male </option>
+                                            <option >Female </option>
+                                        </select>
                 </div>
-                <div className="mb-2 ">
+                <div className="mb-2 mt-5">
                   <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
                     name="name"
                     value={phone}
@@ -82,16 +81,6 @@ const userToken = loggeduser.token
                     required
                   />
                 </div>
-                <div className="flex">
-                  <img src={avatarPreview} alt="Avatar Preview" className="w-24 " />
-                  <input
-                    type="file"
-                    name="avatar"
-                    accept="image/*"
-                    onChange={updateProfileDataChange}
-                    className="mt-5 ms-3"
-                  />
-                </div>
 
                 <button className=" text-white py-1 w-full rounded-md  font-semibold h-10 bg-violet-700 mt-5" type="submit">Update</button>
               </form>
@@ -100,6 +89,20 @@ const userToken = loggeduser.token
 
         </div>
       </div>
+      <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+        {/* Same as */}
+        <ToastContainer />
     </div>
   );
 };

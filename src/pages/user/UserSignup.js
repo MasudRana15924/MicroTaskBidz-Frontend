@@ -24,16 +24,7 @@ const UserSignup = () => {
     myForm.set("email", email);
     myForm.set("password", password);
     dispatch(createSignUp(myForm));
-    toast.success('Please Verify Your Email', {
-      position: "bottom-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    },
+    toast.success('Please Verify Your Email', 
     );
   };
   const registerDataChange = (e) => {

@@ -39,13 +39,13 @@ const UserDetails = () => {
                                 <label className="label">
                                     <span className="label-text text-base">Gender</span>
                                 </label>
-                                <input type="text" placeholder="" className="input input-bordered w-full max-w-xs text-black"/>
+                                <input type="text" value={user.gender} placeholder={user.gender} className="input input-bordered w-full max-w-xs text-black"/>
                             </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text text-base">Date Of Birth</span>
                                 </label>
-                                <input type="date" placeholder="" className="input input-bordered w-full max-w-xs text-black"/>
+                                <input type="date" value={user.birthdate} placeholder={user.birthdate} className="input input-bordered w-full max-w-xs text-black"/>
                             </div>
                         </div>
                     </div>

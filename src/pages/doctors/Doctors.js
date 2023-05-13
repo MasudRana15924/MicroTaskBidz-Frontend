@@ -25,16 +25,20 @@ const Doctors = ({doctor}) => {
 
                 <div className=" text-start p-5">
                     <Link to={`/doctor/${doctor._id}`} >
-                        <p className="text-slate-600 text-md font-semibold mt-5" >
+                        <p className="text-sm font-semibold leading-6 text-gray-900 mt-5" >
                             {name} (  {expert})
                         </p>
                     </Link>
-                    <p className="text-slate-600  text-md font-semibold mt-3" >
+                    <p className="text-sm font-semibold leading-6 text-gray-900 mt-3" >
                       {degree}
                     </p>
-                    <p className="text-slate-600  text-md font-semibold flex gap-2" >
-                    < FaRegMoneyBillAlt className="text-2xl"></FaRegMoneyBillAlt>{fees}Tk
+                    <div className="flex gap-2">
+                    < FaRegMoneyBillAlt className="text-2xl"></FaRegMoneyBillAlt>
+                    <p className="text-sm font-semibold leading-6 text-gray-900" >
+                  {fees}Tk
                     </p>
+                    </div>
+                   
                 </div>
                 <div className="flex justify-between ml-5">
                 <p className=""><Rating {...options} size="medium" className=""/>({ratings})</p>

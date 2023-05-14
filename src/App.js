@@ -31,9 +31,11 @@ import AdminDoctors from './pages/admin/AdminDoctors';
 import Dashboard from './pages/admin/Dashboard';
 import AllUsers from './pages/admin/AllUsers';
 import UpdateProfile from './pages/user/UpdateProfile';
-import Insurance from './components/landingpage/Insurance';
 import Verify from './pages/user/verify/Verify';
 import Nurses from './pages/nurses/Nurses';
+import Insurance from './components/insurance/Insurance';
+import SingleNurse from './pages/nurses/SingleNurse';
+import HireNurse from './pages/user/hiresnurses/HireNurse';
 
 
 function App() {
@@ -70,7 +72,9 @@ function App() {
             <Route path="/about" element={<About />}></Route>
             <Route path="/insurance" element={<Insurance />}></Route>
             <Route path="/nurses" element={<Nurses />}></Route>
+            <Route path="/nurse/:nurseId" element={<SingleNurse />}></Route>
             <Route path="/my-booking" element={<PrivateRoute><MyBooking /></PrivateRoute>}></Route>
+            <Route path="/my/hire-nurses" element={<PrivateRoute><HireNurse /></PrivateRoute>}></Route>
             <Route path="/chat" element={<PrivateRoute><Conversations /></PrivateRoute>}></Route>
             <Route path="/admin-appointments" element={<PrivateRoute><AdminAppointments /></PrivateRoute>}></Route>
             <Route path="/admin/all-doctors" element={<PrivateRoute><AdminDoctors /></PrivateRoute>}></Route>

@@ -3,8 +3,11 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchApponitments } from '../../../state/user/appointment/myAppointmentsSlice';
 import Loading from '../../loader/Loading';
-import MyBookings from './MyBookings';
 import UserSidebar from '../UserSidebar';
+import MyBookings from '../../../pages/user/appointments/MyBookings';
+
+
+
 
 const MyBooking = () => {
     const { loggeduser } = useSelector(
@@ -31,6 +34,7 @@ const MyBooking = () => {
     }
 
     if (!isLoading && !isError && appointment?.length > 0) {
+
         content = appointment.map(booking => <MyBookings key={booking._id} booking={booking} />)
     }
     return (

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { createAppointments } from '../../state/appointments/appointmentsSlice';
+import { createHireNurse } from '../../state/nurses/hireNurseSlice';
 import { Link } from 'react-router-dom';
 
-const AppointmentModal = ({ doctor }) => {
+const NursesModal = ({nurse}) => {
     const dispatch = useDispatch();
     const { token, loggeduser } = useSelector(
         (state) => state.userDetails
@@ -16,16 +16,15 @@ const AppointmentModal = ({ doctor }) => {
     const [patientgender, setGender] = useState('');
     const [phone, setPhone] = useState('');
     const [date, setDate] = useState('');
-    const [schedule, setSchedule] = useState('');
-    const doctorname = doctor.name;
-    const doctorfees = doctor.fees;
-    const doctorimage = doctor.images[0].url;
-    const doctorId = doctor._id;
-    const data = ({ doctorname, doctorfees, doctorimage, doctorId, patientname, patientemail, patientgender, phone, date, schedule });
+    const nursename = nurse.name;
+    const nursefees = nurse.fees;
+    const nurseimage = nurse.images[0].url;
+    const nurseId = nurse._id;
+    const data = ({ nursename, nursefees, nurseimage, nurseId, patientname, patientemail, patientgender, phone, date});
     const handleCreate = (e) => {
         e.preventDefault();
         if (patientname && patientemail && patientgender && phone && date) {
-            dispatch(createAppointments({
+            dispatch(createHireNurse({
                 data, userToken
             }));
             toast.success('Your appointment placed ', {
@@ -51,10 +50,9 @@ const AppointmentModal = ({ doctor }) => {
             });
         }
     }
-
     return (
-        <div >
-            {
+        <div>
+             {
                 token ? <div>
                     <input type="checkbox" id="appointment-modal" class="modal-toggle" />
                     <div class="modal ">
@@ -97,19 +95,9 @@ const AppointmentModal = ({ doctor }) => {
                                         </label>
                                         <input type="date" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Appoinment Date" className="border border-gray-200 rounded w-3/4 p-2  h-12 mx-auto" />
                                     </div>
-                                    <div>
-                                        <label className="label">
-                                            <span className="label-text text-blue-400">Appointment Slot?</span>
-                                        </label>
-                                        <select className="w-3/4 h-12 border rounded" value={schedule} onChange={(e) => setSchedule(e.target.value)}  >
-                                            <option  >Select Slots</option>
-                                            <option >Morning </option>
-                                            <option >Afternoon </option>
-                                            <option >Evening </option>
-                                        </select>
-                                    </div>
+                                   
                                 </div>
-                                <button className="btn bg-violet-900 mt-5 h-12 w-full text-white font-semibold text-center mb-5">Book Appointment </button>
+                                <button className="btn bg-violet-900 mt-5 h-12 w-full text-white font-semibold text-center mb-5">Hire Nurse </button>
                             </form>
                         </div>
                     </div>
@@ -146,4 +134,4 @@ const AppointmentModal = ({ doctor }) => {
     );
 };
 
-export default AppointmentModal;
+export default NursesModal;

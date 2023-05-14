@@ -5,6 +5,7 @@ import Services from '../landingpage/Services';
 import Acheivement from '../landingpage/Acheivement';
 import Blog from '../landingpage/Blog';
 import Nurses from '../../pages/nurses/Nurses';
+import Insurances from '../landingpage/Insurances';
 
 
 
@@ -17,6 +18,7 @@ const Home = () => {
             <Acheivement></Acheivement>
             <Blog></Blog>
             <Nurses></Nurses>
+            <Insurances></Insurances>
       
     
         </div>

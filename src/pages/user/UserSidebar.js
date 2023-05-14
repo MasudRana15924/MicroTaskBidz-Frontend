@@ -130,7 +130,13 @@ const UserSidebar = () => {
                     <div className="flex mt-5">
                         <BsMinecartLoaded className="mt-1 w-20 h-5"></BsMinecartLoaded>
                         <Link to="/my-booking">
-                            <h2 className="text-md font-semibold leading-6 text-gray-900">My Booking</h2>
+                            <h2 className="text-md font-semibold leading-6 text-gray-900">My Appointments</h2>
+                        </Link>
+                    </div>
+                    <div className="flex mt-5">
+                        <BsMinecartLoaded className="mt-1 w-20 h-5"></BsMinecartLoaded>
+                        <Link to="/my/hire-nurses">
+                            <h2 className="text-md font-semibold leading-6 text-gray-900">My Hire Nurses</h2>
                         </Link>
                     </div>
                     <div className="flex mt-5">

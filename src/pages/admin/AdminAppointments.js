@@ -65,7 +65,7 @@ const AdminAppointments = () => {
                                     <th>Phone</th>
                                     <th>Date</th>
                                     <th>Schedule</th>
-                                    <th>Process</th>
+                                    <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>

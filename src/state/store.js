@@ -23,6 +23,8 @@ import  nurseSlice  from "./nurses/nursSlice";
 import NurseReviewsSlice from "./nurses/NurseReviewsSlice";
 import hireNursesSlice from './nurses/hireNurseSlice'
 import myHireNurseSlice from "./user/hirenurse/myHireNurseSlice";
+import  adminAllNursesSlice  from "./admin/AllNursesSlices";
+import adminAllHiredNursessSlice  from "./admin/AllHiredNursesSlice";
 
 
 
@@ -58,6 +60,8 @@ const rootReducer = combineReducers({
   nursesReviews:NurseReviewsSlice,
   hireNurses:hireNursesSlice,
   myHireNurses:myHireNurseSlice,
+  allNurses:adminAllNursesSlice,
+  allhiredNurses:adminAllHiredNursessSlice,
 
 });
 

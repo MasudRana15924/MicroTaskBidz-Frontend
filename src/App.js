@@ -36,6 +36,8 @@ import Nurses from './pages/nurses/Nurses';
 import Insurance from './components/insurance/Insurance';
 import SingleNurse from './pages/nurses/SingleNurse';
 import HireNurse from './pages/user/hiresnurses/HireNurse';
+import AllNurses from './pages/admin/AllNurses';
+import HiredNurses from './pages/admin/HiredNurses';
 
 
 function App() {
@@ -78,6 +80,8 @@ function App() {
             <Route path="/chat" element={<PrivateRoute><Conversations /></PrivateRoute>}></Route>
             <Route path="/admin-appointments" element={<PrivateRoute><AdminAppointments /></PrivateRoute>}></Route>
             <Route path="/admin/all-doctors" element={<PrivateRoute><AdminDoctors /></PrivateRoute>}></Route>
+            <Route path="/admin/all-nurses" element={<PrivateRoute><AllNurses /></PrivateRoute>}></Route>
+            <Route path="/admin/all-hired-nurses" element={<PrivateRoute><HiredNurses /></PrivateRoute>}></Route>
             <Route path="/admin-dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
             <Route path="/admin/alluser" element={<PrivateRoute><AllUsers/></PrivateRoute>}></Route>
           </Routes>

@@ -13,8 +13,7 @@ const UpdateDoctor = () => {
     const dispatch = useDispatch();
     const { doctorId } = useParams()
     const { doctor } = useSelector(state => state.doctor.doctor);
-    const {_id}=doctor;
-    console.log(_id)
+    const {_id}=doctor || {};
     const { loggeduser } = useSelector(
         (state) => state.userDetails
     );
@@ -34,7 +33,19 @@ const UpdateDoctor = () => {
     const [description, setDescription] = useState("");
     useEffect(() => {
         dispatch(fetchDoctor(doctorId));
-    }, [dispatch,doctorId])
+        setName(doctor.name);
+        setDegree(doctor.degree);
+        setEmail(doctor.email);
+        setGender(doctor.gender);
+        setWork(doctor.work);
+        setExpert(doctor.expert);
+        setLocation(doctor.location);
+        setGender(doctor.gender);
+        setFees(doctor.fees);
+        setPhone(doctor.phone);
+        setOldImages(doctor.images);
+        setDescription(doctor.description);
+    }, [dispatch,doctorId,])
     
 
     const updateProductImagesChange = (e) => {

@@ -38,21 +38,21 @@ const MyBooking = () => {
         content = appointment.map(booking => <MyBookings key={booking._id} booking={booking} />)
     }
     return (
-        <div className="p-10 bg-white mt-20 mb-20">
-            <div className="max-w-full mx-auto ">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2">
-                    <div className="lg:w-8/12 lg:mx-auto text-end  mb-5">
-                        <UserSidebar></UserSidebar>
-                    </div>
-                    <div>
-                        <h2 className="text-start text-2xl ">My Booking</h2>
-                        <div className="w-full grid grid-cols-10 gap-4 mt-10">
-                            {content}
-                        </div>
+        <div className="p-10 bg-white mt-32 mb-20">
+        <div className="max-w-full mx-auto ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2">
+                <div className="lg:w-8/12 lg:mx-auto text-end  mb-5">
+                    <UserSidebar></UserSidebar>
+                </div>
+                <div>
+                    <h2 className="text-start text-2xl ">My Booking</h2>
+                    <div className="w-full grid grid-cols-10 gap-4 mt-10">
+                        {content}
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     );
 };
 

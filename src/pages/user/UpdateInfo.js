@@ -36,11 +36,11 @@ const userToken = loggeduser.token
     <div className="p-10 bg-white mt-20 mb-20">
       <div className="max-w-full mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 gap-2">
-          <div className="lg:w-8/12 lg:mx-auto text-end  mb-5">
+          <div className="w-3/4 lg:mx-auto text-end mt-20 mb-5">
             <UserSidebar></UserSidebar>
 
           </div>
-          <div className="lg:w-8/12 mb-5  p-5">
+          <div className="w-3/4 mb-5 mt-32 p-5">
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="mt-5  text-2xl font-medium mb-4 text-start">Update Your Info</h2>
 

@@ -52,7 +52,7 @@ const AdminAppointments = () => {
                 <div className="w-3/4 ">
                 <p className="text-start font-bold mb-5 text-2xl">All Appointments</p>
                 <div className="overflow-x-auto w-full">
-                        <table className="table w-full">
+                <table className="table w-full">
                             <thead>
                                 <tr>
                                     
@@ -75,6 +75,7 @@ const AdminAppointments = () => {
                             </tbody>
 
                         </table>
+                       
                     </div>
                   
                     {

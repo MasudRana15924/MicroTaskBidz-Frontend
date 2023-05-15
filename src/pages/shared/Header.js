@@ -100,7 +100,7 @@ const Header = () => {
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                
                 {
-                  token ? <Link to="/user-info" className="text-sm font-semibold leading-6 text-gray-900">
+                  token ? <Link to="/user-info" className="text-sm font-semibold leading-6 text-gray-900" onClick={showMenu}>
                     {user.name} <span aria-hidden="true">&rarr;</span>
                 </Link> :  <Link to="/user-signin" className="text-sm font-semibold leading-6 text-gray-900">
                     Log in <span aria-hidden="true">&rarr;</span>
@@ -108,7 +108,7 @@ const Header = () => {
                 }
             </div>
         </nav>
-        <ul className={active ? 'flex-col flex fixed inset-0 left-1/4 uppercase   gap-6  md: lg:hidden bg-black text-white text-center ml-24 ' : 'hidden'}>
+        <ul className={active ? 'flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block bg-black text-white text-center ml-24 ' : 'hidden'}>
             <div className="grid grid-cols-2 md:gap-96">
                 <MdCancelPresentation className="text-5xl" onClick={showMenu}></MdCancelPresentation>
                 <p onClick={showMenu} className="mt-3 ">Cancel</p>

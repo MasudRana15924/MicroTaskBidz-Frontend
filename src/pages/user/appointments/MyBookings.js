@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 const MyBookings = ({ booking }) => {
-    const { doctorname, doctorfees, doctorimage, doctorId, date, schedule } = booking;
+    const { doctorname, doctorfees, doctorimage, doctorId, date, schedule,bookingStatus } = booking;
     return (
         <div className="card col-span-12 sm:col-span-6 md:col-span-3  ">
             <div className="card-body border ">
@@ -27,6 +27,7 @@ const MyBookings = ({ booking }) => {
                     </p>
                     <p className="text-slate-600 text-md font-semibold " >Appointment : {date}</p>
                     <p className="text-slate-600 text-md font-semibold " >Slot : {schedule}</p>
+                    <p className="text-slate-600 text-md font-semibold " >Status : {bookingStatus}</p>
                 </div>
 
 

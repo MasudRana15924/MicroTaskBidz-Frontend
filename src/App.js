@@ -38,6 +38,7 @@ import SingleNurse from './pages/nurses/SingleNurse';
 import HireNurse from './pages/user/hiresnurses/HireNurse';
 import AllNurses from './pages/admin/AllNurses';
 import HiredNurses from './pages/admin/HiredNurses';
+import SingleAppointments from './pages/admin/appointment/SingleAppointments';
 
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
             <Route path="/my/hire-nurses" element={<PrivateRoute><HireNurse /></PrivateRoute>}></Route>
             <Route path="/chat" element={<PrivateRoute><Conversations /></PrivateRoute>}></Route>
             <Route path="/admin-appointments" element={<PrivateRoute><AdminAppointments /></PrivateRoute>}></Route>
+            <Route path="/appointment/:appointmentId" element={<PrivateRoute><SingleAppointments/></PrivateRoute>}></Route>
             <Route path="/admin/all-doctors" element={<PrivateRoute><AdminDoctors /></PrivateRoute>}></Route>
             <Route path="/admin/all-nurses" element={<PrivateRoute><AllNurses /></PrivateRoute>}></Route>
             <Route path="/admin/all-hired-nurses" element={<PrivateRoute><HiredNurses /></PrivateRoute>}></Route>

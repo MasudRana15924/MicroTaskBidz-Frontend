@@ -12,10 +12,10 @@ const UserDetails = () => {
         <div className="p-10 bg-white mt-20 mb-20">
             <div className="max-w-full mx-auto ">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 ">
-                    <div className="lg:w-8/12 lg:mx-auto text-end  mb-5  ">
+                    <div className="lg:w-8/12 lg:mx-auto text-end  mb-5 mt-20 ">
                         <UserSidebar></UserSidebar>
                     </div>
-                    <div className="lg:w-8/12 gap-2">
+                    <div className="lg:w-8/12 gap-2 mt-32">
 
                         <div className="avatar mr-28">
                             <div className="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">

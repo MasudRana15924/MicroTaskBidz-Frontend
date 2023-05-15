@@ -113,7 +113,6 @@ const UserSidebar = () => {
             </div>: <div className="card-body text-start">
                     <div className="flex ">
                         <AiOutlineUnorderedList className="mt-1 w-20 h-5"></AiOutlineUnorderedList>
-                        {/* <h2 className="text-sm lg:text-xl  lg:font-semibold"> Manage My Accounts </h2> */}
                         <h2 className="text-md font-semibold leading-6 text-gray-900"> Manage My Accounts </h2>
                     </div>
                     <div className="flex mt-5">

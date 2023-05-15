@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { privatePut} from '../../utilities/apiCaller';
+import { privatePut} from '../../../utilities/apiCaller';
 
 const initialState = {
     updateAppointments:{},

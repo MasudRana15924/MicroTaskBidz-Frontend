@@ -27,7 +27,7 @@ const AdminDoctor = ({ doctor }) => {
         <td>{fees}</td>
         <td>{ratings}</td>
         <th>
-          <button className="btn btn-ghost btn-xs">details</button>
+          <Link to={`/update-doctor/${doctor._id}`}><button className="btn btn-ghost btn-xs">update</button></Link>
         </th>
       </tr>
     );

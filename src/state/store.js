@@ -25,8 +25,10 @@ import hireNursesSlice from './nurses/hireNurseSlice'
 import myHireNurseSlice from "./user/hirenurse/myHireNurseSlice";
 import  adminAllNursesSlice  from "./admin/AllNursesSlices";
 import adminAllHiredNursessSlice  from "./admin/AllHiredNursesSlice";
-import  updateAppointmentSlice  from "./admin/updateAppointmentsSlice";
+import  updateAppointmentSlice  from "./admin/update/updateAppointmentsSlice";
 import   fetchSingleAppointmentsSlice from "./admin/SingleAppointmentSlice";
+import createDoctorsSlice from "./admin/create/createDoctorsSlice";
+import  updateDoctorSlice  from "./admin/update/updateDoctorsSlice";
 
 
 
@@ -66,6 +68,8 @@ const rootReducer = combineReducers({
   allhiredNurses:adminAllHiredNursessSlice,
   singleAppointments:fetchSingleAppointmentsSlice,
   updateAppointments:updateAppointmentSlice,
+  createDoctors:createDoctorsSlice,
+  updateDoctor:updateDoctorSlice,
 
 });
 

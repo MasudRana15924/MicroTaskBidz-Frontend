@@ -48,21 +48,10 @@ const UserSidebar = () => {
                         <h2 className="text-md font-semibold leading-6 text-gray-900">All Appointments</h2>
                     </Link>
                 </div>
+              
                 <div className="flex mt-5">
                     <AiOutlineEdit className="mt-1 w-20 h-5"></AiOutlineEdit>
-                    <Link to="/user/updateinfo">
-                        <h2 className="text-md font-semibold leading-6 text-gray-900">Update Appointment</h2>
-                    </Link>
-                </div>
-                <div className="flex mt-5">
-                    <AiOutlineEdit className="mt-1 w-20 h-5"></AiOutlineEdit>
-                    <Link to="/user/updateinfo">
-                        <h2 className="text-md font-semibold leading-6 text-gray-900">Delete Appointment</h2>
-                    </Link>
-                </div>
-                <div className="flex mt-5">
-                    <AiOutlineEdit className="mt-1 w-20 h-5"></AiOutlineEdit>
-                    <Link to="/user/change/password">
+                    <Link to="/admin/create-doctor">
                         <h2 className="text-md font-semibold leading-6 text-gray-900">Create Doctor</h2>
                     </Link>
                 </div>
@@ -90,12 +79,6 @@ const UserSidebar = () => {
                     <AiOutlineEdit className="mt-1 w-20 h-5"></AiOutlineEdit>
                     <Link to="/admin/alluser">
                         <h2 className="text-md font-semibold leading-6 text-gray-900">All Users</h2>
-                    </Link>
-                </div>
-                <div className="flex mt-5">
-                    <BsMinecartLoaded className="mt-1 w-20 h-5"></BsMinecartLoaded>
-                    <Link to="/my-booking">
-                        <h2 className="text-md font-semibold leading-6 text-gray-900">Delete Users</h2>
                     </Link>
                 </div>
                 <div className="flex mt-5">

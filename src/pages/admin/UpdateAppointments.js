@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
-import { fetchUpdateAppointment } from '../../state/admin/updateAppointmentsSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import { fetchUpdateAppointment } from '../../state/admin/update/updateAppointmentsSlice';
+
 
 const UpdateAppointments = ({appointment}) => {
     const {_id}=appointment
@@ -11,8 +12,11 @@ const UpdateAppointments = ({appointment}) => {
     );
     const userToken = loggeduser.token
     const dispatch = useDispatch();
+    const doctorname=appointment.doctorname;
+    const patientname=appointment.patientname;
+    const patientemail=appointment.patientemail
      const [bookingStatus, setStatus] = useState('');
-    const data={bookingStatus}
+    const data={bookingStatus,doctorname,patientname,patientemail}
     const handleCreate = (e) => {
         e.preventDefault();
             dispatch(fetchUpdateAppointment({
@@ -40,7 +44,20 @@ const UpdateAppointments = ({appointment}) => {
                 </form>
             </div>
         </div>
-
+        <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
+            {/* Same as */}
+            <ToastContainer />
     </div> 
     );
 };

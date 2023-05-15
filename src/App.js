@@ -39,6 +39,8 @@ import HireNurse from './pages/user/hiresnurses/HireNurse';
 import AllNurses from './pages/admin/AllNurses';
 import HiredNurses from './pages/admin/HiredNurses';
 import SingleAppointments from './pages/admin/appointment/SingleAppointments';
+import CreateDoctor from './pages/doctors/CreateDoctor';
+import UpdateDoctor from './pages/doctors/UpdateDoctor';
 
 
 function App() {
@@ -82,6 +84,8 @@ function App() {
             <Route path="/admin-appointments" element={<PrivateRoute><AdminAppointments /></PrivateRoute>}></Route>
             <Route path="/appointment/:appointmentId" element={<PrivateRoute><SingleAppointments/></PrivateRoute>}></Route>
             <Route path="/admin/all-doctors" element={<PrivateRoute><AdminDoctors /></PrivateRoute>}></Route>
+            <Route path="/admin/create-doctor" element={<PrivateRoute><CreateDoctor /></PrivateRoute>}></Route>
+            <Route path="/update-doctor/:doctorId" element={<PrivateRoute><UpdateDoctor /></PrivateRoute>}></Route>
             <Route path="/admin/all-nurses" element={<PrivateRoute><AllNurses /></PrivateRoute>}></Route>
             <Route path="/admin/all-hired-nurses" element={<PrivateRoute><HiredNurses /></PrivateRoute>}></Route>
             <Route path="/admin-dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>

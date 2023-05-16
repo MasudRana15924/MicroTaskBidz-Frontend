@@ -17,7 +17,6 @@ const UpdateAppointments = ({appointment}) => {
     const patientemail=appointment.patientemail
      const [bookingStatus, setStatus] = useState('');
     const data={bookingStatus,doctorname,patientname,patientemail};
-    // const data={bookingStatus}
     const handleCreate = (e) => {
         e.preventDefault();
             dispatch(fetchUpdateAppointment({

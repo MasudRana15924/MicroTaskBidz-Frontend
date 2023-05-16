@@ -23,7 +23,6 @@ import DoctorLis from './pages/DoctorsList/DoctorLis';
 import Contact from './components/landingpage/Contact';
 import About from './components/landingpage/About';
 import MyBooking from './pages/user/appointments/MyBooking';
-import ForgotPassword from './pages/user/Forgotpassword';
 import Resetpassword from './pages/user/Resetpassword';
 import Conversations from './pages/user/conversation/Conversations';
 import AdminAppointments from './pages/admin/AdminAppointments';
@@ -41,6 +40,12 @@ import HiredNurses from './pages/admin/HiredNurses';
 import SingleAppointments from './pages/admin/appointment/SingleAppointments';
 import CreateDoctor from './pages/doctors/CreateDoctor';
 import UpdateDoctor from './pages/doctors/UpdateDoctor';
+import ForgotPass from './pages/user/password/ForgotPass';
+import CreateNurse from './pages/nurses/CreateNurse';
+import UpdateNurses from './pages/nurses/UpdateNurses';
+// import ForgotPassword from './pages/user/Forgotpassword';
+
+
 
 
 function App() {
@@ -64,7 +69,7 @@ function App() {
             <Route path="/user-signin" element={< Login />}></Route>
             <Route path="/user-signup" element={<PublicRoute>< UserSignup /></PublicRoute>}></Route>
             <Route path="/activation/:activation_token"  element={<Verify />} />
-            <Route path="/user/password" element={<ForgotPassword />}></Route>
+            <Route path="/user/password" element={<ForgotPass />}></Route>
             <Route exact path="/password/reset/:token" element={<Resetpassword></Resetpassword>} />
             <Route path="/user/change/password" element={<PrivateRoute><Changepassword /></PrivateRoute>}></Route>
             <Route path="/user/updateinfo" element={<PrivateRoute><UpdateInfo /></PrivateRoute>}></Route>
@@ -85,7 +90,9 @@ function App() {
             <Route path="/appointment/:appointmentId" element={<PrivateRoute><SingleAppointments/></PrivateRoute>}></Route>
             <Route path="/admin/all-doctors" element={<PrivateRoute><AdminDoctors /></PrivateRoute>}></Route>
             <Route path="/admin/create-doctor" element={<PrivateRoute><CreateDoctor /></PrivateRoute>}></Route>
+            <Route path="/admin/create-nurse" element={<PrivateRoute><CreateNurse /></PrivateRoute>}></Route>
             <Route path="/update-doctor/:doctorId" element={<PrivateRoute><UpdateDoctor /></PrivateRoute>}></Route>
+            <Route path="/update-nurse/:nurseId" element={<PrivateRoute><UpdateNurses /></PrivateRoute>}></Route>
             <Route path="/admin/all-nurses" element={<PrivateRoute><AllNurses /></PrivateRoute>}></Route>
             <Route path="/admin/all-hired-nurses" element={<PrivateRoute><HiredNurses /></PrivateRoute>}></Route>
             <Route path="/admin-dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>

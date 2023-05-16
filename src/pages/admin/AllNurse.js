@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AllNurse = ({nurse}) => {
     const{images,name,email}=nurse;
@@ -15,7 +16,7 @@ const AllNurse = ({nurse}) => {
         </td>
         <td>{name}</td>
         <td>{email} </td>
-        <td>edit</td>
+        <td> <Link to={`/update-nurse/${nurse._id}`}>Update</Link> </td>
         <td>
             <button className="text-red-700">delete</button>
         </td>

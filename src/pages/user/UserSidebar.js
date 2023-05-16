@@ -61,7 +61,12 @@ const UserSidebar = () => {
                         <h2 className="text-md font-semibold leading-6 text-gray-900">All Doctors</h2>
                     </Link>
                 </div>
-
+                <div className="flex mt-5">
+                    <AiOutlineEdit className="mt-1 w-20 h-5"></AiOutlineEdit>
+                    <Link to="/admin/create-nurse">
+                        <h2 className="text-md font-semibold leading-6 text-gray-900">Create Nurse</h2>
+                    </Link>
+                </div>
                 <div className="flex mt-5">
                     <AiOutlineEdit className="mt-1 w-20 h-5"></AiOutlineEdit>
                     <Link to="/admin/all-nurses">

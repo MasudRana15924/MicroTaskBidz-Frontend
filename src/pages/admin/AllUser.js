@@ -1,8 +1,16 @@
 import React from 'react';
+import { useDispatch} from 'react-redux';
+import { deleteUser } from '../../state/admin/delete/useDeleteSlice';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const AllUser = ({user}) => {
-    const{image,name,email}=user
+    const{_id,image,name,email}=user;
+    const dispatch = useDispatch();
+    const deleteUserHandler = (_id) => {
+        dispatch(deleteUser(_id));
+        toast.success('User Delete Successful');
+      };
     return (
 
         <tr>
@@ -19,10 +27,25 @@ const AllUser = ({user}) => {
             <td>{email} </td>
             <td>edit</td>
             <td>
-                <button className="text-red-700">delete</button>
+           <button  onClick={() =>
+                deleteUserHandler(_id)
+              }>delete</button>
             </td>
           
-
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
+            {/* Same as */}
+            <ToastContainer />
         </tr>
     
     

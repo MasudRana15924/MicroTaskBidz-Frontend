@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchDoctor } from '../../state/doctor/doctorSlice';
-import Loading from '../loader/Loading';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import UserSidebar from '../user/UserSidebar';
@@ -18,6 +17,22 @@ const UpdateDoctor = () => {
         (state) => state.userDetails
     );
     const userToken = loggeduser.token
+    useEffect(() => {
+        dispatch(fetchDoctor(doctorId));
+
+            // setName(doctor.name);
+            // setDegree(doctor.degree);
+            // setEmail(doctor.email);
+            // setGender(doctor.gender);
+            // setWork(doctor.work);
+            // setExpert(doctor.expert);
+            // setLocation(doctor.location);
+            // setGender(doctor.gender);
+            // setFees(doctor.fees);
+            // setPhone(doctor.phone);
+            // setOldImages(doctor.images);
+            // setDescription(doctor.description);
+    }, [dispatch,doctorId])
     const [oldImages, setOldImages] = useState([]);
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([]);
@@ -31,24 +46,8 @@ const UpdateDoctor = () => {
     const [location, setLocation] = useState("");
     const [fees, setFees] = useState("");
     const [description, setDescription] = useState("");
-    useEffect(() => {
-        dispatch(fetchDoctor(doctorId));
-        setName(doctor.name);
-        setDegree(doctor.degree);
-        setEmail(doctor.email);
-        setGender(doctor.gender);
-        setWork(doctor.work);
-        setExpert(doctor.expert);
-        setLocation(doctor.location);
-        setGender(doctor.gender);
-        setFees(doctor.fees);
-        setPhone(doctor.phone);
-        setOldImages(doctor.images);
-        setDescription(doctor.description);
-    }, [dispatch,doctorId,])
-    
 
-    const updateProductImagesChange = (e) => {
+    const updateDoctorImagesChange = (e) => {
         const files = Array.from(e.target.files);
         setImages([]);
         setImagesPreview([]);
@@ -126,7 +125,7 @@ const UpdateDoctor = () => {
                                         type="file"
                                         name="avatar"
                                         accept="image/*"
-                                        onChange={updateProductImagesChange}
+                                        onChange={updateDoctorImagesChange}
                                         multiple
                                         className="mt-3"
                                     />

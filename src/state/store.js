@@ -29,7 +29,9 @@ import  updateAppointmentSlice  from "./admin/update/updateAppointmentsSlice";
 import   fetchSingleAppointmentsSlice from "./admin/SingleAppointmentSlice";
 import createDoctorsSlice from "./admin/create/createDoctorsSlice";
 import  updateDoctorSlice  from "./admin/update/updateDoctorsSlice";
-
+import createNursesSlice from './admin/create/createNurseSlice'
+import updateNurseSlice from "./admin/update/updateNurseSlice";
+import deleteUsersSlice from './admin/delete/useDeleteSlice'
 
 
 const persistConfig = {
@@ -70,6 +72,9 @@ const rootReducer = combineReducers({
   updateAppointments:updateAppointmentSlice,
   createDoctors:createDoctorsSlice,
   updateDoctor:updateDoctorSlice,
+  createNurse:createNursesSlice,
+  updateNurse:updateNurseSlice,
+  deleteUser:deleteUsersSlice,
 
 });
 

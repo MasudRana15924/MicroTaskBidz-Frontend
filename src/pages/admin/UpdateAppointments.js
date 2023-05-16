@@ -16,7 +16,8 @@ const UpdateAppointments = ({appointment}) => {
     const patientname=appointment.patientname;
     const patientemail=appointment.patientemail
      const [bookingStatus, setStatus] = useState('');
-    const data={bookingStatus,doctorname,patientname,patientemail}
+    const data={bookingStatus,doctorname,patientname,patientemail};
+    // const data={bookingStatus}
     const handleCreate = (e) => {
         e.preventDefault();
             dispatch(fetchUpdateAppointment({
@@ -37,7 +38,7 @@ const UpdateAppointments = ({appointment}) => {
                                 <option  >Update Status</option>
                                 <option >Processing</option>
                                 <option >Confirmed </option>
-                                <option >Canceled </option>
+                                <option >Finished</option>
                             </select>                      
                     </div>
                     <button className="btn bg-violet-900 mt-5 h-12 w-full text-white font-semibold text-center mb-5">Book Appointment </button>

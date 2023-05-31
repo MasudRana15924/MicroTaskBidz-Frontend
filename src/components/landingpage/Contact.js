@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <div className='mt-16 lg:mt-40 mb-20'>
+        <div className=' lg:mt-40 mb-20 mt-40'>
             <div className="lg:flex lg:w-2/4 mx-auto">
                 <div className="card-body shadow m-5">
                     <div className="stat">
@@ -11,7 +11,7 @@ const Contact = () => {
 
                     </div>
                 </div>
-                <div className="card-body shadow lg:ml-10 mt-5 m-5">
+                <div className="hidden card-body shadow lg:ml-10 mt-5 m-5">
                     <div className="stat ">
                         <div className="">Email</div>
                         <p className="stat-value text-md ">mkmcarehos@gmail.com</p>

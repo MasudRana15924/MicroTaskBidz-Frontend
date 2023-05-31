@@ -36,7 +36,7 @@ const userToken = loggeduser.token
     <div className="p-10 bg-white mt-20 mb-20">
       <div className="max-w-full mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 gap-2">
-          <div className="w-3/4 lg:mx-auto text-end mt-20 mb-5">
+          <div className="hidden lg:block  w-3/4 lg:mx-auto text-end mt-20 mb-5">
             <UserSidebar></UserSidebar>
 
           </div>

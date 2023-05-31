@@ -43,12 +43,12 @@ const Nurses = () => {
     }
     return (
         <section id="#nurses" className="doctors-section pt-12 mb-10 mt-24">
-        <h1 className="text-center text-6xl">Our Best Nurses</h1>
+        <h1 className="text-center text-2xl lg:text-6xl">Our Best Nurses</h1>
         <div className="mt-10 ">
             {locations?.map((exp) => (
 
                 <button
-                    className="btn btn-xs ml-5 bg-violet-600 border-violet-600"
+                    className="btn btn-xs ml-5 mt-5 bg-violet-600 border-violet-600"
                     key={exp}
                     onClick={() => setLocation(exp)}
                 >

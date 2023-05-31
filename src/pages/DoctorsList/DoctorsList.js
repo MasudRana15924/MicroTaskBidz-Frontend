@@ -16,7 +16,7 @@ const DoctorsList = ({doctor}) => {
         precision: 0.5,
     };
     return (
-        <div className=" w-3/4 flex justify-between mt-5 border border-inherit">
+        <div className=" w-3/4 mx-auto lg:flex justify-between mt-5 border border-inherit">
             <div className="w-2/4 flex justify-between mt-5 mb-5 ">
                 <img
                     src={images[0].url}
@@ -48,7 +48,7 @@ const DoctorsList = ({doctor}) => {
             </div>
 
 
-            <div className=" text-start mr-10 mt-5 mb-5">
+            <div className="ml-10 lg:ml-0 text-start mr-10 mt-5 mb-5">
                 <p className="text-slate-600  text-md font-semibold" >
                     {work}
                 </p>

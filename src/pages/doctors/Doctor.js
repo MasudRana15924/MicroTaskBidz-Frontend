@@ -47,12 +47,12 @@ const Doctor = () => {
     return (
 
         <section className="doctors-section pt-12 mb-10 mt-10">
-            <h1 className="text-center text-6xl">Our Best Doctors</h1>
+            <h1 className="text-center text-4xl lg:text-6xl">Our Best Doctors</h1>
             <div className="mt-10 ">
                 {experts?.map((exp) => (
 
                     <button
-                        className="btn btn-xs ml-5 bg-violet-600 border-violet-600"
+                        className="btn btn-xs ml-5 mt-5 bg-violet-600 border-violet-600"
                         key={exp}
                         onClick={() => setExpert(exp)}
                     >

@@ -10,7 +10,7 @@ const Insurance = () => {
     return (
         <div className="mt-48 mb-24">
             <Insurances></Insurances>
-        <form action="" className="sm:w-full lg:w-2/4 mx-auto " >
+        <form action="" className="w-3/4 lg:w-2/4 mx-auto " >
             <div className=" mb-16 mt-16">
                 <div className="form-control lg:w-2/4 lg:mx-auto ">
                     <label className="label">

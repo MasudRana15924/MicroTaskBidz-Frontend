@@ -41,7 +41,7 @@ const MyBooking = () => {
         <div className="p-10 bg-white mt-32 mb-20">
         <div className="max-w-full mx-auto ">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2">
-                <div className="lg:w-8/12 lg:mx-auto text-end  mb-5">
+                <div className="hidden lg:block lg:w-8/12 lg:mx-auto text-end  mb-5">
                     <UserSidebar></UserSidebar>
                 </div>
                 <div>

@@ -61,9 +61,9 @@ const DoctorLis = () => {
 
     return (
         <div>
-            <div className="flex gap-4 mt-10 mb-20">
+            <div className="lg:flex gap-4 mt-10 mb-20">
 
-                <div className="w-2/4 mt-16 ">
+                <div className="lg:w-2/4 mt-16 ">
                     <div className="w-3/4 mx-auto">
                         <div className="form-control">
                             <label className="label w-3/4 mx-auto">
@@ -72,10 +72,10 @@ const DoctorLis = () => {
                             <input type="text" placeholder="Type here" className="input input-bordered w-3/4 mx-auto " />
                             
                         </div>
-                        <div className="border h-12 w-3/4 mx-auto mt-10">
+                        <div className="border h-12 w-full lg:w-3/4 lg:mx-auto mt-10">
                             <h2 className="font-semibold text-2xl mt-1 text-center ">Expert</h2>
                         </div>
-                        <div className="w-3/4 mx-auto ">
+                        <div className="hidden lg:block lg:w-3/4 lg:mx-auto ">
 
                             {experts?.map((exp) => (
 
@@ -90,7 +90,20 @@ const DoctorLis = () => {
                             ))}
 
                         </div>
-                        <div className="w-3/4 mx-auto">
+                        <div className="block lg:hidden lg:w-3/4 lg:mx-auto ">
+                            {experts?.map((exp) => (
+
+                                <button
+                                    className="btn btn-xs bg-violet-600 border-violet-600 ml-5 mt-5"
+                                    key={exp}
+                                    onClick={() => setExpert(exp)}
+                                >
+                                    {exp}
+                                </button>
+                            ))}
+                        </div>
+
+                        <div className="hidden w-3/4 mx-auto">
                             <div className="border rounded h-12 mt-5">
                                 <h2 className="font-semibold text-2xl mt-1 text-center ">Gender</h2>
                             </div>
@@ -108,7 +121,7 @@ const DoctorLis = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className="w-3/4 mx-auto">
+                        <div className="hidden w-3/4 mx-auto">
                             <div className="border rounded h-12 mt-5">
                                 <h2 className="font-semibold text-2xl mt-1 text-center">Locations</h2>
                             </div>

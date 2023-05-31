@@ -32,6 +32,7 @@ import  updateDoctorSlice  from "./admin/update/updateDoctorsSlice";
 import createNursesSlice from './admin/create/createNurseSlice'
 import updateNurseSlice from "./admin/update/updateNurseSlice";
 import deleteUsersSlice from './admin/delete/useDeleteSlice'
+import updateAvatarSlice from "./user/updateprofile/updateAvatarSlice";
 
 
 const persistConfig = {
@@ -75,6 +76,7 @@ const rootReducer = combineReducers({
   createNurse:createNursesSlice,
   updateNurse:updateNurseSlice,
   deleteUser:deleteUsersSlice,
+  updateAvatar:updateAvatarSlice,
 
 });
 

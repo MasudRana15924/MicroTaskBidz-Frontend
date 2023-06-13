@@ -1,30 +1,18 @@
 import axios from "axios";
 import { api } from "../../config/index";
-
-
-export const getFilterDoctors = async (expert,gender,location) => {
-    let link=`${api}/doctors`;
-    if(expert){
-        link=`${api}/doctors?expert=${expert}`
+export const getFilterDoctors = async (experts,search) => {
+    let queryString='';
+    if(experts?.length > 0){
+     queryString +=experts.map(tag=>`expert=${tag}`).join("&");
     }
-    if(gender){
-        link=`${api}/doctors?gender=${gender}`
+    if(search !== ''){
+     queryString += `&q=${search}`;
     }
-    if(location){
-        link=`${api}/doctors?location=${location}`
-    }
-    
-    const response = await axios.get(link);
-    return response.data;
+     const response = await axios.get(`${api}/doctors/?${queryString}`);
+     return response.data;
 }
 export const getFilterNurses = async (expert,gender,location) => {
     let link=`${api}/get/nurses`;
-    // if(expert){
-    //     link=`${api}/doctors?expert=${expert}`
-    // }
-    // if(gender){
-    //     link=`${api}/doctors?gender=${gender}`
-    // }
     if(location){
         link=`${api}/get/nurses?location=${location}`
     }

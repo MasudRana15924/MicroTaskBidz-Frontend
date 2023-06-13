@@ -1,10 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+// import { getDoctors } from '../../utilities/apiCaller';
 import { publicGet } from '../../utilities/apiCaller';
 
 export const fetchDoctors = createAsyncThunk(
     'doctors/fetchDoctors',
     async () => {
         const doctors = await publicGet('/doctors');
+        // const doctors = await getDoctors();
         return doctors;
     }
 );

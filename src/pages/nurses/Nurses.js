@@ -6,11 +6,11 @@ import { fetchFilterNurses } from '../../state/nurses/nursesSlices';
 import Loading from '../loader/Loading';
 import Nurse from './Nurse';
 const locations = [
-  "Uttara",
-  "Dhanmondi",
-  "Mirpur",
-  "Banani",
-  "Gulshan"
+    "Uttara",
+    "Dhanmondi",
+    "Mirpur",
+    "Banani",
+    "Gulshan"
 ];
 const Nurses = () => {
     const [location, setLocation] = useState("");
@@ -43,31 +43,33 @@ const Nurses = () => {
     }
     return (
         <section id="#nurses" className="doctors-section pt-12 mb-10 mt-24">
-        <h1 className="text-center text-2xl lg:text-6xl">Our Best Nurses</h1>
-        <div className="mt-10 ">
-            {locations?.map((exp) => (
+            <div className="flex justify-between w-3/4 mx-auto ">
+                <h1 className="text-center text-4xl lg:text-3xl">Our Best Nurses</h1>
+                <div >
+                    {locations?.map((exp) => (
 
-                <button
-                    className="btn btn-xs ml-5 mt-5 bg-violet-600 border-violet-600"
-                    key={exp}
-                    onClick={() => setLocation(exp)}
-                >
-                    {exp}
-                </button>
-            ))}
-        </div>
-        <div
-            className="grid grid-cols-12 gap-4  w-3/4 mx-auto  lg:px-0 min-h-[300px] mt-28 " >
-            {content}
-
-            <div className="col-span-12 ">
-                {visible && (nurses?.length > 0 && (
-                    <button onClick={loadMore} className="btn bg-violet-600 border-violet-600 mx-auto mt-5 mb-10">Load More</button>
-                ))
-                }
+                        <button
+                        className="btn btn-xs ml-5 bg-white text-sm font-semibold leading-6 text-black hover:bg-slate-50"
+                            key={exp}
+                            onClick={() => setLocation(exp)}
+                        >
+                            {exp}
+                        </button>
+                    ))}
+                </div>
             </div>
-        </div>
-    </section>
+            <div
+                className="grid grid-cols-12 gap-4  w-3/4 mx-auto  lg:px-0 min-h-[300px] mt-28 " >
+                {content}
+
+                <div className="col-span-12 ">
+                    {visible && (nurses?.length > 0 && (
+                        <button onClick={loadMore} className="btn btn-sm bg-violet-600 border-violet-600 mx-auto mt-5 mb-10">Load More</button>
+                    ))
+                    }
+                </div>
+            </div>
+        </section>
     );
 };
 

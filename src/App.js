@@ -43,6 +43,7 @@ import UpdateDoctor from './pages/doctors/UpdateDoctor';
 import ForgotPass from './pages/user/password/ForgotPass';
 import CreateNurse from './pages/nurses/CreateNurse';
 import UpdateNurses from './pages/nurses/UpdateNurses';
+import BookAppointment from './components/doctor/BookAppointment';
 // import ForgotPassword from './pages/user/Forgotpassword';
 
 
@@ -78,6 +79,7 @@ function App() {
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
+            <Route path="book-appointment" element={<BookAppointment/>}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/insurance" element={<Insurance />}></Route>

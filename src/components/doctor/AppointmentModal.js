@@ -3,13 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createAppointments } from '../../state/appointments/appointmentsSlice';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const AppointmentModal = ({ doctor }) => {
+    const navigate=useNavigate()
     const dispatch = useDispatch();
     const { token, loggeduser } = useSelector(
         (state) => state.userDetails
     );
+    const {appointment,GatewayPageURL } = useSelector(state => state.appointments.appointments);
     const userToken = loggeduser.token
     const [patientname, setPname] = useState('');
     const [patientemail, setEmail] = useState('');
@@ -24,20 +27,25 @@ const AppointmentModal = ({ doctor }) => {
     const data = ({ doctorname, doctorfees, doctorimage, doctorId, patientname, patientemail, patientgender, phone, date, schedule });
     const handleCreate = (e) => {
         e.preventDefault();
+       
+
         if (patientname && patientemail && patientgender && phone && date) {
             dispatch(createAppointments({
                 data, userToken
             }));
-            toast.success('Your appointment placed ', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-            });
+            // toast.success('Your appointment placed ', {
+            //     position: "top-right",
+            //     autoClose: 500,
+            //     hideProgressBar: false,
+            //     closeOnClick: true,
+            //     pauseOnHover: true,
+            //     draggable: true,
+            //     progress: undefined,
+            //     theme: "dark",
+            // });
+            // window.location.replace(GatewayPageURL)
+            navigate(GatewayPageURL)
+
         } else {
             toast.error('Please enter your details', {
                 position: "top-right",
@@ -51,7 +59,13 @@ const AppointmentModal = ({ doctor }) => {
             });
         }
     }
+    useEffect(() => {
 
+    
+        if (data) {
+          navigate(GatewayPageURL)
+        }
+      }, [data,navigate,GatewayPageURL]);
     return (
         <div >
             {
@@ -130,7 +144,7 @@ const AppointmentModal = ({ doctor }) => {
             }
             <ToastContainer
                 position="top-right"
-                autoClose={5000}
+                autoClose={500}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick

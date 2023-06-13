@@ -42,6 +42,7 @@ export const loginSlice = createSlice({
     builder.addCase(createLogin.rejected, (state, action) => {
       state.isLoading = false;
       state.errorMessage = action.payload;
+      // state.errorMessage = action.payload.response.data.messag;
     });
   },
 });

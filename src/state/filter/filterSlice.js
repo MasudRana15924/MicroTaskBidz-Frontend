@@ -3,8 +3,8 @@ import { getFilterDoctors } from './filterApi';
 
 export const fetchFilterDoctors = createAsyncThunk(
     'doctors/fetchfilterDoctors',
-    async ({expert,gender,location}) => {
-        const doctors = await getFilterDoctors(expert,gender,location);
+    async ({experts,search}) => {
+        const doctors = await getFilterDoctors(experts,search);
         return doctors;
     }
 );

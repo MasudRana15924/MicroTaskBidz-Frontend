@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import forgotPasswordSlice from '../../../state/user/forgotpassword/forgotPasswordSlice';
+import  {forgotPassword} from '../../../state/user/forgotpassword/forgotPasswordSlice';
 import { ToastContainer, toast } from 'react-toastify';
 
 
@@ -9,33 +9,11 @@ const ForgotPass = () => {
     const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const registerSubmit = (e) => {
-    e.preventDefault();
-    const data = ({ email });
-    if (data) {
-      dispatch(forgotPasswordSlice(data));
-      toast.success('Reset Password Email Send', {
-        position: "bottom-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      },
-      );
-    } else {
-      toast.error('Please Enter Email', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
-    }
+        e.preventDefault();
+       const data = ({email});
+      dispatch(forgotPassword(data));
+      toast.success('Reset Password Email Send');
+     
   }
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
@@ -46,7 +24,7 @@ const ForgotPass = () => {
   
               <div className="mb-4">
                 <input className="border border-gray-200 w-full h-10 rounded p-3" type="text" id="useremail"
-                  name="password"
+                  name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter Your Email"
@@ -60,7 +38,7 @@ const ForgotPass = () => {
         </div>
         <ToastContainer
           position="top-right"
-          autoClose={5000}
+          autoClose={500}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick

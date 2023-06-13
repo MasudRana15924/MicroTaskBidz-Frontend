@@ -12,12 +12,13 @@ export const forgotPassword = createAsyncThunk(
             return rejectWithValue(err);
         }
     }
+   
 );
 
 export const forgotPasswordSlice = createSlice({
     name: "forgotPassword",
     initialState: {
-        forgotPassword: [],
+        forgotpassword: [],
         isLoading: false,
         success: false,
         error: false,
@@ -31,7 +32,7 @@ export const forgotPasswordSlice = createSlice({
         builder.addCase(forgotPassword.fulfilled, (state, action) => {
             state.isLoading = false;
             state.error = null;
-            state.forgotPassword = action.payload.userId;
+            state.forgotpassword = action.payload.userId;
             state.success = true;
         });
         builder.addCase(forgotPassword.rejected, (state, action) => {

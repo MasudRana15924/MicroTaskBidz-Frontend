@@ -33,6 +33,8 @@ import createNursesSlice from './admin/create/createNurseSlice'
 import updateNurseSlice from "./admin/update/updateNurseSlice";
 import deleteUsersSlice from './admin/delete/useDeleteSlice'
 import updateAvatarSlice from "./user/updateprofile/updateAvatarSlice";
+import filterSlice from "./filter/filterReducer";
+import categorySlice from "./category/categorySlice";
 
 
 const persistConfig = {
@@ -57,7 +59,7 @@ const rootReducer = combineReducers({
   myAppointments:myAppointmentsSlice,
   updateProfile:updateProfileSlice,
   updatePassword:updatePasswordSlice,
-  forgotPassword:forgotPasswordSlice,
+  forgotpassword:forgotPasswordSlice,
   resetPassword:resetPasswordSlice,
   allAppointments:adminAllAppointmentsSlice,
   allDoctors:adminAllDoctorsSlice,
@@ -77,6 +79,8 @@ const rootReducer = combineReducers({
   updateNurse:updateNurseSlice,
   deleteUser:deleteUsersSlice,
   updateAvatar:updateAvatarSlice,
+  filter:filterSlice,
+  categories:categorySlice,
 
 });
 

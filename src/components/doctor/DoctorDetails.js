@@ -8,6 +8,7 @@ import Reviews from './Reviews';
 import AppointmentModal from './AppointmentModal';
 import { createreviews } from '../../state/doctor/reviewSlice';
 import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 
 const DoctorDetails = ({ doctor }) => {
@@ -76,8 +77,12 @@ const DoctorDetails = ({ doctor }) => {
                     <Rating {...options} size="small" className="mt-3" />
                     <p className="mt-3">({numOfReviews}) reviews</p>
                     <p className="mt-5 w-3/4 ">{description} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ipsa optio. Illo fugiat, vitae excepturi inventore architecto dolor mollitia in animi sit optio nisi dicta natus totam qui, provident aperiam! </p>
-                    <label for="appointment-modal" className=" border-0 btn bg-violet-700 mt-7  w-3/4 mx-auto mb-10">Take Appointment</label>
-                    <AppointmentModal doctor={doctor}></AppointmentModal>
+                    {/* <label for="appointment-modal" className=" border-0 btn bg-violet-700 mt-7  w-3/4 mx-auto mb-10">Take Appointment</label>
+                    <AppointmentModal doctor={doctor}></AppointmentModal> */}
+                    <Link to="/book-appointment">
+                      <button className=" border-0 btn bg-violet-700 mt-7  w-3/4 mx-auto mb-10">Take Appointment</button>
+                    
+                    </Link>
 
                 </div>
 

@@ -9,6 +9,7 @@ import Insurances from '../landingpage/Insurances';
 
 
 
+
 const Home = () => {
     return (
         <div id="home">
@@ -19,6 +20,7 @@ const Home = () => {
             <Blog></Blog>
             <Nurses></Nurses>
             <Insurances></Insurances>
+         
       
     
         </div>

@@ -99,13 +99,17 @@ const Header = () => {
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                
-                {
-                  token ? <Link to="/user-info" className="text-sm font-semibold leading-6 text-gray-900" >
-                    {user.name} <span aria-hidden="true">&rarr;</span>
-                </Link> :  <Link to="/user-signin" className="text-sm font-semibold leading-6 text-gray-900">
-                    Log in <span aria-hidden="true">&rarr;</span>
-                </Link>
-                }
+               
+                    {
+                        token ?
+                            <Link to="/user-info">
+                                <img src={user.avatar.url} alt="" className="h-8 w-8" />
+                                {/* <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p> */}
+                            </Link>
+                            : <Link to="/user-signin" className="text-sm font-semibold leading-6 text-gray-900">
+                                Log in <span aria-hidden="true">&rarr;</span>
+                            </Link>
+                    }
             </div>
         </nav>
         <ul className={active ? 'flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block bg-black text-white text-center ml-24 ' : 'hidden'}>

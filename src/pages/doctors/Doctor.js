@@ -37,7 +37,7 @@ const Doctor = () => {
 
         <section className="doctors-section pt-12 mb-10 mt-10">
             <div className="flex justify-between w-3/4 mx-auto ">
-                <h1 className="text-center text-4xl lg:text-6xl">Our Best Doctors</h1>
+                <h1 className="text-center text-4xl lg:text-3xl">Our Best Doctors</h1>
                <div>
                </div>
             </div>

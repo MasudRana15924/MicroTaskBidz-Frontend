@@ -18,8 +18,8 @@ const UserDetails = () => {
                     <div className="lg:w-8/12 gap-2 mt-32">
 
                         <div className="avatar mr-28">
-                            <div className="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <div className="w-32 rounded-full  ">
+                                <img src={user.avatar.url} alt=""/>
                             </div>
                         </div>
                         <div className="mt-12 w-3/4 mx-auto">

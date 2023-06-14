@@ -59,7 +59,7 @@ const DoctorLis = () => {
                     <div className="w-3/4 mx-auto ">
 
                         <div className="h-12 w-full lg:w-3/4 lg:mx-auto mt-5">
-                            <h2 className="font-semibold text-2xl mt-1 text-start lg:ml-64">Price</h2>
+                            <h2 className="font-semibold text-2xl mt-1 text-start lg:ml-64"> Fee</h2>
                         </div>
 
                         <div className="hidden lg:block lg:w-3/4 lg:mx-auto  ">

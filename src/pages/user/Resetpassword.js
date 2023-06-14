@@ -58,7 +58,7 @@ const Resetpassword = () => {
             <div className="w-full max-w-md">
                 <div className="bg-white rounded-lg shadow-lg p-8">
                     <h2 className="mt-5 mb-5 text-4xl font-medium  text-start ">Reset Password</h2>
-                    <form onSubmit={registerSubmit} className="mt-5 mb-5">
+                    <form onSubmit={registerSubmit} className="mt-10 mb-10">
 
                         <div className="mb-4">
                             <input className="border border-gray-200 w-full h-10 rounded p-3" type="password" id="useremail"
@@ -69,7 +69,7 @@ const Resetpassword = () => {
                                 required
                             />
                         </div>
-                        <div className="mb-4">
+                        <div className="mb-10">
                             <input className="border border-gray-200 w-full h-10 rounded p-3" type="password" id="useremail"
                                 name="email"
                                 value={confirmPassword}
@@ -78,7 +78,7 @@ const Resetpassword = () => {
                                 required
                             />
                         </div>
-                        <button className=" text-white py-1 w-full rounded-md  font-semibold h-10 bg-violet-600" type="submit">Update</button>
+                        <button className=" text-white py-1 w-full  font-semibold h-10 bg-black" type="submit">Update</button>
 
                     </form>
                 </div>

@@ -20,10 +20,10 @@ const ForgotPass = () => {
         <div className="w-full max-w-md">
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="mt-5 mb-5 text-4xl font-medium  text-start ">Forgot Password</h2>
-            <form onSubmit={registerSubmit} className="mt-5 mb-5">
+            <form onSubmit={registerSubmit} className="mt-10 mb-10">
   
-              <div className="mb-4">
-                <input className="border border-gray-200 w-full h-10 rounded p-3" type="text" id="useremail"
+              <div className="mb-10">
+                <input className="border border-black w-full h-10 p-3" type="text" id="useremail"
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -31,7 +31,7 @@ const ForgotPass = () => {
                   required
                 />
               </div>
-              <button className=" text-white py-1 w-full rounded-md  font-semibold h-10 bg-gray-600" type="submit">Send</button>
+              <button className=" text-white py-1 w-full rounded-md  font-semibold h-10 bg-black" type="submit">Send</button>
   
             </form>
           </div>

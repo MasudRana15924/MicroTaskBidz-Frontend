@@ -11,6 +11,8 @@ const UserSignup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [agree, setAgree] = useState(false);
+  const [avatar, setAvatar] = useState("/Profile.png");
+  const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -23,27 +25,43 @@ const UserSignup = () => {
     myForm.set("name", name);
     myForm.set("email", email);
     myForm.set("password", password);
+    myForm.set("avatar", avatar);
     dispatch(createSignUp(myForm));
     toast.success('Please Verify Your Email', 
     );
   };
+  // const registerDataChange = (e) => {
+  //   setUser({
+  //     ...user,
+  //     [e.target.name]: e.target.value
+  //   });
+  // };
   const registerDataChange = (e) => {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value
-    });
+    if (e.target.name === "avatar") {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setAvatarPreview(reader.result);
+          setAvatar(reader.result);
+        }
+      };
+
+      reader.readAsDataURL(e.target.files[0]);
+    } else {
+      setUser({ ...user, [e.target.name]: e.target.value });
+    }
   };
- 
   return (
     <div>
 
       <div className="mt-5 lg:mt-0 flex flex-col items-center justify-center min-h-screen ">
         <div className="lg:w-3/12 ">
-          <img src={authImg} alt="" className="mx-auto " />
+         
           <form action="" className="space-y-6 py-6 " onSubmit={registerSubmit}>
             <div>
               <input
-                className="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-gray-400 focus:invalid:outline-none"
+                className="w-full py-3 px-6 border-2 border-black"
                 type="text"
                 name="name"
                 value={name}
@@ -54,7 +72,7 @@ const UserSignup = () => {
             </div>
             <div>
               <input
-                className="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-gray-400 focus:invalid:outline-none"
+                className="w-full py-3 px-6 border-2 border-black"
                 type="email"
                 name="email"
                 value={email}
@@ -65,7 +83,7 @@ const UserSignup = () => {
             </div>
             <div className="flex flex-col items-end">
               <input
-                className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-gray-400 focus:invalid:outline-none"
+                className="w-full py-3 px-6 border-2 border-black"
                 name="password"
                 value={password}
                 onChange={registerDataChange}
@@ -73,6 +91,15 @@ const UserSignup = () => {
                 required
               />
             </div>
+            <div >
+                  <img src={avatarPreview} alt="Avatar Preview" className="h-16 w-16"/>
+                  <input
+                    type="file"
+                    name="avatar"
+                    accept="image/*"
+                    onChange={registerDataChange}
+                  />
+                </div>
 
             <div className="flex items-center justify-between">
               <div className="flex items-center">
@@ -80,7 +107,7 @@ const UserSignup = () => {
                   id="agree"
                   name="agree"
                   type="checkbox"
-                  className="h-4 w-4 text-violet-700 focus:ring-violet-700 border-gray-300 rounded"
+                  className="h-4 w-4 text-violet-700 focus:ring-violet-700 border-gray-300 "
                   checked={agree}
                   onChange={(e) => setAgree(e.target.checked)}
                   required
@@ -94,10 +121,10 @@ const UserSignup = () => {
               </div>
             </div>
             <div>
-              <button className="w-full px-6 py-3 rounded-xl bg-violet-600 mb-5">
+              <button className="w-full px-6 py-3  bg-black mb-5">
                 <span className="font-semibold text-white text-lg">Signup</span>
               </button>
-              <span className="text-sm tracking-wide text-gray-400 mt-5">Already have a account ?</span> <Link to="/user-signin"><span className="text-violet-700">Please Login</span>
+              <span className="text-sm tracking-wide text-gray-400 mt-5">Already have a account ?</span> <Link to="/user-signin"><span className="text-sm font-semibold leading-6 text-gray-900">Please Login</span>
               </Link>
             </div>
             {/* {

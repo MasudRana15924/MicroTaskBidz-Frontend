@@ -54,13 +54,13 @@ const message=loggeduser.message
                 <div className="lg:w-3/12 ">
                     <div className="  p-8">
 
-                        <img src={authImg} alt="" className="mx-auto" />
+                      
 
 
                         <form action="" className="space-y-6 py-6 " onSubmit={registerSubmit}>
                             <div>
                                 <input
-                                    className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-gray-400 focus:invalid:outline-none"
+                                    className=" w-full py-3 px-6 border-2 border-black"
                                     type="email"
                                     name="email"
                                     value={email}
@@ -73,7 +73,7 @@ const message=loggeduser.message
 
                             <div className="flex flex-col items-end">
                                 <input
-                                    className=" w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400  "
+                                    className=" w-full py-3 px-6 border-2 border-black "
                                     type="password"
                                     name="password"
                                     value={password}
@@ -109,11 +109,11 @@ const message=loggeduser.message
                             </div>
 
                             <div>
-                                <button className="w-full px-6 py-3 rounded-xl bg-violet-600 mb-5">
+                                <button className="w-full px-6 py-3 bg-black mb-5">
                                     <span className="font-semibold text-white text-lg">Login</span>
                                 </button>
 
-                                <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/user-signup"> <span className="text-violet-700">Create new account</span>
+                                <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/user-signup"> <span className="text-sm font-semibold leading-6 text-gray-900">Create new account</span>
                                 </Link>
                             </div>
                         </form>

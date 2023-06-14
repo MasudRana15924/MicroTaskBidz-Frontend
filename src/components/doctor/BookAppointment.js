@@ -63,13 +63,13 @@ const BookAppointment = () => {
             {
                 token ? 
 
-                    <div  className="lg:w-2/4 mx-auto mt-40">
+                    <div  className="lg:w-1/4 mx-auto mt-48">
                         <h3 class="text-center text-3xl font-bold mb-5">Make an Appointment</h3>
                         <form action="" className="" onSubmit={handleCreate}>
                            
                                 <div>
                                     
-                                    <input type="text" value={patientname} onChange={(e) => setPname(e.target.value)} placeholder="Enter Patient Name" className="border border-gray-200 rounded w-3/4 p-2 h-12 mx-auto mt-5" />
+                                    <input type="text" value={patientname} onChange={(e) => setPname(e.target.value)} placeholder="Enter Patient Name" className="border border-gray-300 rounded w-3/4 p-2 h-12 mx-auto mt-5" />
                                 </div>
                                 <div>
                                    
@@ -101,7 +101,7 @@ const BookAppointment = () => {
                                     </select>
                                 </div>
                            
-                            <button className="btn bg-violet-900 mt-5 h-12 w-3/4  text-white font-semibold text-center mb-5">Book Appointment </button>
+                            <button className="btn bg-black mt-5 h-12 w-3/4  text-white font-semibold text-center mb-5">Book Appointment </button>
                         </form>
                     </div>
                  : <div>

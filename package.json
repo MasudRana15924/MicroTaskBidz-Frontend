@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fontsource/roboto": "^4.5.8",
+    "@kommunicate/kommunicate-chatbot-plugin": "^0.0.6",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.4",
     "@mui/styled-engine-sc": "^5.12.0",

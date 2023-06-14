@@ -41,7 +41,7 @@ export const privatePut = async (endpoint, token, body) => {
 
 export const privateAvatarPut = async (endpoint, token, body) => {
   // config.headers.Authorization = `${token}`;
-  const config = { headers: { "Content-Type": "multipart/form-data" } };
+  // const config = { headers: { "Content-Type": "multipart/form-data" } };
     config.headers.Authorization = `${token}`;
   const response = await axios.put(`${api}${endpoint}`, body, config);
   return response.data;
@@ -55,26 +55,3 @@ export const publicPut = async (endpoint, body) => {
   const response = await axios.put(`${api}${endpoint}`, body, config);
   return response.data;
 };
-
-// without search er api 
-// export const getDoctors = async (experts,search) => {
-   
-//     let queryString='';
-//    if(experts?.length > 0){
-//     queryString +=experts.map(tag=>`expert=${tag}`).join("&");
-//    }
-//    if(search !== ''){
-//     queryString += `&q=${search}`;
-//    }
-//     const response = await axios.get(`${api}/doctors/?${queryString}`);
-//     return response.data;
-
-// }
-
-
-
-// export const privateDelete = async (endpoint, token, body) => {
-//   config.headers.Authorization = `${token}`;
-//   const response = await axios.delete(`${api}${endpoint}`, body, config);
-//   return response.data;
-// };

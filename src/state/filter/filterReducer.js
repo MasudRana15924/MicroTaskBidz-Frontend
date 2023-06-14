@@ -3,6 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     // tags gula 
     experts: [],
+    fees:[],
+    genders:[],
+    ratingss:[],
     search: "",
 }
 
@@ -14,11 +17,40 @@ const filterSlice = createSlice({
             state.experts.push(action.payload);
         },
         expertRemoved: (state, action) => {
-            // tag ta cahe kina tai tags array te index ber korte hobe 
-            const indexToRemove = state.experts.indexOf(action.payload)
+            let indexToRemove;
+             indexToRemove = state.experts.indexOf(action.payload)
             if (indexToRemove !== -1) {
-                // jodi thake tahole ekta tag remove korbe
                 state.experts.splice(indexToRemove, 1)
+            }
+        },
+       feesSelected: (state, action) => {
+            state.fees.push(action.payload);
+        },
+        feesRemoved: (state, action) => {
+            let indexToRemove;
+             indexToRemove = state.fees.indexOf(action.payload)
+            if (indexToRemove !== -1) {
+                state.fees.splice(indexToRemove, 1)
+            }
+        },
+        genderSelected: (state, action) => {
+            state.genders.push(action.payload);
+        },
+        genderRemoved: (state, action) => {
+            let indexToRemove;
+             indexToRemove = state.genders.indexOf(action.payload)
+            if (indexToRemove !== -1) {
+                state.genders.splice(indexToRemove, 1)
+            }
+        },
+        ratingSelected: (state, action) => {
+            state.ratingss.push(action.payload);
+        },
+        ratingRemoved: (state, action) => {
+            let indexToRemove;
+             indexToRemove = state.ratingss.indexOf(action.payload)
+            if (indexToRemove !== -1) {
+                state.ratingss.splice(indexToRemove, 1)
             }
         },
         searched:(state,action)=>{
@@ -28,4 +60,4 @@ const filterSlice = createSlice({
 });
 
 export default filterSlice.reducer;
-export const {expertSelected,expertRemoved,searched}=filterSlice.actions
+export const {expertSelected,expertRemoved,feesSelected,feesRemoved,genderSelected,genderRemoved,ratingSelected,ratingRemoved,searched}=filterSlice.actions

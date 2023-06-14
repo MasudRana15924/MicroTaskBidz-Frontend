@@ -9,7 +9,7 @@ const FilterTag = ({title}) => {
 
     const isSelected =experts.includes(title) ? true : false
 
-    const style = isSelected ? 'text-slate-600 w-32 h-8  pt-1  text-start font-semibold  mt-3 lg:ml-64' : 'w-32 h-8  pt-1  text-start font-semibold text-slate-600 mt-3 lg:ml-64'
+    const style = isSelected ? 'text-slate-600 w-32 h-8  pt-1  text-start font-semibold  mt-1 lg:ml-64' : 'w-32 h-8  pt-1  text-start font-semibold text-slate-600 mt-1 lg:ml-64'
     const handleSelect = () => {
         if (isSelected) {
              dispatch(expertRemoved(title));

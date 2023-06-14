@@ -35,6 +35,9 @@ import deleteUsersSlice from './admin/delete/useDeleteSlice'
 import updateAvatarSlice from "./user/updateprofile/updateAvatarSlice";
 import filterSlice from "./filter/filterReducer";
 import categorySlice from "./category/categorySlice";
+import feesSlice from "./category/feesSlice";
+import  gendersSlice  from "./category/genderSlice";
+import ratingsSlice from "./category/ratingsSlice";
 
 
 const persistConfig = {
@@ -81,6 +84,9 @@ const rootReducer = combineReducers({
   updateAvatar:updateAvatarSlice,
   filter:filterSlice,
   categories:categorySlice,
+  fees:feesSlice,
+  genders:gendersSlice,
+  ratings:ratingsSlice,
 
 });
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRatings } from '../../state/category/ratingsSlice';
-import Rating from './Rating';
+import Ratingg from './Rating';
 
 const Ratings = () => {
     const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const Ratings = () => {
     }, [dispatch])
     return (
         <div>
-            {ratings?.map((rating)=><Rating key={rating._id} title={rating.title}></Rating>)}
+            {ratings?.map((rating)=><Ratingg key={rating._id} title={rating.title}></Ratingg>)}
         </div>
     );
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ratingRemoved, ratingSelected } from '../../state/filter/filterReducer';
-
-const Rating = ({title}) => {
+import Rating from '@mui/material/Rating';
+const Ratingg = ({title}) => {
     const dispatch = useDispatch();
     const { ratingss } = useSelector(state => state.filter)
 
@@ -16,16 +16,23 @@ const Rating = ({title}) => {
              dispatch(ratingSelected(title));
         }
     }
+
+    const options = {
+        size: "small",
+        value: title,
+        readOnly: true,
+        precision: 0.5,
+    };
     return (
         <div>
-
-            <p className={style} onClick={handleSelect}>
-                <input type="checkbox" className="mr-3" />
-                {title}
+          
+            <p className={style} onClick={handleSelect} >
+                <input type="checkbox" className="mr-3 absolute mt-2" />
+                <Rating {...options} size="sm" className="ml-5" />
 
             </p>
         </div>
     );
 };
 
-export default Rating;
+export default Ratingg;

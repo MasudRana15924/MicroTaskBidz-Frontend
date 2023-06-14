@@ -44,6 +44,7 @@ import ForgotPass from './pages/user/password/ForgotPass';
 import CreateNurse from './pages/nurses/CreateNurse';
 import UpdateNurses from './pages/nurses/UpdateNurses';
 import BookAppointment from './components/doctor/BookAppointment';
+import Blood from './components/landingpage/Blood';
 // import ForgotPassword from './pages/user/Forgotpassword';
 
 
@@ -99,6 +100,7 @@ function App() {
             <Route path="/admin/all-hired-nurses" element={<PrivateRoute><HiredNurses /></PrivateRoute>}></Route>
             <Route path="/admin-dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
             <Route path="/admin/alluser" element={<PrivateRoute><AllUsers/></PrivateRoute>}></Route>
+            <Route path="/bloods" element={<Blood></Blood>}></Route>
           </Routes>
 
           <Footer></Footer>

@@ -5,10 +5,8 @@ import './User.css'
 import { createSignUp } from '../../state/user/signupSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import authImg from '../../images/auth.png'
-import { useEffect } from 'react';
+
 const UserSignup = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [agree, setAgree] = useState(false);
   const [avatar, setAvatar] = useState("/Profile.png");
@@ -30,12 +28,6 @@ const UserSignup = () => {
     toast.success('Please Verify Your Email', 
     );
   };
-  // const registerDataChange = (e) => {
-  //   setUser({
-  //     ...user,
-  //     [e.target.name]: e.target.value
-  //   });
-  // };
   const registerDataChange = (e) => {
     if (e.target.name === "avatar") {
       const reader = new FileReader();
@@ -57,7 +49,7 @@ const UserSignup = () => {
 
       <div className="mt-5 lg:mt-0 flex flex-col items-center justify-center min-h-screen ">
         <div className="lg:w-3/12 ">
-         
+        <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Welcome to Register</h2>
           <form action="" className="space-y-6 py-6 " onSubmit={registerSubmit}>
             <div>
               <input
@@ -92,7 +84,7 @@ const UserSignup = () => {
               />
             </div>
             <div >
-                  <img src={avatarPreview} alt="Avatar Preview" className="h-16 w-16"/>
+                  <img src={avatarPreview} alt="Avatar Preview" className="h-16 w-16 mb-5 border rounded-full"/>
                   <input
                     type="file"
                     name="avatar"

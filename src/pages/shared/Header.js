@@ -28,48 +28,9 @@ const Header = () => {
         setActive(!active)
     }
     return (
-        // <header className="header">
-        //     <div className="flex items-center justify-between xl:max-w-7xl xl:mx-auto max-w-full px-[5%] flex-wrap w-full">
-        //         <Link to="/" className="flex">
-        //             <img src={logo} alt="" className="logo" />
-        //             <p className="mt-3 font-semibold text-indigo-600">MKM HealthBridge</p>
-        //         </Link>
-
-        //         <FiMenu className="lg:hidden block h-10 w-10 cursor-pointer "
-        //             onClick={() => setOpen(!open)}
-        //         />
-
-        //         <nav className={`${open ? "hidden" : "hidden"} w-full lg:flex lg:items-center lg:w-auto`}>
-        //             <ul className="text-base lg:flex lg:justify-between">
-        //                 <li>
-        //                     <Link to="/" className="text-indigo-600 px-5 py-2 hover:text-blue-200 font-semibold block">Home</Link>
-        //                 </li>
-        //                 <li>
-        //                     <Link to="/about" className="text-indigo-600  px-5 py-2 hover:text-blue-200 font-semibold block">About</Link>
-        //                 </li>
-        //                 <li>
-        //                     <Link to="/contact" className="text-indigo-600 px-5 py-2 hover:text-blue-200 font-semibold block">Contact Us</Link>
-        //                 </li>
-        //                 <li>
-        //                     <Link to="/doctors" className="text-indigo-600  px-5 py-2 hover:text-blue-200 font-semibold block">Doctors</Link>
-        //                 </li>
-
-        //                 {
-        //                     token ? <Link to="/user-info" className="text-indigo-600  px-5 py-2 hover:text-blue-200 font-semibold block">{user.name}</Link> : <li>
-        //                         <Link to="/user-signin" className="text-indigo-600  px-5 py-2 hover:text-blue-200 font-semibold block">Login</Link>
-        //                     </li>
-        //                 }
-
-        //             </ul>
-        //         </nav>
-              
-
-        //     </div>
-        // </header>
         <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex lg:flex-1">
-
                 <img
                     className="h-8 w-auto"
                     src={logo}
@@ -84,9 +45,7 @@ const Header = () => {
                     onClick={showMenu}
                 >
                     <span className="sr-only">Open main menu</span>
-                    {/* <Bars3Icon className="h-6 w-6" aria-hidden="true" /> */}
                     <FiMenu className="lg:hidden block h-10 w-10 cursor-pointer "
-
                     />
                 </button>
             </div>
@@ -98,8 +57,6 @@ const Header = () => {
                 ))}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-               
-               
                     {
                         token ?
                             <Link to="/user-info">
@@ -112,54 +69,63 @@ const Header = () => {
                     }
             </div>
         </nav>
-        <ul className={active ? 'flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block bg-black text-white text-center ml-24 ' : 'hidden'}>
+        <ul className={active ? 'border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block bg-white text-black text-start ml-24 ' : 'hidden'}>
             <div className="grid grid-cols-2 md:gap-96">
-                <MdCancelPresentation className="text-5xl" onClick={showMenu}></MdCancelPresentation>
-                <p onClick={showMenu} className="mt-3 ">Cancel</p>
+                <MdCancelPresentation className="text-4xl ml-5" onClick={showMenu}></MdCancelPresentation>
+               
             </div>
             <li>
-                <Link to="/" className="text-white px-5 py-2  font-semibold block">Home</Link>
+                <Link to="/" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>Home</Link>
             </li>
             <li>
-                <Link to="/about" className="text-white px-5 py-2  font-semibold block ">About</Link>
+                <Link to="/about" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>About</Link>
             </li>
             <li>
-                <Link to="/contact" className="text-white px-5 py-2 font-semibold block">Contact Us</Link>
+                <Link to="/contact" className="leading-6 text-gray-900 px-5 py-2 font-semibold block" onClick={showMenu}>Contact Us</Link>
             </li>
             <li>
-                <Link to="/doctors" className="text-white px-5 py-2  font-semibold block ">Doctors</Link>
+                <Link to="/doctors" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>Doctors</Link>
+            </li>
+            <li>
+                <Link to="/nurses" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>Nurses</Link>
+            </li>
+            <li>
+                <Link to="/insurance" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>Insurance</Link>
+            </li>
+            <li>
+                <Link to="/bloods" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>Bloods</Link>
             </li>
 
             {
                token ? <div>
                    <li>
-                    <Link to="/user-info" className="text-white px-5 py-2  font-semibold block">
+                    <Link to="/user-info" onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2  font-semibold block">
                         My Profile
                     </Link>
                     </li>
                     <li>
-                    <Link to="/user/updateinfo" className="text-white px-5 py-2 mt-5 font-semibold block">
+                    <Link to="/user/updateinfo" onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2 mt-5 font-semibold block">
                         Update Profile
                     </Link>
                     </li>
                     <li>
-                    <Link to="/user/change/password" className="text-white px-5 py-2 mt-5 font-semibold block">
+                    <Link to="/user/change/password"onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2 mt-5 font-semibold block">
                         Change Password
                     </Link>
                     </li>
                   <li>
-                  <Link to="/my-booking" className="text-white px-5 py-2 mt-5 font-semibold block">
+                  <Link to="/my-booking"onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2 mt-5 font-semibold block">
                         My Booking
                     </Link>
                   </li>
                     <li>
-                    <Link to="/chat" className="text-white px-5 py-2 mt-5 font-semibold block">
+                    <Link to="/chat"onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2 mt-5 font-semibold block">
                         Chat
                     </Link>
                     </li>
-                    <button className="btn bg-black border-black hover:bg-black w-full mx-auto mt-72">Logout as {user.name}</button>
+                    <button onClick={showMenu} className="btn  bg-black border-black hover:bg-black w-full mx-auto mt-72">Logout as {user.name}</button>
                 </div> : <li>
-                    <Link to="/user-signin" className="text-white px-5 py-2  font-semibold block">Login</Link>
+                    <Link to="/user-signin" onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2  font-semibold block">Login</Link>
                 </li>
             }
         </ul>

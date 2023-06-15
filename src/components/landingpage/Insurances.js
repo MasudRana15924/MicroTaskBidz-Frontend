@@ -7,12 +7,12 @@ const Insurances = () => {
  
   
     return (
-        <div className="blogs mt-48 mb-10">
-            <p className="text-4xl font-bold pt-12">The importance of health insurance </p>
+        <div className="blogs  md:mt-48 lg:mt-48 mb-10">
+            <p className="text-2xl md:text-4xl lg:text-4xl font-bold pt-12">The importance of health insurance </p>
             <div className="w-3/4 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 ">
-                <div className="mt-20 mb-20">
+                <div className="mt-5 lg:mt-20 lg:mb-20 md:mt-20 md:mb-20">
                     <div className=" bg-white">
-                        <img src={fight} alt="find" className="h-48 w-3/4 mx-auto pt-5" />
+                        <img src={fight} alt="find" className=" h-40 md:h-48 lg:h-48 w-3/4 mx-auto pt-5" />
                         <div className="card-body text-center">
                             <h2 className="text-center text-2xl font-semibold ">
                             To fight lifestyle diseases
@@ -22,9 +22,9 @@ const Insurances = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-20 mb-20">
+                <div className="lg:mt-20 lg:mb-20 md:mt-20 md:mb-20">
                     <div className=" bg-white">
-                    <img src={family} alt="find" className="h-48 w-3/4 mx-auto pt-5" />
+                    <img src={family} alt="find" className=" h-40 md:h-48 lg:h-48  w-3/4 mx-auto pt-5" />
                         <div className="card-body">
                             <h2 className="text-center text-2xl font-semibold ">
                             To safeguard your family 
@@ -35,9 +35,9 @@ const Insurances = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-20 mb-20">
+                <div className="lg:mt-20 lg:mb-20 md:mt-20 md:mb-20">
                     <div className=" bg-white">
-                    <img src={savings} alt="find" className="h-48 w-3/4 mx-auto pt-5" />
+                    <img src={savings} alt="find" className=" h-40 md:h-48 lg:h-48  w-3/4 mx-auto pt-5" />
                         <div className="card-body">
                             <h2 className="text-center text-2xl font-semibold">
                             To protect your savings

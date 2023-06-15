@@ -4,7 +4,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './User.css'
 import { useDispatch, useSelector } from 'react-redux';
-import authImg from '../../images/auth.png'
 import { createLogin } from '../../state/user/Login/loginSlice';
 
 
@@ -12,10 +11,10 @@ const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [agree, setAgree] = useState(false);
-    const { token,loggeduser} = useSelector(
+    const { token, loggeduser } = useSelector(
         (state) => state.userDetails
     );
-const message=loggeduser.message
+    const message = loggeduser.message
     const [users, setUser] = useState({
         email: "",
         password: "",
@@ -27,8 +26,8 @@ const message=loggeduser.message
         myForm.set("email", email);
         myForm.set("password", password);
         dispatch(createLogin(myForm));
-        if(token){
-            toast.info('Login Succesfull'); 
+        if (token) {
+            toast.info('Login Succesfull');
         }
     };
     const registerDataChange = (e) => {
@@ -39,24 +38,19 @@ const message=loggeduser.message
     };
     useEffect(() => {
         if (token) {
-           
+
             navigate('/');
-         
-        }else{
-            toast.info(message); 
+
+        } else {
+            toast.info(message);
         }
-    }, [token, navigate,message]);
+    }, [token, navigate, message]);
     return (
         <div>
-
             <div className=" flex flex-col items-center justify-center min-h-screen">
-
                 <div className="lg:w-3/12 ">
-                    <div className="  p-8">
-
-                      
-
-
+                    <div className=" p-8">
+                        <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Welcome to Login</h2>
                         <form action="" className="space-y-6 py-6 " onSubmit={registerSubmit}>
                             <div>
                                 <input
@@ -103,7 +97,7 @@ const message=loggeduser.message
                                 <div>
                                     <Link to="/user/password">
 
-                                        <span className="text-sm tracking-wide text-violet-700 mt-5">Forgot password ?</span>
+                                        <span className="text-sm tracking-wide text-blue-700 mt-5">Forgot password ?</span>
                                     </Link>
                                 </div>
                             </div>

@@ -42,14 +42,14 @@ const Nurses = () => {
         content = nurses.slice(0, visible).map(nurse => <Nurse key={nurse._id} nurse={nurse} />)
     }
     return (
-        <section id="#nurses" className="doctors-section pt-12 mb-10 mt-24">
-            <div className="flex justify-between w-3/4 mx-auto ">
-                <h1 className="text-center text-4xl lg:text-3xl">Our Best Nurses</h1>
+        <section id="#nurses" className="doctors-section pt-12 mb-10 md:mt-24 lg:mt-24">
+            <div className=" md:flex lg:flex justify-between md:w-3/4 lg:w-3/4 mx-auto ">
+                <h1 className="font-bold text-2xl md:text-2xl lg:text-3xl">Our Best Nurses</h1>
                 <div >
                     {locations?.map((exp) => (
 
                         <button
-                        className="btn btn-xs ml-5 bg-white text-sm font-semibold leading-6 text-black hover:bg-slate-50"
+                        className="btn btn-xs mt-5 lg:mt-0 md:mt-0 ml-1 md:ml-5 lg:ml-5 bg-white text-sm font-semibold leading-6 text-black hover:bg-slate-50"
                             key={exp}
                             onClick={() => setLocation(exp)}
                         >
@@ -59,7 +59,7 @@ const Nurses = () => {
                 </div>
             </div>
             <div
-                className="grid grid-cols-12 gap-4  w-3/4 mx-auto  lg:px-0 min-h-[300px] mt-28 " >
+                className="grid grid-cols-12 gap-4  w-3/4 mx-auto  lg:px-0 min-h-[300px] mt-10 md:mt-16 lg:mt-16 " >
                 {content}
 
                 <div className="col-span-12 ">

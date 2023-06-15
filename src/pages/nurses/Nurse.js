@@ -11,7 +11,7 @@ const Nurse = ({nurse}) => {
         precision: 0.5,
     };
     return (
-        <div className="bg-white border col-span-12 sm:col-span-6 md:col-span-3">
+        <div className="bg-white border col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 ">
         <div className="w-full flex flex-col ">
             <div className="relative">
                 <Link to={`/nurse/${nurse._id}`}>
@@ -37,10 +37,18 @@ const Nurse = ({nurse}) => {
                 </div>
                
             </div>
-            <div className="flex justify-between ml-5 mb-5">
+            <div className="hidden lg:flex lg:justify-between ml-5 mb-5">
             <p className=""><Rating {...options} size="medium" className=""/>({ratings})</p>
             <Link to={`/nurse/${nurse._id}`} >
             <button className="h-8 mr-5  border border-violet-400 text-xs pl-1 pr-1">VIEW PROFILE</button>
+            </Link>
+            </div>
+
+            {/* for small devicess */}
+            <div className="lg:hidden mb-5">
+            <Rating {...options} size="small" className="mr-12"/>
+            <Link to={`/nurse/${nurse._id}`} >
+            <button className=" w-3/4 mx-auto h-8   border border-violet-400 text-xs pl-1 pr-1">VIEW PROFILE</button>
             </Link>
             </div>
 

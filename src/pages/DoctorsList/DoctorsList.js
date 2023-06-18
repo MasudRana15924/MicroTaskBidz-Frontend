@@ -16,14 +16,14 @@ const DoctorsList = ({doctor}) => {
         precision: 0.5,
     };
     return (
-        <div className=" w-3/4  lg:flex justify-between mt-5 border border-inherit">
-            <div className="w-2/4 flex justify-between mt-5 mb-5 ">
+        <div className="w-3/4 mx-auto lg:flex justify-between mt-5 border border-inherit">
+            <div className=" md:w-2/4 lg:w-2/4  md:flex lg:flex justify-between mt-5 mb-5 ">
                 <img
                     src={images[0].url}
-                    className="w-2/4 max-h-48 ml-5"
+                    className="w-3/4 mx-auto md:w-2/4 lg:w-2/4 max-h-48 ml-5"
                     alt={name}
                 />
-                <div className=" w-full text-start ml-3">
+                <div className=" w-full text-start ml-12 lg:ml-3 md:ml-3">
                     <div className="flex mt-3">
                         <p className="font-semibold"> {name} </p>
                         <GoPrimitiveDot className="text-green-600"></GoPrimitiveDot>

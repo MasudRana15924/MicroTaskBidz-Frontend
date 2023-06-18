@@ -5,7 +5,6 @@ import Rating from '@mui/material/Rating';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Reviews from './Reviews';
-import AppointmentModal from './AppointmentModal';
 import { createreviews } from '../../state/doctor/reviewSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';

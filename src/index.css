@@ -64,6 +64,7 @@ code {
   font: 300 0.7vmax "Roboto";
   color: rgb(80, 80, 80);
   transition: all 0.3s;
+
 }
 
 .page-item:hover {
@@ -115,7 +116,6 @@ code {
   width:60px;
   
 }
-
 
 
 

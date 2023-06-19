@@ -38,7 +38,7 @@ const Doctor = () => {
 
         <section className="doctors-section pt-12 mb-10 mt-10">
             <div className="flex justify-between w-3/4 mx-auto ">
-                <h1 className=" font-bold text-4xl lg:text-3xl ">Our Best Doctors</h1>
+                <h1 className="text-start font-bold text-4xl lg:text-3xl ">Our Best Doctors</h1>
             </div>
             <div
                 className="grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0 min-h-[300px] mt-10 md:mt-16 lg:mt-16 " >

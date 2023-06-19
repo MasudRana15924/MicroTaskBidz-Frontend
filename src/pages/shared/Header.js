@@ -4,8 +4,9 @@ import { FiMenu } from 'react-icons/fi'
 import './Shared.css'
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {RxCross1} from "react-icons/rx";
+import { logout } from '../../state/user/Login/loginSlice';
 
 
 const navigation = [
@@ -19,7 +20,7 @@ const navigation = [
 ]
 
 const Header = () => {
-
+    const dispatch = useDispatch();
     const { token, loggeduser } = useSelector(
         (state) => state.userDetails
     );
@@ -127,7 +128,7 @@ const Header = () => {
                             </Link>
                         </li>
                       
-                        <button onClick={showMenu} className="btn  bg-black border-black hover:bg-black w-full mx-auto mt-32">Logout as {user.name}</button>
+                        <button  className="btn  bg-black border-black hover:bg-black w-full mx-auto mt-32" onClick={() => dispatch(logout())}>Logout as {user.name}</button>
                     </ul> : <li>
                         <Link to="/user-signin" onClick={showMenu} className="text-sm  text-gray-900 px-5 py-2 font-semibold  block">Login</Link>
                     </li>

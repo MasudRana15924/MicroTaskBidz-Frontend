@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Rating from '@mui/material/Rating';
 import {  FaRegMoneyBillAlt } from "react-icons/fa";
 const Nurse = ({nurse}) => {
-    const { name,expert, degree,fees,ratings,images } = nurse;
+    const { name,fees,ratings,images } = nurse;
     const options = {
         size: "large",
         value: ratings,
@@ -17,7 +17,7 @@ const Nurse = ({nurse}) => {
                 <Link to={`/nurse/${nurse._id}`}>
                     <img
                         src={images[0].url}
-                        className="w-full max-h-48"
+                        className="w-full h-48"
                         alt={name}
                     />
                 </Link>

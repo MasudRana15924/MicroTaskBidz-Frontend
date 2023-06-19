@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const UserSignup = () => {
   const dispatch = useDispatch();
+  const navigate=useNavigate()
   const [agree, setAgree] = useState(false);
   const [avatar, setAvatar] = useState("/Profile.png");
   const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
@@ -25,8 +26,10 @@ const UserSignup = () => {
     myForm.set("password", password);
     myForm.set("avatar", avatar);
     dispatch(createSignUp(myForm));
-    toast.success('Please Verify Your Email', 
+    toast.success('Account Create Successfully', 
     );
+    navigate('/user-signin');
+
   };
   const registerDataChange = (e) => {
     if (e.target.name === "avatar") {

@@ -14,6 +14,8 @@ const Login = () => {
     const { token, loggeduser } = useSelector(
         (state) => state.userDetails
     );
+   
+    const user = loggeduser.user
     const message = loggeduser.message
     const [users, setUser] = useState({
         email: "",
@@ -26,9 +28,10 @@ const Login = () => {
         myForm.set("email", email);
         myForm.set("password", password);
         dispatch(createLogin(myForm));
-        if (token) {
+        if(user){
             toast.info('Login Succesfull');
         }
+        
     };
     const registerDataChange = (e) => {
         setUser({
@@ -113,9 +116,10 @@ const Login = () => {
                         </form>
                     </div>
                 </div>
+
                 <ToastContainer
                     position="top-right"
-                    autoClose={5000}
+                    autoClose={500}
                     hideProgressBar={false}
                     newestOnTop={false}
                     closeOnClick
@@ -124,9 +128,11 @@ const Login = () => {
                     draggable
                     pauseOnHover
                     theme="light"
+                   
                 />
                 {/* Same as */}
                 <ToastContainer />
+      
 
             </div>
         </div>

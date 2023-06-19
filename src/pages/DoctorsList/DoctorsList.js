@@ -17,13 +17,13 @@ const DoctorsList = ({doctor}) => {
     };
     return (
         <div className="w-3/4 mx-auto lg:flex justify-between mt-5 border border-inherit">
-            <div className=" md:w-2/4 lg:w-2/4  md:flex lg:flex justify-between mt-5 mb-5 ">
+            <div className=" md:w-2/4 lg:w-2/4  md:flex lg:flex justify-between  mb-5 ">
                 <img
                     src={images[0].url}
-                    className="w-3/4 mx-auto md:w-2/4 lg:w-2/4 max-h-48 ml-5"
+                    className="w-full mx-auto md:w-2/4 lg:w-2/4 max-h-48 "
                     alt={name}
                 />
-                <div className=" w-full text-start ml-12 lg:ml-3 md:ml-3">
+                <div className=" w-full text-start ml-5 lg:ml-3 md:ml-3">
                     <div className="flex mt-3">
                         <p className="font-semibold"> {name} </p>
                         <GoPrimitiveDot className="text-green-600"></GoPrimitiveDot>
@@ -48,9 +48,9 @@ const DoctorsList = ({doctor}) => {
             </div>
 
 
-            <div className="ml-10 lg:ml-0 text-start mr-10 mt-5 mb-5">
+            <div className="ml-5 lg:ml-0 text-start mr-10 mt-5 mb-5">
                 <p className="text-slate-600  text-md font-semibold" >
-                    {work}
+                   Works at {work}
                 </p>
                 <p className="text-slate-600  text-md font-semibold flex gap-2 mt-2" >
                     < FaRegMoneyBillAlt className="text-2xl"></FaRegMoneyBillAlt>{fees}Tk

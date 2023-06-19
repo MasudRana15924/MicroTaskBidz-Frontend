@@ -47,7 +47,7 @@ const UpdateInfo = () => {
               <form onSubmit={registerSubmit}>
                 <div className="mb-2 ">
                   <p className="text-start text-sm text-blue-300 mt-5">What is your Name?</p>
-                  <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
+                  <input className="border border-gray-200 w-full h-10 rounded p-3 " type="text" id="username"
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -65,7 +65,7 @@ const UpdateInfo = () => {
                 </div>
                 <div className="mb-2 mt-5">
                 <p className="text-start text-sm text-blue-300 ">What is your Phone?</p>
-                  <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
+                  <input className="border border-gray-200 w-full h-10 rounded p-3 " type="text" id="username"
                     name="name"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}

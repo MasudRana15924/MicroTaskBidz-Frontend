@@ -5,8 +5,8 @@ import './Shared.css'
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useSelector } from 'react-redux';
-import { MdCancelPresentation } from "react-icons/md";
-import FilterTags from '../DoctorsList/FilterTags';
+import {RxCross1} from "react-icons/rx";
+
 
 const navigation = [
     { name: 'Home', to: '/home' },
@@ -33,12 +33,16 @@ const Header = () => {
         <header className="absolute inset-x-0 top-0 z-50">
             <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
-                    <img
-                        className="h-8 w-auto"
-                        src={logo}
-                        alt=""
-                    />
-                    <p className="text-sm font-semibold leading-6 text-gray-900">MKM HealthBridge</p>
+                    <Link to="/">
+                        <img
+                            className="h-8 w-auto"
+                            src={logo}
+                            alt=""
+                        />
+                    </Link>
+                    <Link to="/">
+                        <p className="text-sm font-semibold leading-6 text-gray-900">MKM HealthBridge</p>
+                    </Link>
                 </div>
                 <div className="flex lg:hidden">
                     <button
@@ -71,64 +75,61 @@ const Header = () => {
                     }
                 </div>
             </nav>
+            {/* for small devices */}
             <ul className={active ? '  border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block bg-white text-black text-start ml-24 ' : 'hidden'}>
                 <div className="grid grid-cols-2 md:gap-96">
-                    <MdCancelPresentation className="text-4xl ml-5" onClick={showMenu}></MdCancelPresentation>
+                    <RxCross1 className="text-xl ml-5 mt-5" onClick={showMenu}></RxCross1>
 
                 </div>
                 <li>
-                    <Link to="/" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>Home</Link>
+                    <Link to="/" className=" text-sm  text-gray-900 px-5 py-2 font-semibold  block " onClick={showMenu}>Home</Link>
                 </li>
                 <li>
-                    <Link to="/about" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>About</Link>
+                    <Link to="/about" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>About</Link>
                 </li>
                 <li>
-                    <Link to="/contact" className="leading-6 text-gray-900 px-5 py-2 font-semibold block" onClick={showMenu}>Contact Us</Link>
+                    <Link to="/contact" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>Contact Us</Link>
                 </li>
                 <li>
-                    <Link to="/doctors" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>Doctors</Link>
+                    <Link to="/doctors" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block " onClick={showMenu}>Doctors</Link>
                 </li>
                 <li>
-                    <Link to="/nurses" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>Nurses</Link>
+                    <Link to="/nurses" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>Nurses</Link>
                 </li>
                 <li>
-                    <Link to="/insurance" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>Insurance</Link>
+                    <Link to="/insurance" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block " onClick={showMenu}>Insurance</Link>
                 </li>
                 <li>
-                    <Link to="/bloods" className="leading-6 text-gray-900 px-5 py-2  font-semibold block " onClick={showMenu}>Bloods</Link>
+                    <Link to="/bloods" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>Bloods</Link>
                 </li>
                 
                 
                 {
-                    token ? <div>
+                    token ? <ul>
                         <li>
-                            <Link to="/user-info" onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2  font-semibold block">
+                            <Link to="/user-info" onClick={showMenu} className=" text-sm  text-gray-900 px-5 py-2 font-semibold  block">
                                 My Profile
                             </Link>
                         </li>
                         <li>
-                            <Link to="/user/updateinfo" onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2 mt-5 font-semibold block">
+                            <Link to="/user/updateinfo" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5 py-2 font-semibold  block">
                                 Update Profile
                             </Link>
                         </li>
                         <li>
-                            <Link to="/user/change/password" onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2 mt-5 font-semibold block">
+                            <Link to="/user/change/password" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5 py-2 font-semibold  block">
                                 Change Password
                             </Link>
                         </li>
                         <li>
-                            <Link to="/my-booking" onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2 mt-5 font-semibold block">
+                            <Link to="/my-booking" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5 py-2 font-semibold  block">
                                 My Booking
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/chat" onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2 mt-5 font-semibold block">
-                                Chat
-                            </Link>
-                        </li>
-                        <button onClick={showMenu} className="btn  bg-black border-black hover:bg-black w-full mx-auto mt-72">Logout as {user.name}</button>
-                    </div> : <li>
-                        <Link to="/user-signin" onClick={showMenu} className="leading-6 text-gray-900 px-5 py-2  font-semibold block">Login</Link>
+                      
+                        <button onClick={showMenu} className="btn  bg-black border-black hover:bg-black w-full mx-auto mt-32">Logout as {user.name}</button>
+                    </ul> : <li>
+                        <Link to="/user-signin" onClick={showMenu} className="text-sm  text-gray-900 px-5 py-2 font-semibold  block">Login</Link>
                     </li>
                 }
             </ul>

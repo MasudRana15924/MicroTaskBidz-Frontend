@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Rating from '@mui/material/Rating';
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 const Doctors = ({ doctor }) => {
-    const { name, expert, degree, fees, ratings, images } = doctor;
+    const { name, expert, degree, fees, ratings, images,numOfReviews } = doctor;
     const options = {
         size: "large",
         value: ratings,
@@ -43,7 +43,7 @@ const Doctors = ({ doctor }) => {
 
 
                 <div className=" hidden lg:flex justify-between lg:ml-5 mb-8">
-                    <p className=""><Rating {...options} size="medium" className="" />({ratings})</p>
+                    <p className=""><Rating {...options} size="medium" className="" />{numOfReviews}</p>
                     <Link to={`/doctor/${doctor._id}`} >
                         <button className="h-8 lg:mr-5  border border-violet-400 text-xs pl-1 pr-1">VIEW PROFILE</button>
                     </Link>

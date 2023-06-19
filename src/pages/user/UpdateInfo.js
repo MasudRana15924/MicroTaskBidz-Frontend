@@ -8,18 +8,18 @@ const UpdateInfo = () => {
   const dispatch = useDispatch();
   const { loggeduser } = useSelector(
     (state) => state.userDetails
-);
-const userToken = loggeduser.token
+  );
+  const userToken = loggeduser.token
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
   const [phone, setPhone] = useState("");
   const [birthdate, setBirthdate] = useState("");
-  const data=({name,gender,phone,birthdate})
+  const data = ({ name, gender, phone, birthdate })
   const registerSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateProfile({data,userToken}));
+    dispatch(updateProfile({ data, userToken }));
     toast.success('Your Info Updated', {
-      position: "bottom-center",
+      position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -31,7 +31,7 @@ const userToken = loggeduser.token
     );
   };
 
-  
+
   return (
     <div className="p-10 bg-white mt-20 mb-20">
       <div className="max-w-full mx-auto ">
@@ -40,13 +40,14 @@ const userToken = loggeduser.token
             <UserSidebar></UserSidebar>
 
           </div>
-          <div className="w-3/4 mb-5 mt-32 p-5">
+          <div className="lg:w-3/4 mb-5 mt-32 lg:p-5">
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="mt-5  text-2xl font-medium mb-4 text-start">Update Your Info</h2>
 
               <form onSubmit={registerSubmit}>
                 <div className="mb-2 ">
-                  <input className="border border-gray-200 w-full h-10 rounded p-3 mt-5 mb-5" type="text" id="username"
+                  <p className="text-start text-sm text-blue-300 mt-5">What is your Name?</p>
+                  <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -55,14 +56,15 @@ const userToken = loggeduser.token
                   />
                 </div>
                 <div className="mb-2 ">
-                  
-                    <select name="Gender" className="w-full h-12 border rounded" value={gender} onChange={(e) => setGender(e.target.value)}>
-                                            <option  >Select Gender </option>
-                                            <option  >Male </option>
-                                            <option >Female </option>
-                                        </select>
+                  <p className="text-start text-sm text-blue-300 mt-5">What is your Gender?</p>
+                  <select name="Gender" className="w-full h-12 border rounded" value={gender} onChange={(e) => setGender(e.target.value)}>
+                    <option  >Select Gender </option>
+                    <option  >Male </option>
+                    <option >Female </option>
+                  </select>
                 </div>
                 <div className="mb-2 mt-5">
+                <p className="text-start text-sm text-blue-300 ">What is your Phone?</p>
                   <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="text" id="username"
                     name="name"
                     value={phone}
@@ -71,8 +73,9 @@ const userToken = loggeduser.token
                     required
                   />
                 </div>
-                
+
                 <div className="mb-2 ">
+                <p className="text-start text-sm text-blue-300 mt-5">What is your Birthdate?</p>
                   <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="date" id="username"
                     name="name"
                     value={birthdate}
@@ -90,19 +93,19 @@ const userToken = loggeduser.token
         </div>
       </div>
       <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
-        {/* Same as */}
-        <ToastContainer />
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </div>
   );
 };

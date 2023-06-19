@@ -64,36 +64,39 @@ const BookAppointment = () => {
                 token ? 
 
                     <div  className="lg:w-1/4 mx-auto mt-48">
-                        <h3 class="text-center text-3xl font-bold mb-5">Make an Appointment</h3>
-                        <form action="" className="" onSubmit={handleCreate}>
+                        <h3 class="text-start w-3/4 mx-auto text-3xl font-bold mb-5">Make an Appointment</h3>
+                        <form action="" className="mt-10" onSubmit={handleCreate}>
                            
-                                <div>
-                                    
-                                    <input type="text" value={patientname} onChange={(e) => setPname(e.target.value)} placeholder="Enter Patient Name" className="border border-gray-300 rounded w-3/4 p-2 h-12 mx-auto mt-5" />
+                                <div className="">
+                                <p className="text-start w-3/4 mx-auto text-sm text-blue-300">What is your Name?</p>
+                                    <input type="text" value={patientname} onChange={(e) => setPname(e.target.value)} placeholder="Enter Patient Name" className="border border-gray-300 rounded w-3/4 mx-auto   p-2 h-12" />
                                 </div>
                                 <div>
-                                   
-                                    <input type="text" value={patientemail} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Patient Email" className="border border-gray-200 rounded w-3/4 p-2 h-12 mx-auto mt-5" />
+                                <p className="text-start w-3/4 mx-auto text-sm text-blue-300 mt-5">What is your Email?</p>
+                                    <input type="text" value={patientemail} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Patient Email" className="border border-gray-200 rounded w-3/4 p-2 h-12 mx-auto" />
                                 </div>
                                 <div>
-                                 
-                                    <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter Patient Phone " className="border border-gray-200 rounded w-3/4 p-2 h-12 mx-auto mt-5 " />
+                                <p className="text-start w-3/4 mx-auto text-sm text-blue-300 mt-5">What is your Phone?</p>
+                                    <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter Patient Phone " className="border border-gray-200 rounded w-3/4 p-2 h-12 mx-auto " />
                                 </div>
                                 <div>
-                                
-                                    <select name="Gender" className="w-3/4 h-12 border rounded mt-5" value={patientgender} onChange={(e) => setGender(e.target.value)}>
+                                <p className="text-start w-3/4 mx-auto text-sm text-blue-300 mt-5">What is your Gender?</p>
+                                    <select name="Gender" className="w-3/4 h-12 border rounded " value={patientgender} onChange={(e) => setGender(e.target.value)}>
                                         <option  >Select Gender </option>
                                         <option  >Male </option>
                                         <option >Female </option>
                                     </select>
                                 </div>
                                 <div>
+                                   
+
+                                <p className="text-start w-3/4 mx-auto text-sm text-blue-300 mt-5">Select appointment Date?</p>
+                                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Appoinment Date" className="border border-gray-200 rounded w-3/4 p-2 h-12 mx-auto  text-black" />
                                     
-                                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Appoinment Date" className="border border-gray-200 rounded w-3/4 p-2  h-12 mx-auto mt-5" />
                                 </div>
                                 <div>
-                                    
-                                    <select className="w-3/4 h-12 border rounded mt-5" value={schedule} onChange={(e) => setSchedule(e.target.value)}  >
+                                <p className="text-start w-3/4 mx-auto text-sm text-blue-300 mt-5">Select appointment Slots?</p>
+                                    <select className="w-3/4 h-12 border rounded" value={schedule} onChange={(e) => setSchedule(e.target.value)}  >
                                         <option  >Select Slots</option>
                                         <option >Morning </option>
                                         <option >Afternoon </option>

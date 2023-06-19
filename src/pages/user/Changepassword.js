@@ -3,7 +3,7 @@ import UserSidebar from './UserSidebar';
 import { useDispatch, useSelector } from 'react-redux';
 import { updatePassword } from '../../state/user/changePassword/updatePasswordSlice';
 import { ToastContainer, toast } from 'react-toastify';
-import { useEffect } from 'react';
+
 
 
 
@@ -22,7 +22,7 @@ const Changepassword = () => {
     if (data && userToken) {
       dispatch(updatePassword({ data, userToken }));
       toast.success('Password Update Suceessfully ', {
-        position: "top-right",
+        position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -33,7 +33,7 @@ const Changepassword = () => {
       });
     } else {
       toast.error('Please enter your details', {
-        position: "top-right",
+        position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -55,11 +55,12 @@ const Changepassword = () => {
             <UserSidebar></UserSidebar>
 
           </div>
-          <div className=" lg:w-8/12 mb-5 mt-32 p-5 ">
+          <div className=" lg:w-8/12 mb-5 mt-32 lg:p-5 ">
             <div class="bg-white rounded-lg shadow-lg p-8 ">
               <h2 class=" mb-5 text-2xl font-medium  text-start mt-10">Change Password</h2>
               <form onSubmit={registerSubmit}>
                 <div class="mb-4">
+
                   <input class="border border-gray-200 w-full h-10 rounded p-3" type="password" id="username"
                     name="password"
                     value={oldPassword}

@@ -25,7 +25,7 @@ const Nurses = () => {
     }, [dispatch, location])
 
     let content;
-    if (isLoading) content = <Loading></Loading>;
+    if (nurses?.length < 0 && isLoading) content = <Loading></Loading>;
 
     if (!isLoading && isError) content = <div className="col-span-12">{error}</div>
 

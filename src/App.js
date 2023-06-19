@@ -45,7 +45,7 @@ import CreateNurse from './pages/nurses/CreateNurse';
 import UpdateNurses from './pages/nurses/UpdateNurses';
 import BookAppointment from './components/doctor/BookAppointment';
 import Blood from './components/landingpage/Blood';
-// import ForgotPassword from './pages/user/Forgotpassword';
+
 
 
 

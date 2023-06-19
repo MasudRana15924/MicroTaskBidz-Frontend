@@ -21,6 +21,7 @@ const Doctor = () => {
 
 
     let content;
+    if (doctors?.length < 0 && isLoading) content = <Loading></Loading>;
     if (!isLoading && isError) content = <div className="col-span-12">{error}</div>
     if (!isLoading && !isError && doctors?.length === 0) {
         content = <div className="col-span-12  ">

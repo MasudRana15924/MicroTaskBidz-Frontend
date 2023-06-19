@@ -2,11 +2,11 @@ import React from 'react';
 import bloodImg from '../../images/bloods.jpg'
 const Blood = () => {
     return (
-        <div className="mt-64 mb-10 lg:flex w-3/4 mx-auto">
+        <div className="mt-28 lg:mt-64 md:mt-64 mb-10 ">
             <div>
-                <img src={bloodImg} alt="" className="max-h-96"/>
+                <img src={bloodImg} alt="" className="h-96 w-3/4 mx-auto"/>
             </div>
-             <div  className="lg:w-2/4 mx-auto ">
+             <div  className=" mt-10 lg:w-1/4 mx-auto ">
                         <h3 class="text-center text-xl font-bold ">Apply For Emergency  Blood </h3>
                         <form action="" >
                            

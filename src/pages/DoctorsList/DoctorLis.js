@@ -10,7 +10,7 @@ import GendersLists from '../DoctorsList/GendersLists';
 import Ratings from './Ratings';
 import { BsFilterRight } from "react-icons/bs";
 import { useState } from 'react';
-
+import { RxCross1 } from "react-icons/rx";
 const DoctorLis = () => {
     const dispatch = useDispatch();
     const { doctors, isLoading, isError, error } = useSelector(state => state.filterDoctors.filterDoctors);
@@ -21,7 +21,7 @@ const DoctorLis = () => {
 
     //decide what to render 
     let content;
-    if (isLoading) content = <Loading></Loading>;
+    if (isLoading && doctors?.length < 0) content = <Loading></Loading>;
     if (!isLoading && isError) content = <div className="col-span-12">{error}</div>
     if (!isLoading && !isError && doctors?.length === 0) {
         content = <div className="col-span-12 lg:mt-64 text-red-600 text-5xl">No Doctors is Found ! </div>
@@ -96,23 +96,22 @@ const DoctorLis = () => {
                     <button className="btn btn-sm bg-white text-gray-900" onClick={showMenu}>Filter <BsFilterRight className="text-2xl"></BsFilterRight> </button>
 
                 </div>
-                <div className={active ? 'border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md:hidden lg:hidden bg-white text-black text-start ml-24 mt-16 overflow-y-auto' : 'hidden'}>
-                    <h2 className="text-gray-900 ml-16 font-semibold" onClick={showMenu}>Filter Doctors </h2>
+                <div className={active ? 'bg-white border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase gap-4  md:hidden lg:hidden  text-black text-start mt-16 ml-16' : 'hidden'}>
+                    {/* <div>
+                    <h2 className="text-gray-900 mt-7 font-semibold" onClick={showMenu}>Filter Doctors </h2>
+                    </div> */}
+                    <RxCross1 className="text-xl ml-5 mt-5" onClick={showMenu}></RxCross1>
                     <div className="ml-5 ">
-
                         <div className=" w-full lg:w-3/4 lg:mx-auto">
                             <h2 className=" text-sm text-start lg:ml-64">Expert</h2>
 
                         </div>
                         <div className="lg:block lg:w-3/4 lg:mx-auto  ">
-
                             <FilterTags></FilterTags>
                         </div>
-
-
                     </div>
-                    <div className="flex ml-5">
-                    <div>
+                    <div className=" ml-5">
+                        <div>
                             <div className="">
                                 <div className=" w-full lg:w-3/4 lg:mx-auto">
                                     <h2 className=" text-sm text-start lg:ml-64"> Fees</h2>
@@ -122,15 +121,15 @@ const DoctorLis = () => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+
                             <div className=" w-full lg:w-3/4 lg:mx-auto">
-                                <h2 className=" text-sm text-start lg:ml-64">Gender</h2>
+                                <h2 className=" text-sm text-start lg:ml-64 mt-5">Gender</h2>
                             </div>
                             <div className=" lg:block lg:w-3/4 lg:mx-auto ">
                                 <GendersLists></GendersLists>
                             </div>
-                        </div>
                         
+
                     </div>
 
                     <div className=" ml-5">
@@ -143,7 +142,7 @@ const DoctorLis = () => {
 
                     </div>
 
-                    <button className="btn btn-sm w-3/4 mx-auto bg-black text-white" onClick={showMenu}>Cancel Filter </button>
+
 
                 </div>
 

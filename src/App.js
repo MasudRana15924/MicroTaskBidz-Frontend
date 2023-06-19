@@ -80,7 +80,7 @@ function App() {
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
-            <Route path="book-appointment" element={<BookAppointment/>}></Route>
+            <Route path="book-appointment" element={<PrivateRoute><BookAppointment/></PrivateRoute>}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/insurance" element={<Insurance />}></Route>

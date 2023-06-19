@@ -6,7 +6,7 @@ import insuranceImg from '../../images/insurance (1).jpg'
 const Blog = () => {
     return (
         <div className="blogs mt-16 md:mt-48 lg:mt-48 mb-10">
-            <p className="text-4xl font-bold  absolute  ml-36 lg:ml-60 mt-10 mb-10 ">Blog and News</p>
+            <p className="text-4xl font-bold  absolute  ml-20 lg:ml-60 mt-10 mb-10 ">Blog and News</p>
             <div className="w-3/4 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <div className="mt-28 md:mb-20 lg:mb-20">
                     <div className="h-96 bg-white ">

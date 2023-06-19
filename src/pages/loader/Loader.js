@@ -2,8 +2,8 @@ import React from 'react';
 import { Triangle} from 'react-loader-spinner'
 const Loader = () => {
     return (
-        <div className="w-2/4 md:w-2/4 lg:w-1/4 mx-auto mt-96 lg:mt-96 justify-items-center">
-        <div className=" w-2/4 lg:w-1/4 mx-auto">
+        <div className="w-2/4 mx-auto md:w-2/4 lg:w-1/4 lg:mx-auto mt-96 lg:mt-96 justify-items-center">
+        <div className=" w-2/4 mx-auto lg:w-1/4 lg:mx-auto">
                 <Triangle
                     height="60"
                     width="60"

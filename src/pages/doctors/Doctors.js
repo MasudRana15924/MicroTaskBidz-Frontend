@@ -17,7 +17,7 @@ const Doctors = ({ doctor }) => {
                     <Link to={`/doctor/${doctor._id}`}>
                         <img
                             src={images[0].url}
-                            className="w-full max-h-48"
+                            className="w-full h-48"
                             alt={name}
                         />
                     </Link>
@@ -73,7 +73,7 @@ const Doctors = ({ doctor }) => {
 
                 </div>
                 {/* for small  */}
-                <div className=" mr-12 lg:hidden justify-between lg:ml-5 mb-5">
+                <div className="hidden mr-12 lg:hidden justify-between lg:ml-5 mb-5">
                    <Rating {...options} size="small" className="" />
                     <Link to={`/doctor/${doctor._id}`} >
                         <button className="w-full h-8 ml-6  border border-violet-400 text-xs">VIEW PROFILE</button>

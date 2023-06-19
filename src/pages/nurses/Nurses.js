@@ -43,7 +43,7 @@ const Nurses = () => {
     }
     return (
         <section id="#nurses" className="doctors-section pt-12 mb-10 md:mt-24 lg:mt-24">
-            <div className=" md:flex lg:flex justify-between md:w-3/4 lg:w-3/4 mx-auto ">
+            <div className="mt-12 md:flex lg:flex justify-between md:w-3/4 lg:w-3/4 mx-auto ">
                 <h1 className="font-bold text-2xl md:text-2xl lg:text-3xl">Our Best Nurses</h1>
                 <div >
                     {locations?.map((exp) => (

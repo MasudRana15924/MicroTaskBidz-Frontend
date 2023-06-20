@@ -19,7 +19,7 @@ const UserDetails = () => {
 
                         <div className="avatar mr-28">
                             <div className="w-32 rounded-full  ">
-                                <img src={user.avatar.url} alt=""/>
+                                {/* <img src={user.avatar.url} alt=""/> */}
                             </div>
                         </div>
                         <div className="mt-12 w-3/4 mx-auto">

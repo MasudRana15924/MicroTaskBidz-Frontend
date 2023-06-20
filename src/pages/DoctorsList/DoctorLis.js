@@ -96,11 +96,11 @@ const DoctorLis = () => {
                     <button className="btn btn-sm bg-white text-gray-900" onClick={showMenu}>Filter <BsFilterRight className="text-2xl"></BsFilterRight> </button>
 
                 </div>
-                <div className={active ? 'bg-white border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase gap-4  md:hidden lg:hidden  text-black text-start mt-16 ml-16' : 'hidden'}>
+                <div className={active ? 'bg-white border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase gap-2  md:hidden lg:hidden  text-black text-start  ml-16' : 'hidden'}>
                     {/* <div>
                     <h2 className="text-gray-900 mt-7 font-semibold" onClick={showMenu}>Filter Doctors </h2>
                     </div> */}
-                    <RxCross1 className="text-xl ml-5 mt-5" onClick={showMenu}></RxCross1>
+                    <RxCross1 className="text-xl ml-5 mt-5 text-black" onClick={showMenu}></RxCross1>
                     <div className="ml-5 ">
                         <div className=" w-full lg:w-3/4 lg:mx-auto">
                             <h2 className=" text-sm text-start lg:ml-64">Expert</h2>

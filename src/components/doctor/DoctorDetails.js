@@ -56,7 +56,7 @@ const DoctorDetails = ({ doctor }) => {
                 <div>
                     <img
                         src={images[0].url}
-                        className="w-full max-h-72 "
+                        className="w-full h-72 "
                         alt={name}
                     />
 

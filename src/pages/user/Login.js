@@ -28,10 +28,7 @@ const Login = () => {
         myForm.set("email", email);
         myForm.set("password", password);
         dispatch(createLogin(myForm));
-        if(user){
-            toast.info('Login Succesfull');
-        }
-        
+        toast.success('Login Succesfull');     
     };
     const registerDataChange = (e) => {
         setUser({
@@ -41,9 +38,8 @@ const Login = () => {
     };
     useEffect(() => {
         if (token) {
-
             navigate('/');
-
+            // toast.info('Login Succesfull');
         } else {
             toast.info(message);
         }

@@ -18,10 +18,13 @@ const SingleDoctor = () => {
         dispatch(fetchDoctor(doctorId))
     }, [dispatch, doctorId])
     let content;
-    if (isLoading) content = <Loading></Loading>;
+    if (isLoading){
+        content = <Loading></Loading>;
+    }
+   
     if (!isLoading && isError) content = <div className="col-span-12">{error}</div>
     if (!isLoading && !isError && !doctor?._id) {
-        content = <div className="col-span-12">No doctor found ! </div>
+        content = <div className="col-span-12"><Loading></Loading></div>
     }
     if (!isLoading && !isError && doctor?._id) {
         content = <div>

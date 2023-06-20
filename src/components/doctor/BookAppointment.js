@@ -31,17 +31,17 @@ const BookAppointment = () => {
             dispatch(createAppointments({
                 data, userToken
             }));
-            // toast.success('Your appointment placed ', {
-            //     position: "top-right",
-            //     autoClose: 500,
-            //     hideProgressBar: false,
-            //     closeOnClick: true,
-            //     pauseOnHover: true,
-            //     draggable: true,
-            //     progress: undefined,
-            //     theme: "dark",
-            // });
-              window.location.replace(GatewayPageURL)
+            toast.success('Your appointment placed ', {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+               window.location.replace(GatewayPageURL)
             // navigate(GatewayPageURL)
 
         } else {
@@ -103,8 +103,8 @@ const BookAppointment = () => {
                                         <option >Evening </option>
                                     </select>
                                 </div>
-                           
-                            <button className="btn bg-black mt-5 h-12 w-3/4  text-white font-semibold text-center mb-5">Book Appointment </button>
+                          
+                            <button  className="btn bg-black mt-5 h-12 w-3/4  text-white font-semibold text-center mb-5">Book Appointment </button>
                         </form>
                     </div>
                  : <div>

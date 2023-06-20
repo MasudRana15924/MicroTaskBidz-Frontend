@@ -98,14 +98,13 @@ const DoctorLis = () => {
                 </div>
                 {/* small devices filter */}
                 <div className="modal" id="my_modal_8">
-                   
                     <div className="modal-box">
                     <div className="modal-action">
                         {
-                            doctors?.length ? <p className="text-blue-400 mr-28">All Doctors {doctors.length}</p>:null
+                            doctors?.length ? <p className="text-blue-400 mr-40">All Doctors {doctors.length}</p>:null
                         }
-                        <a href="#" className="btn btn-sm border-none text-xl bg-white text-gray-900 hover:bg-white ">
-                            <RxCross1 className="text-black" ></RxCross1>
+                        <a href="#" className="btn btn-sm border-none text-2xl bg-white text-gray-900 hover:bg-white ">
+                            <RxCross1 className="text-black text-xl" ></RxCross1>
                         </a>
                     </div>
                         <div className="ml-5">

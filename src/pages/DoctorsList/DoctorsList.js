@@ -58,7 +58,7 @@ const DoctorsList = ({doctor}) => {
                 <p className="text-slate-600  text-md font-semibold mt-2" >
                     ({numOfReviews}) Reviews
                 </p>
-                <p className="mt-2"><Rating {...options} size="sm" className="" />({ratings})</p>
+                <p className="mt-2"><Rating {...options} size="sm" className="" /> {numOfReviews} </p>
 
                 <p className="text-green-600  text-md font-semibold flex gap-2 mt-2" >
                     < MdCalendarToday className="text-2xl"></MdCalendarToday>Available Today

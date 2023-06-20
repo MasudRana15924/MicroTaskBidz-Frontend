@@ -93,15 +93,65 @@ const DoctorLis = () => {
                 <div className="w-3/4 mx-auto lg:hidden md:hidden flex justify-between mt-32 ">
 
                     <h2 className="text-xl font-semibold leading-6 text-gray-900">All Doctors </h2>
-                    <button className="btn btn-sm bg-white text-gray-900" onClick={showMenu}>Filter <BsFilterRight className="text-2xl"></BsFilterRight> </button>
-
+                    {/* <button className="btn btn-sm bg-white text-gray-900" >Filter <BsFilterRight className="text-2xl"></BsFilterRight> </button> */}
+                    <a href="#my_modal_8" className="btn btn-sm bg-white text-gray-900 hover:bg-white ">Filter <BsFilterRight className="text-2xl"></BsFilterRight></a>
                 </div>
-                <div className={active ? 'bg-white border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase gap-2  md:hidden lg:hidden  text-black text-start  ml-16' : 'hidden'}>
+                {/* small devices filter */}
+                <div className="modal" id="my_modal_8">
+                    <div className="modal-box">
+                        <div className="ml-5">
+                          
+                            <div className="lg:block lg:w-3/4 lg:mx-auto  ">
+                                <FilterTags></FilterTags>
+                            </div>
+                        </div>
+                        <div className=" ml-5">
+                        <div>
+                            <div className="">
+                                <div className=" w-full lg:w-3/4 lg:mx-auto">
+                                    <h2 className=" text-sm text-start lg:ml-64"> Fees</h2>
+                                </div>
+                                <div className=" lg:block lg:w-3/4 lg:mx-auto  ">
+                                    <FilterFeeses></FilterFeeses>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className=" w-full lg:w-3/4 lg:mx-auto">
+                            <h2 className=" text-sm text-start lg:ml-64 ">Gender</h2>
+                        </div>
+                        <div className=" lg:block lg:w-3/4 lg:mx-auto ">
+                            <GendersLists></GendersLists>
+                        </div>
+                        <div className="">
+                        <div className=" w-full lg:w-3/4 lg:mx-auto">
+                            <h2 className=" text-sm text-start lg:ml-64">Ratings</h2>
+                        </div>
+                        <div className=" lg:block lg:w-3/4 lg:mx-auto  ">
+                            <Ratings></Ratings>
+                        </div>
+
+                    </div>
+
+                    </div>
+                        <div className="modal-action mr-12">
+                            <a href="#" className="btn btn-sm bg-white text-gray-900 hover:bg-white ">
+                            <RxCross1 className="text-black" ></RxCross1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div className={active ? 'bg-white border border-gray-200 flex-col flex fixed inset-0 right-1/4 lg:left-3/4 uppercase gap-2  md:hidden lg:hidden  text-black text-start' : 'hidden'}>
                     {/* <div>
                     <h2 className="text-gray-900 mt-7 font-semibold" onClick={showMenu}>Filter Doctors </h2>
                     </div> */}
                     <RxCross1 className="text-xl ml-5 mt-5 text-black" onClick={showMenu}></RxCross1>
-                    <div className="ml-5 ">
+                    <div className="ml-5 mt-5">
                         <div className=" w-full lg:w-3/4 lg:mx-auto">
                             <h2 className=" text-sm text-start lg:ml-64">Expert</h2>
 
@@ -122,13 +172,13 @@ const DoctorLis = () => {
                             </div>
                         </div>
 
-                            <div className=" w-full lg:w-3/4 lg:mx-auto">
-                                <h2 className=" text-sm text-start lg:ml-64 mt-5">Gender</h2>
-                            </div>
-                            <div className=" lg:block lg:w-3/4 lg:mx-auto ">
-                                <GendersLists></GendersLists>
-                            </div>
-                        
+                        <div className=" w-full lg:w-3/4 lg:mx-auto">
+                            <h2 className=" text-sm text-start lg:ml-64 mt-5">Gender</h2>
+                        </div>
+                        <div className=" lg:block lg:w-3/4 lg:mx-auto ">
+                            <GendersLists></GendersLists>
+                        </div>
+
 
                     </div>
 

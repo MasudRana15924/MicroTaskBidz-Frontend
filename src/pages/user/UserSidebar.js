@@ -21,7 +21,7 @@ const UserSidebar = () => {
                 <div className="flex text-start ml-8">
                     <div className="avatar mb-5 mt-5 ml-5">
                         <div className="w-16 h-16 rounded-full  ring-offset-base-100 ring-offset-2">
-                        <img src={user.avatar.url} alt=""/>
+                        {/* <img src={user.avatar.url} alt=""/> */}
                         </div>
                     </div>
                     <div className="mt-7 ml-10">

@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './User.css'
 import { createSignUp } from '../../state/user/signupSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
 
 const UserSignup = () => {
   const dispatch = useDispatch();
+  const {success} = useSelector(
+    (state) => state.signup
+);
   const navigate=useNavigate()
   const [agree, setAgree] = useState(false);
   const [avatar, setAvatar] = useState("/Profile.png");
@@ -26,28 +30,30 @@ const UserSignup = () => {
     myForm.set("password", password);
     myForm.set("avatar", avatar);
     dispatch(createSignUp(myForm));
-    toast.success('Account Create Successfully',
-    
-    );
-
-
+    toast.success('Account create successfully');     
   };
   const registerDataChange = (e) => {
-    if (e.target.name === "avatar") {
-      const reader = new FileReader();
+    // if (e.target.name === "avatar") {
+    //   const reader = new FileReader();
 
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          setAvatarPreview(reader.result);
-          setAvatar(reader.result);
-        }
-      };
+    //   reader.onload = () => {
+    //     if (reader.readyState === 2) {
+    //       setAvatarPreview(reader.result);
+    //       setAvatar(reader.result);
+    //     }
+    //   };
 
-      reader.readAsDataURL(e.target.files[0]);
-    } else {
-      setUser({ ...user, [e.target.name]: e.target.value });
-    }
+    //   reader.readAsDataURL(e.target.files[0]);
+    // } else {
+    //   setUser({ ...user, [e.target.name]: e.target.value });
+    // }
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
+  useEffect(() => {
+    if (success) {
+        navigate('/user-signin');
+    } 
+}, [success, navigate]);
   return (
     <div>
 
@@ -87,7 +93,7 @@ const UserSignup = () => {
                 required
               />
             </div>
-            <div >
+            {/* <div >
                   <img src={avatarPreview} alt="Avatar Preview" className="h-16 w-16 mb-5 border rounded-full"/>
                   <input
                     type="file"
@@ -95,7 +101,7 @@ const UserSignup = () => {
                     accept="image/*"
                     onChange={registerDataChange}
                   />
-                </div>
+                </div> */}
 
             <div className="flex items-center justify-between">
               <div className="flex items-center">

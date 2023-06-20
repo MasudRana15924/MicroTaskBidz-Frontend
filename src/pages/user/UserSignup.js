@@ -26,9 +26,10 @@ const UserSignup = () => {
     myForm.set("password", password);
     myForm.set("avatar", avatar);
     dispatch(createSignUp(myForm));
-    toast.success('Account Create Successfully', 
+    toast.success('Account Create Successfully',
+    
     );
-    navigate('/user-signin');
+
 
   };
   const registerDataChange = (e) => {

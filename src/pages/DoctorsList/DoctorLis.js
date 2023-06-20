@@ -98,7 +98,16 @@ const DoctorLis = () => {
                 </div>
                 {/* small devices filter */}
                 <div className="modal" id="my_modal_8">
+                   
                     <div className="modal-box">
+                    <div className="modal-action">
+                        {
+                            doctors?.length ? <p className="text-blue-400 mr-28">All Doctors {doctors.length}</p>:null
+                        }
+                        <a href="#" className="btn btn-sm border-none text-xl bg-white text-gray-900 hover:bg-white ">
+                            <RxCross1 className="text-black" ></RxCross1>
+                        </a>
+                    </div>
                         <div className="ml-5">
                           
                             <div className="lg:block lg:w-3/4 lg:mx-auto  ">
@@ -134,11 +143,7 @@ const DoctorLis = () => {
                     </div>
 
                     </div>
-                        <div className="modal-action mr-12">
-                            <a href="#" className="btn btn-sm bg-white text-gray-900 hover:bg-white ">
-                            <RxCross1 className="text-black" ></RxCross1>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -146,10 +151,7 @@ const DoctorLis = () => {
 
 
 
-                <div className={active ? 'bg-white border border-gray-200 flex-col flex fixed inset-0 right-1/4 lg:left-3/4 uppercase gap-2  md:hidden lg:hidden  text-black text-start' : 'hidden'}>
-                    {/* <div>
-                    <h2 className="text-gray-900 mt-7 font-semibold" onClick={showMenu}>Filter Doctors </h2>
-                    </div> */}
+                {/* <div className={active ? 'bg-white border border-gray-200 flex-col flex fixed inset-0 right-1/4 lg:left-3/4 uppercase gap-2  md:hidden lg:hidden  text-black text-start' : 'hidden'}>
                     <RxCross1 className="text-xl ml-5 mt-5 text-black" onClick={showMenu}></RxCross1>
                     <div className="ml-5 mt-5">
                         <div className=" w-full lg:w-3/4 lg:mx-auto">
@@ -171,17 +173,13 @@ const DoctorLis = () => {
                                 </div>
                             </div>
                         </div>
-
                         <div className=" w-full lg:w-3/4 lg:mx-auto">
                             <h2 className=" text-sm text-start lg:ml-64 mt-5">Gender</h2>
                         </div>
                         <div className=" lg:block lg:w-3/4 lg:mx-auto ">
                             <GendersLists></GendersLists>
                         </div>
-
-
                     </div>
-
                     <div className=" ml-5">
                         <div className=" w-full lg:w-3/4 lg:mx-auto">
                             <h2 className=" text-sm text-start lg:ml-64">Ratings</h2>
@@ -189,12 +187,8 @@ const DoctorLis = () => {
                         <div className=" lg:block lg:w-3/4 lg:mx-auto  ">
                             <Ratings></Ratings>
                         </div>
-
                     </div>
-
-
-
-                </div>
+                </div> */}
 
 
 

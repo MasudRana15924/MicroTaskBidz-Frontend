@@ -37,13 +37,13 @@ const Login = () => {
         });
     };
     useEffect(() => {
-        if (token) {
+        if (user) {
             navigate('/');
             // toast.info('Login Succesfull');
         } else {
             toast.info(message);
         }
-    }, [token, navigate, message]);
+    }, [user, navigate, message]);
     return (
         <div>
             <div className=" flex flex-col items-center justify-center min-h-screen">

@@ -32,18 +32,15 @@ const Header = () => {
     }
     return (
         <header className="absolute inset-x-0 top-0 z-50">
-            <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <nav className="flex items-center justify-between lg:p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/">
                         <img
-                            className="h-16 w-auto"
+                            className="h-12 lg:h-16 lg:w-auto "
                             src={logo}
                             alt=""
                         />
                     </Link>
-                    {/* <Link to="/">
-                        <p className="text-sm font-semibold leading-6 text-gray-900">MKM HealthBridge</p>
-                    </Link> */}
                 </div>
                 <div className="flex lg:hidden">
                     <button
@@ -52,7 +49,7 @@ const Header = () => {
                         onClick={showMenu}
                     >
                         <span className="sr-only">Open main menu</span>
-                        <FiMenu className="lg:hidden block h-10 w-10 cursor-pointer "
+                        <FiMenu className="lg:hidden block h-8 w-8 cursor-pointer mr-3 "
                         />
                     </button>
                 </div>

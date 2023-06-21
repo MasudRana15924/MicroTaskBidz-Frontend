@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../images/logo2.png'
+import logo from '../../images/main.png'
 import { FiMenu } from 'react-icons/fi'
 import './Shared.css'
 import { Link } from 'react-router-dom';
@@ -36,14 +36,14 @@ const Header = () => {
                 <div className="flex lg:flex-1">
                     <Link to="/">
                         <img
-                            className="h-8 w-auto"
+                            className="h-16 w-auto"
                             src={logo}
                             alt=""
                         />
                     </Link>
-                    <Link to="/">
+                    {/* <Link to="/">
                         <p className="text-sm font-semibold leading-6 text-gray-900">MKM HealthBridge</p>
-                    </Link>
+                    </Link> */}
                 </div>
                 <div className="flex lg:hidden">
                     <button

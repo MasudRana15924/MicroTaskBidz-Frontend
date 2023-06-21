@@ -44,6 +44,18 @@ const DoctorSignup = () => {
                     <p className="text-xl text-gray-900 lg:text-3xl text-center mt-12 font-bold lg:ml-3">Join the forefront of digital healthcare</p>
                     <p className="text-gray-900 text-xl text-start ml-3 lg:ml-0 lg:w-3/4 mx-auto mt-10">Join HealthBridge network and create your virtual chamber provide medical consultancy via video call and expand the reach of your service.</p>
                 </div>
+                <div className="mt-16 block lg:hidden ">
+                    <p className="text-2xl text-center text-blue-600 font-bold ">Are You A Qualified Doctor?</p>
+                    <p className=" text-gray-900 text-center mt-8 font-bold ">Join the forefront of digital healthcare</p>
+                    <p className="text-gray-900 text-start text-xl w-3/4 mx-auto mt-10 mb-12">Join HealthBridge network and create your virtual chamber provide medical consultancy via video call and expand the reach of your service.</p>
+                </div>
+
+
+
+
+
+
+
             </div>
             <div className="w-full lg:mt-0 mt-12">
                 <p className=" text-4xl text-center font-semibold text-gray-900 lg:w-2/4 lg:mx-auto ">Doctors Registration</p>
@@ -127,7 +139,7 @@ const DoctorSignup = () => {
                             </label>
                         </div>
                     </div>
-                    <Button variant="contained" className="w-3/4">Signup</Button> 
+                    <Button variant="contained" className="w-3/4 lg:w-2/4">Signup</Button> 
                 </form>
             </div>
 

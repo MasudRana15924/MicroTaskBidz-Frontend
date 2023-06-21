@@ -131,7 +131,7 @@ const Header = () => {
                             </Link>
                         </li>
                       
-                        <button  className="btn btn-sm  bg-black border-black hover:bg-black w-3/4 mx-auto mt-32" onClick={() => dispatch(logout())}>Logout as {user.name}</button>
+                        <button  className="btn btn-sm ml-8 bg-black border-black hover:bg-black w-3/4 mx-auto mt-32" onClick={() => dispatch(logout())}>Logout as {user.name}</button>
                     </ul> : <li>
                         <Link to="/user-signin" onClick={showMenu} className="text-sm  text-gray-900 px-5 py-2 font-semibold  block">Login</Link>
                     </li>

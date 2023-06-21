@@ -38,6 +38,7 @@ import categorySlice from "./category/categorySlice";
 import feesSlice from "./category/feesSlice";
 import  gendersSlice  from "./category/genderSlice";
 import ratingsSlice from "./category/ratingsSlice";
+import  doctorsignUpSlice  from "./doctors/doctorsignupSlice";
 
 
 const persistConfig = {
@@ -87,6 +88,7 @@ const rootReducer = combineReducers({
   fees:feesSlice,
   genders:gendersSlice,
   ratings:ratingsSlice,
+  doctorsignup:doctorsignUpSlice,
 
 });
 

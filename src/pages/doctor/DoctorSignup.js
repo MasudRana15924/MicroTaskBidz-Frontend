@@ -1,26 +1,51 @@
 import React from 'react';
 import { TextField } from '@mui/material';
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+
 import Button from '@mui/material/Button';
 import { useState } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { createDoctorSignUp } from '../../state/doctors/doctorsignupSlice';
+import { ToastContainer, toast } from 'react-toastify';
 const DoctorSignup = () => {
+    const dispatch = useDispatch();
+    // const { success } = useSelector(
+    //     (state) => state.signup
+    // );
+    const navigate = useNavigate()
+    const [title, setTitle] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [gender, setGender] = useState('');
 
+    const [district, setDistrict] = useState('');
+    const [nid_No, setnid_No] = useState('');
+    const [bmdc_No, setbmdc_No] = useState('');
+    const [type, setType] = useState('');
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const data = ({ title, gender, district, nid_No, bmdc_No, type, phone, name, email, password });
+    const registerSubmit = (e) => {
+        e.preventDefault();
 
+        if (data) {
+            dispatch(createDoctorSignUp(data));
+            toast.success('Account create successfully', {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        } else {
+            toast.alert('Enter Details');
+        }
 
-    const gender = [
-        {
-            value: 'Male',
-            label: 'Male',
-        },
-        {
-            value: 'Female',
-            label: 'Female',
-        },
-    ];
+    }
     const [agree, setAgree] = useState(false);
 
     return (
@@ -59,65 +84,68 @@ const DoctorSignup = () => {
             </div>
             <div className="w-full lg:mt-0 mt-12">
                 <p className=" text-4xl text-center font-semibold text-gray-900 lg:w-2/4 lg:mx-auto ">Doctors Registration</p>
-                <form action="" className="">
+                <form action="" className="" >
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
-                        <TextField id="standard-basic" label="Title" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
+                        <TextField id="standard-basic" label="Title" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={title} onChange={(e) => setTitle(e.target.value)} />
                     </div>
 
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
-                        <TextField id="standard-basic" label="Name" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
+                        <TextField id="standard-basic" label="Name" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
 
 
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
-                        <TextField
-                            id="filled-select-currency-native"
-                            select
-                            label="Gender"
-                            defaultValue="EUR"
-                            SelectProps={{
-                                native: true,
-                            }}
-                            className="w-full lg:w-2/4 mx-auto mt-12"
-                            variant="filled"
+
+
+                        <select name="Gender" variant="outlined" className="w-full lg:w-2/4 mx-auto border h-14 rounded text-gray-600 pl-2" value={gender} onChange={(e) => setGender(e.target.value)}>
+                            <option  >Select Gender </option>
+                            <option  >Male </option>
+                            <option >Female </option>
+                        </select>
+
+                        {/* <InputLabel id="demo-select-small-label" className="text-start lg:text-center">Select Gender</InputLabel>
+                        <Select
+                            labelId="demo-select-small-label"
+                            id="demo-select-small"
+                            value={gender} onChange={(e) => setGender(e.target.value)}
+                            className="w-full lg:w-2/4 mx-auto "
                         >
-                            {gender.map((option) => (
-                                <option key={option.value} value={option.value}>
-                                    {option.label}
-                                </option>
-                            ))}
-                        </TextField>
+
+                            <MenuItem value="Male">Male</MenuItem>
+                            <MenuItem value="Female">Female</MenuItem>
+                        </Select> */}
+
+
+
+
                     </div>
                     <div className="mt-8 lg:ml-44 lg:pr-14 m-5 lg:m-0 ">
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DemoContainer components={['DatePicker']}>
-                                <DatePicker label="Birth Date" className="w-full lg:w-3/4 mx-auto mt-12" />
-                            </DemoContainer>
-                        </LocalizationProvider>
+
+
                     </div>
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
-                        <TextField id="standard-basic" label="District" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
+                        <TextField id="standard-basic" label="District" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={district} onChange={(e) => setDistrict(e.target.value)} />
                     </div>
 
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
-                        <TextField id="standard-basic" label="NID / Passport Number" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
+                        <TextField id="standard-basic" label="NID / Passport Number" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={nid_No} onChange={(e) => setnid_No(e.target.value)} />
                     </div>
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
-                        <TextField id="standard-basic" label="BMDC Registration Number" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
-                    </div>
-
-                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
-                        <TextField id="standard-basic" label="Doctor Type" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
+                        <TextField id="standard-basic" label="BMDC Registration Number" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={bmdc_No} onChange={(e) => setbmdc_No(e.target.value)} />
                     </div>
 
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
-                        <TextField id="standard-basic" label="Phone Number" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
+                        <TextField id="standard-basic" label="Doctor Type" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={type} onChange={(e) => setType(e.target.value)} />
+                    </div>
+
+                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
+                        <TextField id="standard-basic" label="Phone Number" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
-                        <TextField id="standard-basic" label="Email" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
+                        <TextField id="standard-basic" label="Email" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
-                        <TextField id="standard-basic" label="Password" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
+                        <TextField id="standard-basic" label="Password" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
 
                     <div className="flex items-center justify-between">
@@ -139,9 +167,23 @@ const DoctorSignup = () => {
                             </label>
                         </div>
                     </div>
-                    <Button variant="contained" className="w-3/4 lg:w-2/4">Signup</Button> 
+                    <Button variant="contained" className="w-3/4 lg:w-2/4" onClick={registerSubmit}>Signup</Button>
                 </form>
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
+            {/* Same as */}
+            <ToastContainer />
 
         </div>
     );

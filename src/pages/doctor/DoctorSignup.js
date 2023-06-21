@@ -4,6 +4,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import Button from '@mui/material/Button';
 import { useState } from 'react';
 const DoctorSignup = () => {
 
@@ -22,27 +23,42 @@ const DoctorSignup = () => {
     const [agree, setAgree] = useState(false);
 
     return (
-        <div className="mt-40 lg:w-3/4 lg:mx-auto lg:flex justify-between lg:gap-4 mb-10">
-            <div className="w-full hidden">
-                <form action="" className="">
-                    <TextField id="standard-basic" label="Title" variant="standard" className="" />
-                    <TextField id="standard-basic" label="Name" variant="standard" className="" />
+        <div className="mt-40 lg:w-3/4 lg:mx-auto lg:flex lg:justify-between lg:gap-4 mb-10">
+            <div className="w-full">
 
-                </form>
+                <div className="hidden lg:block mt-16">
+                <p className= "text-4xl text-center text-blue-600 font-bold w-3/4 mx-auto ">Are You A Qualified Doctor?</p>
+                <p className=" text-gray-900 lg:text-3xl text-center mt-12 font-bold ml-5">Join the forefront of digital healthcare</p>
+                <p className="text-gray-900 text-xl text-start w-3/4 mx-auto mt-10">Join HealthBridge network and create your virtual chamber provide medical consultancy via video call and expand the reach of your service.</p>
+                </div>
+                
+                <div className="hidden lg:block mt-16">
+                <p className= "text-4xl text-start text-blue-600 font-bold w-3/4 mx-auto">Benefits Of Joining</p>
+                <p className="text-gray-900 text-xl text-start w-3/4 mx-auto mt-10">Doctors can join the platform using our simple on boarding process. We verify every doctor to make sure only BMDC authorised doctors are providing consultation using our latest technology.</p>
+                <p className="text-gray-900 text-xl text-start w-3/4 mx-auto mt-10">You will be at the forefront of digital healthcare innovations providing accessible patient care for all.</p>
+                <p className="text-gray-900 text-xl text-start w-3/4 mx-auto mt-10">You will be working independently, making autonomous medical decisions, and supported by our HealthBridge technical team who are here to assist both patient and yourself when you’re on session or outside sessions.</p>
+                </div>
+                <div className="block lg:hidden mt-16">
+                <p className= " text-2xl lg:text-4xl text-start text-blue-600 font-bold lg:w-3/4 mx-auto ml-3 lg:ml-0">Are You A Qualified Doctor?</p>
+                <p className="text-xl text-gray-900 lg:text-3xl text-center mt-12 font-bold lg:ml-3">Join the forefront of digital healthcare</p>
+                <p className="text-gray-900 text-xl text-start ml-3 lg:ml-0 lg:w-3/4 mx-auto mt-10">Join HealthBridge network and create your virtual chamber provide medical consultancy via video call and expand the reach of your service.</p>
+                </div>
+
+
             </div>
-            <div className="w-full ">
+            <div className="w-full lg:mt-0 mt-12">
                 <p className=" text-4xl text-center font-semibold text-gray-900 lg:w-2/4 lg:mx-auto ">Doctors Registration</p>
                 <form action="" className="">
-                    <div className="mt-6 p-5 lg:m-0">
+                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 lg:mt-6">
                         <TextField id="standard-basic" label="Title" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
                     </div>
 
-                    <div className="mt-6 m-5 lg:m-0">
+                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 lg:mt-6">
                         <TextField id="standard-basic" label="Name" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
                     </div>
 
 
-                    <div className="mt-8 m-5 lg:m-0">
+                    <div className="mt-8 m-5 lg:m-0 lg:ml-0 lg:mr-0 lg:mt-6">
                         <TextField
                             id="filled-select-currency-native"
                             select
@@ -61,40 +77,40 @@ const DoctorSignup = () => {
                             ))}
                         </TextField>
                     </div>
-                    <div className="mt-8 lg:ml-44 lg:pr-14 m-5 lg:m-0">
+                    <div className="mt-8 lg:ml-44 lg:pr-14 m-5  lg:mr-0 lg:mt-6">
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DemoContainer components={['DatePicker']}>
-                                <DatePicker label="Birth Date" className="w-full lg:w-2/4 mx-auto mt-12" />
+                                <DatePicker label="Birth Date" className="w-full lg:w-3/4 mx-auto mt-12" />
                             </DemoContainer>
                         </LocalizationProvider>
                     </div>
-                    <div className="mt-6 m-5 lg:m-0">
+                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 lg:mt-6">
                         <TextField id="standard-basic" label="District" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
                     </div>
 
-                    <div className="mt-6 m-5 lg:m-0">
+                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 lg:mt-6">
                         <TextField id="standard-basic" label="NID / Passport Number" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
                     </div>
-                    <div className="mt-6 m-5 lg:m-0">
+                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 lg:mt-6">
                         <TextField id="standard-basic" label="BMDC Registration Number" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
                     </div>
 
-                    <div className="mt-6 m-5 lg:m-0">
+                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 lg:mt-6">
                         <TextField id="standard-basic" label="Doctor Type" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
                     </div>
 
-                    <div className="mt-6 m-5 lg:m-0">
+                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 lg:mt-6">
                         <TextField id="standard-basic" label="Phone Number" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
                     </div>
-                    <div className="mt-6 m-5 lg:m-0">
+                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 lg:mt-6">
                         <TextField id="standard-basic" label="Email" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
                     </div>
-                    <div className="mt-6 m-5 lg:m-0">
+                    <div className="mt-6 m-5 lg:ml-0 lg:mr-0 lg:mt-6">
                         <TextField id="standard-basic" label="Password" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" />
                     </div>
 
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center lg:w-2/4 mx-auto mt-5">
+                        <div className="flex items-center w-3/4 lg:w-2/4 mx-auto mt-5 mb-6">
                             <input
                                 id="agree"
                                 name="agree"
@@ -112,7 +128,7 @@ const DoctorSignup = () => {
                             </label>
                         </div>
                     </div>
-                    <button className="btn btn-sm bg-black w-2/4 mx-auto mt-5">Signup</button>
+                    <Button variant="contained" className=" w-3/4 lg:w-2/4 mt-6 ">Signup</Button>
 
                 </form>
             </div>

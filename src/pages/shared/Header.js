@@ -33,11 +33,11 @@ const Header = () => {
     }
     return (
         <header className="absolute inset-x-0 top-0 z-50">
-            <nav className="flex items-center justify-between lg:p-6 lg:px-8" aria-label="Global">
+            <nav className="flex items-center justify-between pr-6 pl-6 lg:p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/">
                         <img
-                            className="h-12 lg:h-16 lg:w-auto "
+                            className="h-12 lg:h-16 w-auto  lg:w-auto "
                             src={logo}
                             alt=""
                         />
@@ -78,7 +78,7 @@ const Header = () => {
                 </div>
             </nav>
             {/* for small devices */}
-            <ul className={active ? '  border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block bg-white text-black text-start ml-24 ' : 'hidden'}>
+            <ul className={active ? '  border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block bg-white text-black text-start ml-16 ' : 'hidden'}>
                 <div className="grid grid-cols-2 md:gap-96">
                     <RxCross1 className="text-xl ml-5 mt-5" onClick={showMenu}></RxCross1>
 
@@ -131,7 +131,7 @@ const Header = () => {
                             </Link>
                         </li>
                       
-                        <button  className="btn  bg-black border-black hover:bg-black w-full mx-auto mt-32" onClick={() => dispatch(logout())}>Logout as {user.name}</button>
+                        <button  className="btn  bg-black border-black hover:bg-black w-3/4 mt-32" onClick={() => dispatch(logout())}>Logout as {user.name}</button>
                     </ul> : <li>
                         <Link to="/user-signin" onClick={showMenu} className="text-sm  text-gray-900 px-5 py-2 font-semibold  block">Login</Link>
                     </li>

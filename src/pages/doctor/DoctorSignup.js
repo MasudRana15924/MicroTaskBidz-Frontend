@@ -102,7 +102,7 @@ const DoctorSignup = () => {
                             <option  >Male </option>
                             <option >Female </option>
                         </select>
-                    </div>
+
                    
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
                         <TextField id="standard-basic" label="District" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={district} onChange={(e) => setDistrict(e.target.value)} />

@@ -103,26 +103,7 @@ const DoctorSignup = () => {
                             <option >Female </option>
                         </select>
 
-                        {/* <InputLabel id="demo-select-small-label" className="text-start lg:text-center">Select Gender</InputLabel>
-                        <Select
-                            labelId="demo-select-small-label"
-                            id="demo-select-small"
-                            value={gender} onChange={(e) => setGender(e.target.value)}
-                            className="w-full lg:w-2/4 mx-auto "
-                        >
-
-                            <MenuItem value="Male">Male</MenuItem>
-                            <MenuItem value="Female">Female</MenuItem>
-                        </Select> */}
-
-
-
-
-                    </div>
-                    <div className="mt-8 lg:ml-44 lg:pr-14 m-5 lg:m-0 ">
-
-
-                    </div>
+                   
                     <div className="mt-6 m-5 lg:ml-0 lg:mr-0 ">
                         <TextField id="standard-basic" label="District" variant="outlined" className="w-full lg:w-2/4 mx-auto mt-12" value={district} onChange={(e) => setDistrict(e.target.value)} />
                     </div>

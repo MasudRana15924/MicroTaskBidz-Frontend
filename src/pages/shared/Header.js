@@ -17,6 +17,7 @@ const navigation = [
     { name: 'Insurance', to: '/insurance' },
     { name: 'Bloods', to: '/bloods' },
     { name: 'Nurses', to: "/nurses" },
+    { name: 'For Doctors', to: "/doctor/signup" },
 ]
 
 const Header = () => {

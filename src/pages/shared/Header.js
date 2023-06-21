@@ -104,7 +104,9 @@ const Header = () => {
                 <li>
                     <Link to="/bloods" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>Bloods</Link>
                 </li>
-                
+                <li>
+                    <Link to="/doctor/signup" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>For Doctors</Link>
+                </li>
                 
                 {
                     token ? <ul>

@@ -19,6 +19,15 @@ const navigation = [
     { name: 'Nurses', to: "/nurses" },
     { name: 'For Doctors', to: "/doctor/signup" },
 ]
+const navigations = [
+    { name: 'Home', to: '/home' },
+    { name: 'About Us', to: '/about' },
+    { name: 'Contact Us', to: '/contact' },
+    { name: 'Doctors', to: '/doctors' },
+    { name: 'Insurance', to: '/insurance' },
+    { name: 'Bloods', to: '/bloods' },
+    { name: 'Nurses', to: "/nurses" },
+]
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -55,11 +64,18 @@ const Header = () => {
                     </button>
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
-                    {navigation.map((item) => (
-                        <Link key={item.name} as={HashLink} to={item.to} className="text-sm font-semibold leading-6 text-gray-900">
-                            {item.name}
-                        </Link>
-                    ))}
+                   
+                     {
+                        token ? <div  className="hidden lg:flex lg:gap-x-12">{navigations.map((item) => (
+                            <Link key={item.name} as={HashLink} to={item.to} className="text-sm font-semibold leading-6 text-gray-900">
+                                {item.name}
+                            </Link>
+                        ))}</div>:<div  className="hidden lg:flex lg:gap-x-12">{navigation.map((item) => (
+                            <Link key={item.name} as={HashLink} to={item.to} className="text-sm font-semibold leading-6 text-gray-900">
+                                {item.name}
+                            </Link>
+                        ))}</div>
+                     }
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     {

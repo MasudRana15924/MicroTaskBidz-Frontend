@@ -36,7 +36,6 @@ export const signUpSlice = createSlice({
     builder.addCase(createSignUp.rejected, (state, action) => {
       state.isLoading = false;
       state.error = true;
-      state.errorMessage = action.payload.data.message;
     });
   },
 });

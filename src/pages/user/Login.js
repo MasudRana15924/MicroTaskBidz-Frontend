@@ -102,7 +102,7 @@ const Login = () => {
                             </div>
 
                             <div>
-                                <button className="w-full px-6 py-3 bg-black mb-5">
+                                <button className="w-full px-6 py-3 bg-blue-500 mb-5">
                                     <span className="font-semibold text-white text-lg">Login</span>
                                 </button>
 

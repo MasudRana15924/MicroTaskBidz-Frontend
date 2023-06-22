@@ -36,8 +36,7 @@ export const doctorsignUpSlice = createSlice({
     });
     builder.addCase(createDoctorSignUp.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = true;
-      state.errorMessage = action.payload.data.message;
+      state.error=action.payload.response?.message;
     });
   },
 });

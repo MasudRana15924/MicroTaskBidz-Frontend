@@ -79,7 +79,8 @@ function App() {
             <Route path="/user/updateprofile" element={<PrivateRoute><UpdateProfile /></PrivateRoute>}></Route>
             <Route path="/user-info" element={<PrivateRoute>< UserDetails /></PrivateRoute>}></Route>
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
-            <Route path="/doctor/signup" element={<DoctorSignup></DoctorSignup>}></Route>
+            {/* <Route path="/doctor/signup" element={<DoctorSignup></DoctorSignup>}></Route> */}
+            <Route path="/doctor/signup" element={<PublicRoute>< DoctorSignup /></PublicRoute>}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
             <Route path="book-appointment" element={<PrivateRoute><BookAppointment/></PrivateRoute>}></Route>

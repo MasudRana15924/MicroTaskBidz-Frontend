@@ -123,7 +123,7 @@ const UserSignup = () => {
               </div>
             </div>
             <div>
-              <button className="w-full px-6 py-3  bg-black mb-5">
+              <button className="w-full px-6 py-3  bg-blue-500 mb-5">
                 <span className="font-semibold text-white text-lg">Signup</span>
               </button>
               <span className="text-sm tracking-wide text-gray-400 mt-5">Already have a account ?</span> <Link to="/user-signin"><span className="text-sm font-semibold leading-6 text-gray-900">Please Login</span>

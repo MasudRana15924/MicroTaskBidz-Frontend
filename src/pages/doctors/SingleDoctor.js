@@ -37,7 +37,7 @@ const SingleDoctor = () => {
             {content}
             <div className="mt-48">
                 {/* <h2 className="text-start text-3xl text-red-500">Related Doctors </h2> */}
-                <RelatedDoctors expert={expert} id={_id}> </RelatedDoctors>
+                {/* <RelatedDoctors expert={expert} id={_id}> </RelatedDoctors> */}
             </div>
         </section>
     );

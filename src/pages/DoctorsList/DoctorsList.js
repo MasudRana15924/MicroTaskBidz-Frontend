@@ -7,7 +7,7 @@ import { FcCallback } from "react-icons/fc";
 import { HiOutlineMail } from "react-icons/hi";
 import { GoPrimitiveDot } from "react-icons/go";
 
-const DoctorsList = ({doctor}) => {
+const DoctorsList = ({ doctor }) => {
     const { name, phone, work, expert, email, degree, fees, ratings, numOfReviews, images } = doctor;
     const options = {
         size: "large",
@@ -18,11 +18,22 @@ const DoctorsList = ({doctor}) => {
     return (
         <div className="w-3/4 mx-auto lg:flex justify-between mt-5 border border-inherit">
             <div className=" md:w-2/4 lg:w-2/4  md:flex lg:flex justify-between  mb-5 ">
-                <img
+                {/* <img
                     src={images[0].url}
                     className="w-full mx-auto md:w-2/4 lg:w-2/4 max-h-48 "
                     alt={name}
+                /> */}
+                {
+                    images[0]?.url? <img
+                        src={images[0].url}
+                        className="w-full mx-auto md:w-2/4 lg:w-2/4 max-h-48 "
+                        alt={name}
+                    />: <img
+                    src=""
+                    className="w-full mx-auto md:w-2/4 lg:w-2/4 max-h-48 "
+                    alt={name}
                 />
+                }
                 <div className=" w-full text-start ml-5 lg:ml-3 md:ml-3">
                     <div className="flex mt-3">
                         <p className="font-semibold"> {name} </p>
@@ -50,7 +61,7 @@ const DoctorsList = ({doctor}) => {
 
             <div className="ml-5 lg:ml-0 text-start mr-10 mt-5 mb-5">
                 <p className="text-slate-600  text-md font-semibold" >
-                   Works at {work}
+                    Works at {work}
                 </p>
                 <p className="text-slate-600  text-md font-semibold flex gap-2 mt-2" >
                     < FaRegMoneyBillAlt className="text-2xl"></FaRegMoneyBillAlt>{fees}Tk

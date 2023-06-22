@@ -62,7 +62,7 @@ const DoctorDetails = ({ doctor }) => {
                     {
                     images[0]?.url? <img
                         src={images[0].url}
-                        className="md:w-2/4 lg:w-2/4 max-h-48"
+                        className="w-3/4 mx-auto h-32 md:w-2/4 lg:w-3/4 lg:mx-auto lg:h-60 "
                         alt={name}
                     />: <img
                     src=""
@@ -72,7 +72,7 @@ const DoctorDetails = ({ doctor }) => {
                 }
 
                 </div>
-                <div className="text-start ml-5 text-sm font-semibold leading-6 text-gray-900">
+                <div className="text-start text-sm font-semibold leading-6 text-gray-900">
                     <p className="mt-5 lg:mt-0">{name} (  {expert})  </p>
                     <p className="mt-3 ">  {degree}  </p>
                     <p className=" mt-3"> Works at {work}  </p>
@@ -101,7 +101,7 @@ const DoctorDetails = ({ doctor }) => {
             <div className="hidden lg:grid lg:grid-cols-2">
                 <div >
 
-                    <h2 className="text-start text-md">Reviews ({reviews.length})</h2>
+                    <h2 className="text-start lg:ml-32 text-md">Reviews ({reviews.length})</h2>
                     {
                         reviews[0] ? reviews.map((review) => (<Reviews key={review._id} review={review} />))
                             : <p className="text-2xl text-start mt-10 text-red-700">No Reviews Yet !!!</p>
@@ -120,7 +120,7 @@ const DoctorDetails = ({ doctor }) => {
                             onChange={(e) => setComment(e.target.value)}></textarea>
                         <br />
                         <button class="btn w-full mt-2 bg-violet-600 border-violet-600" onClick={reviewSubmitHandler}>Submit</button>
-                    </div> : <div class=" border rounded alert alert-error shadow-lg lg:w-3/4 mt-5 h-12 lg:ml-5">
+                    </div> : <div class=" border rounded alert alert-error shadow-lg lg:w-3/4 mt-5 h-12 ">
                         <div >
                             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                             <span>Please be Login to Give a Review</span>

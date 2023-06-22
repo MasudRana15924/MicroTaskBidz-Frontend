@@ -148,9 +148,14 @@ const UserSidebar = () => {
                     </div>
 
                     <div className=" mt-10">
-                        <Link to="/user-signin">
+                        {
+                             user?.role==='user'?<Link to="/user-signin">
+                             <button className="btn  ml-8 w-3/4 bg-slate-700 border-slate-200  hover:bg-slate-700 " onClick={() => dispatch(logout())}>  Logout </button>
+                         </Link>:<Link to="/doctor/login">
                             <button className="btn  ml-8 w-3/4 bg-slate-700 border-slate-200  hover:bg-slate-700 " onClick={() => dispatch(logout())}>  Logout </button>
                         </Link>
+                        }
+                        
                     </div>
                 </div>
                }

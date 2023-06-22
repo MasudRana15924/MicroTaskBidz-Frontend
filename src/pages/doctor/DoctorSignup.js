@@ -239,7 +239,7 @@ const DoctorSignup = () => {
                     <Button variant="contained" className="w-3/4 lg:w-2/4" onClick={registerSubmit}>Signup</Button>
                     {/* <button variant="contained" className="w-3/4 lg:w-2/4" >Signup</button> */}
                    <div className="mt-5">
-                   <span className="text-sm tracking-wide text-gray-400 mt-8">Already have a account ?</span> <Link to="/user-signin"><span className="text-sm font-semibold leading-6 text-gray-900">Please Login</span></Link>
+                   <span className="text-sm tracking-wide text-gray-400 mt-8">Already have a account ?</span> <Link to="/doctor/login"><span className="text-sm font-semibold leading-6 text-gray-900">Please Login</span></Link>
                    </div>
                 </form>
             </div>

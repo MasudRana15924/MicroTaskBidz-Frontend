@@ -25,6 +25,11 @@ code {
   transition: 0.3s;
   /* height: 380px; */
 }
+.doctor-image{
+  width:100px;
+  height:100px;
+
+}
 
 .blogs {
   background-color: #f8f9fa !important;

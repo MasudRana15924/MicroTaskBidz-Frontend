@@ -1,22 +1,17 @@
 import React from 'react';
 import { TextField } from '@mui/material';
-import Box from '@mui/material/Box';
-import NativeSelect from '@mui/material/NativeSelect';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-// import { createDoctorSignUp } from '../../state/doctors/doctorsignupSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import { createSignUp } from '../../state/user/signupSlice';
 const DoctorSignup = () => {
     const dispatch = useDispatch();
-    // const { success } = useSelector(
-    //     (state) => state.signup
-    // );
+    const {success} = useSelector(
+        (state) => state.signup
+    );
     const navigate = useNavigate()
     const [title, setTitle] = useState('');
     const [name, setName] = useState('');
@@ -34,7 +29,7 @@ const DoctorSignup = () => {
     const registerSubmit = (e) => {
         e.preventDefault();
 
-        if (data) {
+        if (title&& gender && district && nid_No && bmdc_No && type && phone && name&&  email&& password) {
             // dispatch(createDoctorSignUp(data));
             dispatch(createSignUp(data));
             toast.success('Account create successfully', {
@@ -47,12 +42,25 @@ const DoctorSignup = () => {
                 progress: undefined,
                 theme: "light",
             });
-        } else {
-            toast.alert('Enter Details');
+        } else{
+            toast.error('Enter all Fields', {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
 
     }
-
+    useEffect(() => {
+        if (success) {
+            navigate('/user-signin');
+        } 
+    }, [success, navigate]);
     const titles = [
         {
 
@@ -134,7 +142,7 @@ const DoctorSignup = () => {
             </div>
             <div className=" w-3/4 mx-auto lg:w-full lg:mt-12 mt-10">
                 <p className="text-2xl lg:text-4xl lg:text-center font-semibold text-gray-900 lg:w-2/4 lg:mx-auto ">Doctors Registration</p>
-                <form action="" className="" >
+                <form action="" className="" onSubmit={registerSubmit}>
                     <div className="mt-12  lg:ml-0 lg:mr-0 ">
                         {/* <TextField id="standard-basic" label="Title" variant="standard" className="w-full lg:w-2/4 mx-auto mt-12" value={title} onChange={(e) => setTitle(e.target.value)} /> */}
                         <TextField
@@ -147,7 +155,9 @@ const DoctorSignup = () => {
                             }}
                             variant="standard"
                             className="bg-white w-full lg:w-2/4 mx-auto "
-                             onChange={(e) => setTitle(e.target.value)}
+                            onChange={(e) => setTitle(e.target.value)}
+                           
+                            
                         >
                             {titles.map((option) => (
                                 <option key={option.value} value={option.value}>
@@ -226,6 +236,7 @@ const DoctorSignup = () => {
                         <TextField id="standard-basic" label="Password" variant="standard" className="w-full lg:w-2/4 mx-auto mt-12" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <Button variant="contained" className="w-3/4 lg:w-2/4" onClick={registerSubmit}>Signup</Button>
+                    {/* <button variant="contained" className="w-3/4 lg:w-2/4" >Signup</button> */}
                 </form>
             </div>
             <ToastContainer

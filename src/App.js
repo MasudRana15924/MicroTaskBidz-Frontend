@@ -48,6 +48,7 @@ import Blood from './components/landingpage/Blood';
 import DoctorSignup from './pages/doctor/DoctorSignup';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import DoctorLogin from './pages/doctor/DoctorLogin';
 
 
 
@@ -80,6 +81,7 @@ function App() {
             <Route path="/user-info" element={<PrivateRoute>< UserDetails /></PrivateRoute>}></Route>
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
             <Route path="/doctor/signup" element={< DoctorSignup />}></Route>
+            <Route path="/doctor/login" element={< DoctorLogin />}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
             <Route path="book-appointment" element={<PrivateRoute><BookAppointment/></PrivateRoute>}></Route>

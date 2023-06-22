@@ -19,22 +19,27 @@ const navigation = [
     { name: 'Nurses', to: "/nurses" },
     { name: 'For Doctors', to: "/doctor/signup" },
 ]
-const navigations = [
-    { name: 'Home', to: '/home' },
-    { name: 'About Us', to: '/about' },
-    { name: 'Contact Us', to: '/contact' },
-    { name: 'Doctors', to: '/doctors' },
-    { name: 'Insurance', to: '/insurance' },
-    { name: 'Bloods', to: '/bloods' },
-    { name: 'Nurses', to: "/nurses" },
-]
+// const navigations = [
+//     { name: 'Home', to: '/home' },
+//     { name: 'About Us', to: '/about' },
+//     { name: 'Contact Us', to: '/contact' },
+//     { name: 'Doctors', to: '/doctors' },
+//     { name: 'Insurance', to: '/insurance' },
+//     { name: 'Bloods', to: '/bloods' },
+//     { name: 'Nurses', to: "/nurses" },
+// ]
 
 const Header = () => {
     const dispatch = useDispatch();
-    const { token, loggeduser } = useSelector(
+    const {token, loggeduser } = useSelector(
         (state) => state.userDetails
     );
     const user = loggeduser.user
+    // const { loggeddoctor } = useSelector(
+    //     (state) => state.loggeddoctor
+    // );
+    // const doctor = loggeddoctor.user
+    // const doctorToken=loggeddoctor.token
     const [active, setActive] = useState(false)
 
     const showMenu = () => {
@@ -65,8 +70,8 @@ const Header = () => {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
                    
-                     {
-                        token ? <div  className="hidden lg:flex lg:gap-x-12">{navigations.map((item) => (
+                     {/* {
+                        user?.role==='doctor' ? <div  className="hidden lg:flex lg:gap-x-12">{navigations.map((item) => (
                             <Link key={item.name} as={HashLink} to={item.to} className="text-sm font-semibold leading-6 text-gray-900">
                                 {item.name}
                             </Link>
@@ -75,7 +80,12 @@ const Header = () => {
                                 {item.name}
                             </Link>
                         ))}</div>
-                     }
+                     } */}
+                     {navigation.map((item) => (
+                            <Link key={item.name} as={HashLink} to={item.to} className="text-sm font-semibold leading-6 text-gray-900">
+                                {item.name}
+                            </Link>
+                        ))}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     {

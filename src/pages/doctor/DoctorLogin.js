@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './User.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { createLogin } from '../../state/user/Login/loginSlice';
+import { createDoctorLogin } from '../../state/user/Login/loginSlice';
 
 
-const Login = () => {
+
+const DoctorLogin = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [agree, setAgree] = useState(false);
@@ -27,8 +27,8 @@ const Login = () => {
         const myForm = new FormData();
         myForm.set("email", email);
         myForm.set("password", password);
-         dispatch(createLogin(myForm));
-        // dispatch(createDoctorLogin(myForm));
+        // dispatch(createLogin(myForm));
+        dispatch(createDoctorLogin(myForm));
         toast.success('Login Succesfull');     
     };
     const registerDataChange = (e) => {
@@ -136,4 +136,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default DoctorLogin;

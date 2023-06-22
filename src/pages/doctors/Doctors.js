@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Rating from '@mui/material/Rating';
 import { FaRegMoneyBillAlt } from "react-icons/fa";
+import imgAvatar from '../../images/avatar.jpg'
 const Doctors = ({ doctor }) => {
-    const { name, expert, degree, fees, ratings, images,numOfReviews } = doctor;
+    const { name, expert, degree, fees, ratings,avatar,numOfReviews } = doctor;
     const options = {
         size: "large",
         value: ratings,
@@ -15,11 +16,17 @@ const Doctors = ({ doctor }) => {
             <div className="w-full flex flex-col ">
                 <div className="relative">
                     <Link to={`/doctor/${doctor._id}`}>
-                        <img
-                            src={images[0].url}
-                            className="w-full h-48"
-                            alt={name}
-                        />
+                    {
+                     avatar?.url?<img
+                        src={avatar.url }
+                        className="w-3/4 mx-auto h-32 md:w-2/4 lg:w-3/4 lg:mx-auto lg:h-60 "
+                        alt={name}
+                    />: <img
+                    src={imgAvatar}
+                    className="w-full mx-auto md:w-2/4 lg:w-2/4 max-h-48 "
+                    alt={name}
+                />
+                }
                     </Link>
                 </div>
 

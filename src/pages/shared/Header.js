@@ -153,29 +153,29 @@ const Header = () => {
                 {
                     token ? <ul>
                         <li>
-                            <Link to="/user-info" onClick={showMenu} className=" text-sm  text-gray-900 px-5 font-semibold  block">
+                            <Link to="/user-info" onClick={showMenu} className=" text-sm  text-gray-900 px-5 py-4 font-semibold  block">
                                 My Profile
                             </Link>
                         </li>
                         <li>
-                            <Link to="/user/updateinfo" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5  font-semibold  block">
+                            <Link to="/user/updateinfo" onClick={showMenu} className="mt-3 text-sm py-4 text-gray-900 px-5  font-semibold  block">
                                 Update Profile
                             </Link>
                         </li>
                         <li>
-                            <Link to="/user/change/password" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5 py-1 font-semibold  block">
+                            <Link to="/user/change/password" onClick={showMenu} className="mt-3 text-sm py-4 text-gray-900 px-5  font-semibold  block">
                                 Change Password
                             </Link>
                         </li>
                         <li>
-                            <Link to="/my-booking" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5 py-1 font-semibold  block">
+                            <Link to="/my-booking" onClick={showMenu} className="mt-3 text-sm py-4 text-gray-900 px-5 font-semibold  block">
                              Booking History
                             </Link>
                         </li>
                       
                         <button  className="btn btn-sm ml-8 bg-black border-black hover:bg-black w-3/4 mx-auto mt-32" onClick={() => dispatch(logout())}>Logout as {user.name}</button>
                     </ul> : <li>
-                        <Link to="/user-signin" onClick={showMenu} className="text-sm  text-gray-900 px-5 py-2 font-semibold  block">Login</Link>
+                        <Link to="/user-signin" onClick={showMenu} className="text-sm  text-gray-900 px-5 py-4 font-semibold  block">Login</Link>
                     </li>
                 }
             </ul>

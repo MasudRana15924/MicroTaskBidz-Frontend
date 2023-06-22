@@ -52,17 +52,28 @@ const DoctorDetails = ({ doctor }) => {
 
     return (
         <div>
-            <div className="w-full   mb-5 mt-20 grid lg:grid-cols-2 ">
+            <div className=" w-full   mb-5 lg:mt-20 grid lg:grid-cols-2 ">
                 <div>
-                    <img
+                    {/* <img
                         src={images[0].url}
-                        className="w-full h-72 "
+                        className="w-full border rounded h-72 "
                         alt={name}
-                    />
+                    /> */}
+                    {
+                    images[0]?.url? <img
+                        src={images[0].url}
+                        className="md:w-2/4 lg:w-2/4 max-h-48"
+                        alt={name}
+                    />: <img
+                    src=""
+                    className="w-full mx-auto md:w-2/4 lg:w-2/4 max-h-48 "
+                    alt={name}
+                />
+                }
 
                 </div>
                 <div className="text-start ml-5 text-sm font-semibold leading-6 text-gray-900">
-                    <p className="">{name} (  {expert})  </p>
+                    <p className="mt-5 lg:mt-0">{name} (  {expert})  </p>
                     <p className="mt-3 ">  {degree}  </p>
                     <p className=" mt-3"> Works at {work}  </p>
                     <p className="mt-3">Fees {fees}Tk </p>
@@ -78,7 +89,7 @@ const DoctorDetails = ({ doctor }) => {
                     <p className="mt-3">({numOfReviews}) reviews</p>
                     <p className="mt-5 w-3/4 ">{description} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ipsa optio. Illo fugiat, vitae excepturi inventore architecto dolor mollitia in animi sit optio nisi dicta natus totam qui, provident aperiam! </p>
                     <Link to="/book-appointment">
-                        <button className=" border-0 btn bg-violet-700 mt-7 w-full lg:w-3/4 mx-auto mb-10">Take Appointment</button>
+                        <button className=" border-0 btn bg-blue-500 mt-7 w-full lg:w-3/4 mx-auto mb-10">Take Appointment</button>
 
                     </Link>
 
@@ -109,8 +120,8 @@ const DoctorDetails = ({ doctor }) => {
                             onChange={(e) => setComment(e.target.value)}></textarea>
                         <br />
                         <button class="btn w-full mt-2 bg-violet-600 border-violet-600" onClick={reviewSubmitHandler}>Submit</button>
-                    </div> : <div class="alert alert-error shadow-lg w-3/4 mt-5 h-12 ml-5">
-                        <div>
+                    </div> : <div class=" border rounded alert alert-error shadow-lg lg:w-3/4 mt-5 h-12 lg:ml-5">
+                        <div >
                             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                             <span>Please be Login to Give a Review</span>
                         </div>
@@ -132,10 +143,10 @@ const DoctorDetails = ({ doctor }) => {
                             onChange={(e) => setComment(e.target.value)}></textarea>
                         <br />
                         <button class="btn w-full mt-2 bg-violet-600 border-violet-600" onClick={reviewSubmitHandler}>Submit</button>
-                    </div> : <div class="alert alert-error shadow-lg w-1/4 mt-5 h-12 ml-5">
+                    </div> : <div class="alert alert-error shadow-lg w-3/4 lg:mt-5 h-12 ml-5 text-sm text-start">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            <span>Please be Login to Give a Review</span>
+                            <span>Be Login to Give Review</span>
                         </div>
                     </div>
                 }

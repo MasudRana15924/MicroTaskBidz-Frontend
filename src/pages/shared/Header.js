@@ -99,51 +99,77 @@ const Header = () => {
                     <RxCross1 className="text-xl ml-5 mt-5" onClick={showMenu}></RxCross1>
 
                 </div>
-                <li>
+               {
+                token? <div>
+                     <li>
                     <Link to="/" className=" text-sm  text-gray-900 px-5 py-2 font-semibold  block " onClick={showMenu}>Home</Link>
                 </li>
                 <li>
-                    <Link to="/about" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>About</Link>
+                    <Link to="/about" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block" onClick={showMenu}>About</Link>
                 </li>
                 <li>
-                    <Link to="/contact" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>Contact Us</Link>
+                    <Link to="/contact" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block" onClick={showMenu}>Contact Us</Link>
                 </li>
                 <li>
-                    <Link to="/doctors" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block " onClick={showMenu}>Doctors</Link>
+                    <Link to="/doctors" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block " onClick={showMenu}>Doctors</Link>
                 </li>
                 <li>
-                    <Link to="/nurses" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>Nurses</Link>
+                    <Link to="/nurses" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block" onClick={showMenu}>Nurses</Link>
                 </li>
                 <li>
-                    <Link to="/insurance" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block " onClick={showMenu}>Insurance</Link>
+                    <Link to="/insurance" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block " onClick={showMenu}>Insurance</Link>
                 </li>
                 <li>
-                    <Link to="/bloods" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>Bloods</Link>
+                    <Link to="/bloods" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block" onClick={showMenu}>Bloods</Link>
+                </li>
+                </div>:<ul>
+                     <li>
+                    <Link to="/" className=" text-sm  text-gray-900 px-5 py-2 font-semibold  block " onClick={showMenu}>Home</Link>
                 </li>
                 <li>
-                    <Link to="/doctor/signup" className="text-sm  text-gray-900 px-5 py-1 font-semibold  block" onClick={showMenu}>For Doctors</Link>
+                    <Link to="/about" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block" onClick={showMenu}>About</Link>
                 </li>
+                <li>
+                    <Link to="/contact" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block" onClick={showMenu}>Contact Us</Link>
+                </li>
+                <li>
+                    <Link to="/doctors" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block " onClick={showMenu}>Doctors</Link>
+                </li>
+                <li>
+                    <Link to="/nurses" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block" onClick={showMenu}>Nurses</Link>
+                </li>
+                <li>
+                    <Link to="/insurance" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block " onClick={showMenu}>Insurance</Link>
+                </li>
+                <li>
+                    <Link to="/bloods" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block" onClick={showMenu}>Bloods</Link>
+                </li>
+                <li>
+                    <Link to="/doctor/signup" className="text-sm  text-gray-900 px-5 py-2 font-semibold  block" onClick={showMenu}>For Doctors</Link>
+                </li>
+                </ul>
+               }
                 
                 {
                     token ? <ul>
                         <li>
-                            <Link to="/user-info" onClick={showMenu} className=" text-sm  text-gray-900 px-5 py-2 font-semibold  block">
+                            <Link to="/user-info" onClick={showMenu} className=" text-sm  text-gray-900 px-5 font-semibold  block">
                                 My Profile
                             </Link>
                         </li>
                         <li>
-                            <Link to="/user/updateinfo" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5 py-2 font-semibold  block">
+                            <Link to="/user/updateinfo" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5  font-semibold  block">
                                 Update Profile
                             </Link>
                         </li>
                         <li>
-                            <Link to="/user/change/password" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5 py-2 font-semibold  block">
+                            <Link to="/user/change/password" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5 py-1 font-semibold  block">
                                 Change Password
                             </Link>
                         </li>
                         <li>
-                            <Link to="/my-booking" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5 py-2 font-semibold  block">
-                                My Booking
+                            <Link to="/my-booking" onClick={showMenu} className="mt-3 text-sm  text-gray-900 px-5 py-1 font-semibold  block">
+                             Booking History
                             </Link>
                         </li>
                       

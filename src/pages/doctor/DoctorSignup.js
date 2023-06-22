@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { createSignUp } from '../../state/user/signupSlice';
+import { Link } from 'react-router-dom';
 const DoctorSignup = () => {
     const dispatch = useDispatch();
     const {success} = useSelector(
@@ -237,6 +238,9 @@ const DoctorSignup = () => {
                     </div>
                     <Button variant="contained" className="w-3/4 lg:w-2/4" onClick={registerSubmit}>Signup</Button>
                     {/* <button variant="contained" className="w-3/4 lg:w-2/4" >Signup</button> */}
+                   <div className="mt-5">
+                   <span className="text-sm tracking-wide text-gray-400 mt-8">Already have a account ?</span> <Link to="/user-signin"><span className="text-sm font-semibold leading-6 text-gray-900">Please Login</span></Link>
+                   </div>
                 </form>
             </div>
             <ToastContainer

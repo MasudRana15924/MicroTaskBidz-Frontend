@@ -70,7 +70,7 @@ function App() {
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="/home" element={<Home></Home>}></Route>
             <Route path="/user-signin" element={< Login />}></Route>
-            <Route path="/user-signup" element={<PublicRoute>< UserSignup /></PublicRoute>}></Route>
+            <Route path="/user-signup" element={< UserSignup />}></Route>
             <Route path="/activation/:activation_token"  element={<Verify />} />
             <Route path="/user/password" element={<ForgotPass />}></Route>
             <Route exact path="/password/reset/:token" element={<Resetpassword></Resetpassword>} />
@@ -79,8 +79,7 @@ function App() {
             <Route path="/user/updateprofile" element={<PrivateRoute><UpdateProfile /></PrivateRoute>}></Route>
             <Route path="/user-info" element={<PrivateRoute>< UserDetails /></PrivateRoute>}></Route>
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
-            {/* <Route path="/doctor/signup" element={<DoctorSignup></DoctorSignup>}></Route> */}
-            <Route path="/doctor/signup" element={<PublicRoute>< DoctorSignup /></PublicRoute>}></Route>
+            <Route path="/doctor/signup" element={< DoctorSignup />}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
             <Route path="book-appointment" element={<PrivateRoute><BookAppointment/></PrivateRoute>}></Route>

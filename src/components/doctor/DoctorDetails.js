@@ -8,10 +8,10 @@ import Reviews from './Reviews';
 import { createreviews } from '../../state/doctor/reviewSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
-
+import imgAvatar from '../../images/avatar.jpg'
 
 const DoctorDetails = ({ doctor }) => {
-    const { images, name, phone, work, expert, email, degree, fees, ratings, numOfReviews, description, reviews } = doctor;
+    const { avatar, name, phone, work, expert, email, degree, fees, ratings, numOfReviews, description, reviews } = doctor;
     const options = {
         size: "large",
         value: ratings,
@@ -54,18 +54,15 @@ const DoctorDetails = ({ doctor }) => {
         <div>
             <div className=" w-full   mb-5 lg:mt-20 grid lg:grid-cols-2 ">
                 <div>
-                    {/* <img
-                        src={images[0].url}
-                        className="w-full border rounded h-72 "
-                        alt={name}
-                    /> */}
-                    {
-                    images[0]?.url? <img
-                        src={images[0].url}
+
+                   
+                {
+                     avatar?.url?<img
+                        src={avatar.url }
                         className="w-3/4 mx-auto h-32 md:w-2/4 lg:w-3/4 lg:mx-auto lg:h-60 "
                         alt={name}
                     />: <img
-                    src=""
+                    src={imgAvatar}
                     className="w-full mx-auto md:w-2/4 lg:w-2/4 max-h-48 "
                     alt={name}
                 />

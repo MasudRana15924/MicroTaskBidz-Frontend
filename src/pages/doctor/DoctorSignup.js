@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import { createSignUp } from '../../state/user/signupSlice';
 import { Link } from 'react-router-dom';
+import { createDoctorSignUp } from '../../state/doctors/doctorsignupSlice';
 const DoctorSignup = () => {
     const dispatch = useDispatch();
     const {success} = useSelector(
@@ -24,15 +24,19 @@ const DoctorSignup = () => {
     const [type, setType] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
-    const role = "doctor";
+    const [degree, setDegree] = useState("");
+    const [expert, setExpert] = useState("");
+    const [experience, setExperience] = useState("");
+    const [work, setWork] = useState("");
 
-    const data = ({ title, gender, district, nid_No, bmdc_No, type, phone, name, email, password, role });
+
+    const data = ({ title, gender, district, nid_No, bmdc_No, type, phone, name, email, password,degree,expert,work,experience });
     const registerSubmit = (e) => {
         e.preventDefault();
 
-        if (title&& gender && district && nid_No && bmdc_No && type && phone && name&&  email&& password) {
-            // dispatch(createDoctorSignUp(data));
-            dispatch(createSignUp(data));
+        if (title&& gender && district && nid_No && bmdc_No && type && phone && name&&  email&& password,degree,expert,work,experience ) {
+             dispatch(createDoctorSignUp(data));
+            // dispatch(createSignUp(data));
             toast.success('Account create successfully', {
                 position: "top-center",
                 autoClose: 500,
@@ -192,6 +196,18 @@ const DoctorSignup = () => {
                                 </option>
                             ))}
                         </TextField>
+                    </div>
+                    <div className="mt-6  lg:ml-0 lg:mr-0 ">
+                        <TextField id="standard-basic" label="Degree" variant="standard" className="w-full lg:w-2/4 mx-auto mt-12" value={degree} onChange={(e) => setDegree(e.target.value)} />
+                    </div>
+                    <div className="mt-6  lg:ml-0 lg:mr-0 ">
+                        <TextField id="standard-basic" label="Expert" variant="standard" className="w-full lg:w-2/4 mx-auto mt-12" value={expert} onChange={(e) => setExpert(e.target.value)} />
+                    </div>
+                    <div className="mt-6  lg:ml-0 lg:mr-0 ">
+                        <TextField id="standard-basic" label="Experience" variant="standard" className="w-full lg:w-2/4 mx-auto mt-12" value={experience} onChange={(e) => setExperience(e.target.value)} />
+                    </div>
+                    <div className="mt-6  lg:ml-0 lg:mr-0 ">
+                        <TextField id="standard-basic" label="Work" variant="standard" className="w-full lg:w-2/4 mx-auto mt-12" value={work} onChange={(e) => setWork(e.target.value)} />
                     </div>
 
                     <div className="mt-6  lg:ml-0 lg:mr-0 ">

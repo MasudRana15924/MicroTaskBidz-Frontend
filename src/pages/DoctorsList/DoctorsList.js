@@ -1,20 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { MdCalendarToday } from "react-icons/md";
-import Rating from '@mui/material/Rating';
-import { FcCallback } from "react-icons/fc";
-import { HiOutlineMail } from "react-icons/hi";
-import { GoPrimitiveDot } from "react-icons/go";
 
+import { GoPrimitiveDot } from "react-icons/go";
+import imgAvatar from '../../images/avatar.jpg'
 const DoctorsList = ({ doctor }) => {
-    const { name, phone, work, expert, email, degree, fees, ratings, numOfReviews, images } = doctor;
-    const options = {
-        size: "large",
-        value: ratings,
-        readOnly: true,
-        precision: 0.5,
-    };
+    const { name, work, expert, degree, fees, ratings, avatar,isActive,experience} = doctor;
+    
     return (
         <Link to={`/doctor/${doctor._id}`} >
         <div className="ml-3 mr-3 lg:ml-0 lg:mr-0 lg:w-3/4 mx-auto lg:flex justify-between mt-5 border border-inherit rounded">
@@ -25,21 +17,24 @@ const DoctorsList = ({ doctor }) => {
                     alt={name}
                 /> */}
                 {
-                    images[0]?.url? <img
-                        src={images[0].url}
+                    avatar?.url? <img
+                        src={avatar.url}
                         // className="w-1/4 mx-auto md:w-2/4 lg:w-2/4 h-28 lg:h-48 border rounded m-3 ml-3 "
                         className="doctor-image m-3 ml-3 border rounded"
                         alt={name}
                     />: <img
-                    src=""
-                    className="w-full mx-auto md:w-2/4 lg:w-2/4 max-h-48 "
+                    src={imgAvatar}
+                    className="doctor-image m-3 ml-3 border rounded"
                     alt={name}
                 />
                 }
                 <div className=" w-full text-start ml-5 lg:ml-3 md:ml-3">
                     <div className="flex mt-3">
                         <p className="font-semibold"> {name} </p>
-                        <GoPrimitiveDot className="text-green-600"></GoPrimitiveDot>
+                       
+                        {
+                         isActive==='true'?  <GoPrimitiveDot className="text-green-600 mt-1"></GoPrimitiveDot>:null
+                        }
                     </div>
                     <p className="text-slate-600  text-md " >
                         {degree}
@@ -50,16 +45,6 @@ const DoctorsList = ({ doctor }) => {
                     <p className=" text-md " >
                         {expert}
                     </p>
-                    {/* <div className="flex mt-3">
-                        <FcCallback className="mt-1 text-2xl"> </FcCallback>
-                        <p className="ml-3"> {phone} </p>
-                    </div>
-                    <div className="flex mt-3">
-                        <HiOutlineMail className="mt-1 text-2xl"> </HiOutlineMail>
-                        <p className="ml-3"> {email} </p>
-                    </div> */}
-
-
                 </div>
             </div>
 
@@ -77,8 +62,8 @@ const DoctorsList = ({ doctor }) => {
                     <p className="text-slate-400  text-md mt-3" >
                        Experience
                     </p>
-                    <p className=" text-md " >
-                        {expert}
+                    <p className=" text-md text-black" >
+                        {experience} Years
                     </p>
                     </div>
                     <div>

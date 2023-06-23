@@ -1,6 +1,6 @@
 import axios from "axios";
 import { api } from "../../config/index";
-export const getFilterDoctors = async (experts, fees, genders, ratingss, search) => {
+export const getFilterDoctors = async (experts, fees, genders, ratingss,status) => {
     let queryString = '';
     if (experts?.length > 0) {
         queryString += experts.map(tag => `expert=${tag}`).join("&");
@@ -14,9 +14,12 @@ export const getFilterDoctors = async (experts, fees, genders, ratingss, search)
     if (ratingss?.length > 0) {
         queryString += ratingss.map(rating => `&ratings=${rating}`).join("&");
     }
-    if (search !== '') {
-        queryString += `&q=${search}`;
+    if (status?.length > 0) {
+        queryString += status.map(active => `&isActive=${active}`).join("&");
     }
+    // if (search !== '') {
+    //     queryString += `&q=${search}`;
+    // }
     const response = await axios.get(`${api}/doctors/?${queryString}`);
     return response.data;
 }

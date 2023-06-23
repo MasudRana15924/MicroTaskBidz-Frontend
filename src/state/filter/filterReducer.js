@@ -6,6 +6,7 @@ const initialState = {
     fees:[],
     genders:[],
     ratingss:[],
+    status:[],
     search: "",
 }
 
@@ -53,6 +54,16 @@ const filterSlice = createSlice({
                 state.ratingss.splice(indexToRemove, 1)
             }
         },
+        statusSelected: (state, action) => {
+            state.status.push(action.payload);
+        },
+        statusRemoved: (state, action) => {
+            let indexToRemove;
+             indexToRemove = state.status.indexOf(action.payload)
+            if (indexToRemove !== -1) {
+                state.status.splice(indexToRemove, 1)
+            }
+        },
         searched:(state,action)=>{
             state.search=action.payload
         }
@@ -60,4 +71,4 @@ const filterSlice = createSlice({
 });
 
 export default filterSlice.reducer;
-export const {expertSelected,expertRemoved,feesSelected,feesRemoved,genderSelected,genderRemoved,ratingSelected,ratingRemoved,searched}=filterSlice.actions
+export const {statusSelected,statusRemoved,expertSelected,expertRemoved,feesSelected,feesRemoved,genderSelected,genderRemoved,ratingSelected,ratingRemoved,searched}=filterSlice.actions

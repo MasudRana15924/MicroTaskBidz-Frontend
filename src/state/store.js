@@ -39,7 +39,8 @@ import feesSlice from "./category/feesSlice";
 import  gendersSlice  from "./category/genderSlice";
 import ratingsSlice from "./category/ratingsSlice";
 import  doctorsignUpSlice  from "./doctors/doctorsignupSlice";
-
+import updateLogoutSlice from './user/Login/logOutSlice'
+import statusSlice from "./category/statusSlice";
 
 const persistConfig = {
   key: "authentication",
@@ -88,7 +89,9 @@ const rootReducer = combineReducers({
   fees:feesSlice,
   genders:gendersSlice,
   ratings:ratingsSlice,
+  status:statusSlice,
   doctorsignup:doctorsignUpSlice,
+  logout:updateLogoutSlice
 
 });
 

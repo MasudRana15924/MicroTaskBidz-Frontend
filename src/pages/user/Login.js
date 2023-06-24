@@ -29,7 +29,7 @@ const Login = () => {
         myForm.set("password", password);
          dispatch(createLogin(myForm));
         // dispatch(createDoctorLogin(myForm));
-        toast.success('Login Succesfull');     
+        // toast.success('Login Succesfull');     
     };
     const registerDataChange = (e) => {
         setUser({

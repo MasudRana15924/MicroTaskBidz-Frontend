@@ -20,10 +20,11 @@ const BookAppointment = () => {
     const [date, setDate] = useState('');
     const [schedule, setSchedule] = useState('');
     const doctorname = doctor.name;
+    const doctoremail=doctor.email;
     const doctorfees = doctor.fees;
-    const doctorimage = doctor.images[0].url;
+    const doctorimage = doctor.avatar?.url;
     const doctorId = doctor._id;
-    const data = ({ doctorname, doctorfees, doctorimage, doctorId, patientname, patientemail, patientgender, phone, date, schedule });
+    const data = ({ doctorname,doctoremail, doctorfees, doctorimage, doctorId, patientname, patientemail, patientgender, phone, date, schedule });
     const GatewayPageURL='https://sandbox.sslcommerz.com/EasyCheckOut/testcde2792b8985131ec217d634dca483ceade'
     const handleCreate = (e) => {
         e.preventDefault();

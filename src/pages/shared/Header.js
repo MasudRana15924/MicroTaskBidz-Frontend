@@ -15,7 +15,7 @@ const navigation = [
     { name: 'Contact Us', to: '/contact' },
     { name: 'Doctors', to: '/doctors' },
     { name: 'Insurance', to: '/insurance' },
-    { name: 'Bloods', to: '/bloods' },
+    { name: 'Find Bloods', to: '/bloods' },
     { name: 'Nurses', to: "/nurses" },
     { name: 'For Doctors', to: "/doctor/signup" },
 ]
@@ -82,7 +82,7 @@ const Header = () => {
                         ))}</div>
                      } */}
                      {navigation.map((item) => (
-                            <Link key={item.name} as={HashLink} to={item.to} className="text-sm font-semibold leading-6 text-gray-900">
+                            <Link key={item.name} as={HashLink} to={item.to} className="text-md font-semibold leading-6 text-gray-900">
                                 {item.name}
                             </Link>
                         ))}
@@ -179,11 +179,11 @@ const Header = () => {
                         </li>
                         <li>
                             <Link to="/my-booking" onClick={showMenu} className="mt-3 text-sm py-4 text-gray-900 px-5 font-semibold  block">
-                             Booking History
+                             Consultation History
                             </Link>
                         </li>
                       
-                        <button  className="btn btn-sm ml-8 bg-black border-black hover:bg-black w-3/4 mx-auto mt-32" onClick={() => dispatch(logout())}>Logout as {user.name}</button>
+                        <button  className="btn btn-sm text-sm ml-5 bg-red-500 border-red-500 hover:bg-red-500 w-3/4 mx-auto mt-32" onClick={() => dispatch(logout())}>Logout</button>
                     </ul> : <li>
                         <Link to="/user-signin" onClick={showMenu} className="text-sm  text-gray-900 px-5 py-4 font-semibold  block">Login</Link>
                     </li>

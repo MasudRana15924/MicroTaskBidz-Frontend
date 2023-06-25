@@ -41,6 +41,7 @@ import ratingsSlice from "./category/ratingsSlice";
 import  doctorsignUpSlice  from "./doctors/doctorsignupSlice";
 import updateLogoutSlice from './user/Login/logOutSlice'
 import statusSlice from "./category/statusSlice";
+import createBloodRequestSlice from './blood/bloodSlice'
 
 const persistConfig = {
   key: "authentication",
@@ -91,7 +92,8 @@ const rootReducer = combineReducers({
   ratings:ratingsSlice,
   status:statusSlice,
   doctorsignup:doctorsignUpSlice,
-  logout:updateLogoutSlice
+  logout:updateLogoutSlice,
+  bloods:createBloodRequestSlice,
 
 });
 

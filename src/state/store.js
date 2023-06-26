@@ -42,6 +42,8 @@ import  doctorsignUpSlice  from "./doctors/doctorsignupSlice";
 import updateLogoutSlice from './user/Login/logOutSlice'
 import statusSlice from "./category/statusSlice";
 import createBloodRequestSlice from './blood/bloodSlice'
+import  doctorApponitmentsSlice  from "./doctors/appointmentSlice";
+import  updatePrescriptionSlice  from "./doctors/updateAppointmentSlice";
 
 const persistConfig = {
   key: "authentication",
@@ -94,6 +96,8 @@ const rootReducer = combineReducers({
   doctorsignup:doctorsignUpSlice,
   logout:updateLogoutSlice,
   bloods:createBloodRequestSlice,
+  doctorAppointments:doctorApponitmentsSlice,
+  updatePrescription:updatePrescriptionSlice,
 
 });
 

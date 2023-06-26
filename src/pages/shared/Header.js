@@ -130,7 +130,7 @@ const Header = () => {
                     <Link to="/insurance" className="text-sm  text-gray-900 px-5 py-4 font-semibold  block " onClick={showMenu}>Insurance</Link>
                 </li>
                 <li>
-                    <Link to="/bloods" className="text-sm  text-gray-900 px-5 py-4 font-semibold  block" onClick={showMenu}>Bloods</Link>
+                    <Link to="/bloods" className="text-sm  text-gray-900 px-5 py-4 font-semibold  block" onClick={showMenu}>Find Bloods</Link>
                 </li>
                 </div>:<ul>
                      <li>
@@ -148,15 +148,17 @@ const Header = () => {
                 <li>
                     <Link to="/nurses" className="text-sm  text-gray-900 px-5 py-4 font-semibold  block" onClick={showMenu}>Nurses</Link>
                 </li>
+
+                <li>
+                    <Link to="/bloods" className="text-sm  text-gray-900 px-5 py-4 font-semibold  block" onClick={showMenu}>Find Bloods</Link>
+                </li>
                 <li>
                     <Link to="/insurance" className="text-sm  text-gray-900 px-5 py-4 font-semibold  block " onClick={showMenu}>Insurance</Link>
                 </li>
                 <li>
-                    <Link to="/bloods" className="text-sm  text-gray-900 px-5 py-4 font-semibold  block" onClick={showMenu}>Bloods</Link>
-                </li>
-                <li>
                     <Link to="/doctor/signup" className="text-sm  text-gray-900 px-5 py-4 font-semibold  block" onClick={showMenu}>For Doctors</Link>
                 </li>
+
                 </ul>
                }
                 
